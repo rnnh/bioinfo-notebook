@@ -1,4 +1,4 @@
-# `htseq-count`
+# htseq-count
 
 <https://htseq.readthedocs.io/en/release_0.11.1/count.html#count>
 

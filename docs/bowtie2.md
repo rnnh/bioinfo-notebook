@@ -1,4 +1,4 @@
-# `bowtie2`
+# bowtie2
 
 - **`-p`** number of processors/threads used
 - **`-x`** genome indexed using `bowtie2-build`

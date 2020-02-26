@@ -1,4 +1,4 @@
-# `fastq-dump`
+# fastq-dump
 
 ```
 fastq-dump --gzip --skip-technical  --readids --read-filter pass 
