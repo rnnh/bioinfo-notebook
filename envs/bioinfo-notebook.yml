@@ -6,5 +6,3 @@ dependencies:
   - sra-tools
   - samtools
   - htseq
-prefix: /home/ronan/miniconda3/envs/bioinfo-notebook
-
