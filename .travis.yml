@@ -23,8 +23,8 @@ install:
   # Useful for debugging any issues with conda
   - conda info -a
 
-  # Creating conda environment using envs/bioinfo-notebook.yml
-  - conda env create -n bioinfo-notebook -f envs/bioinfo-notebook.yml
+  # Creating conda environment using envs/bioinfo-notebook.txt
+  - conda env create -n bioinfo-notebook -f envs/bioinfo-notebook.txt
   - conda activate bioinfo-notebook
 
 script:
