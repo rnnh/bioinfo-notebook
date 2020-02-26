@@ -1,0 +1,10 @@
+name: bioinfo-notebook
+channels:
+  - defaults
+dependencies:
+  - bowtie2
+  - sra-tools
+  - samtools
+  - htseq
+prefix: /home/ronan/miniconda3/envs/bioinfo-notebook
+
