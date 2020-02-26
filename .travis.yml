@@ -24,7 +24,7 @@ install:
   - conda info -a
 
   # Creating conda environment using envs/bioinfo-notebook.txt
-  - conda env create -n bioinfo-notebook -f envs/bioinfo-notebook.txt
+  - conda create --name bioinfo-notebook --file envs/bioinfo-notebook.txt
   - conda activate bioinfo-notebook
 
 script:
