@@ -1,4 +1,6 @@
-![bioinfo-notebook](assets/bioinfo-notebook_logo.png)
+<p align="center">
+    ![bioinfo-notebook](assets/bioinfo-notebook_logo.png)
+</p>
 
 [![Build Status](https://travis-ci.com/rnnh/bioinfo-notebook.svg?branch=master)](https://travis-ci.com/rnnh/bioinfo-notebook)
 
