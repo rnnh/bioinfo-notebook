@@ -45,6 +45,20 @@ In this command...
 
 1. **`sorted_example_alignment.bam`** is the name of the input file.
 
+## Simulating short reads using `samtools wgsim`
+
+`wgsim` is a `samtools` program that can simulate short sequencing reads from a reference genome.
+This is useful for creating FASTQ files to practice with.
+
+```
+$ wgsim example_nucleotide_sequence.fasta example_reads_1.fastq example_reads_2.fastq
+```
+
+In this command...
+
+1. **`example_nucleotide_sequence.fasta`** is the reference genome input.
+2. **`example_reads_1.fastq`** and **`example_reads_2.fastq`** are the names of the simulated read output files.
+
 ## Further reading
 
 1. The `samtools` manual: <https://www.htslib.org/doc/samtools.html>
