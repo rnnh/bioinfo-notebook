@@ -1,42 +1,50 @@
 # samtools
 
-<https://www.htslib.org/doc/samtools.html>
+`samtools` is a set of utilities that manipulate alignments in the BAM format.
+It imports from and exports to the SAM (Sequence Alignment/Map) format, does sorting, merging and indexing, and allows to retrieve reads in any regions swiftly. 
 
-## `view`
+## Converting a `sam` alignment file to a sorted, indexed `bam` file using `samtools`
 
-`samtools view [options] in.sam|in.bam|in.cram [region...]`
+Sequence Alignment Map (SAM/`.sam`) is a text-based file is a text-based file format for sequence alignments.
+It's binary equivalent is Binary Alignment Map (BAM/`.bam`), which stores the same data as a compressed binary file.
+A binary file for a sequence alignment is preferable over a text file, as binary files are faster to work with.
+A SAM alignment file (`example_alignment.sam`) can be converted to a BAM alignment using `samtools view`.
 
-With no options or regions specified, prints all alignments in the specified input alignment file (in SAM, BAM, or CRAM format) to standard output in SAM format (with no header). 
+```
+samtools view -@ n -Sb -o example_alignment.bam example_alignment.sam
+```
 
-The `-b`, `-C`, `-1`, `-u`, `-h`, `-H`, and `-c` options change the output format from the default of headerless SAM, and the `-o` and `-U` options set the output file name(s).
+In this command...
 
-The `-t` and `-T` options provide additional reference data. One of these two options is required when SAM input does not contain @SQ headers, and the `-T` option is required whenever writing CRAM output.
+1. **`-@`** sets the number (*`n`*) of threads/CPUs to be used. This flag is optional and can be used with other `samtools` commands.
+2. **`-Sb`** specifies that the input is in SAM format (`S`) and the output will be be BAM format(`b`).
+3. **`-o`** sets the name of the output file (`example_alignment.bam`).
+4. **`example_alignment.sam`** is the name of the input file.
 
-The `-L`, `-M`, `-r`, `-R`, `-s`, `-q`, `-l`, `-m`, `-f`, `-F`, and `-G` options filter the alignments that will be included in the output to only those alignments that match certain criteria.
+Now that the example alignment is in BAM format, we can sort it using `samtools sort`.
+Sorting this alignment will allow us to create a index.
 
-The `-x` and `-B` options modify the data which is contained in each alignment.
+```
+samtools sort -O bam -o sorted_example_alignment.bam example_alignment.bam
+```
 
-Finally, the `-@` option can be used to allocate additional threads to be used for compression, and the `-?` option requests a long help message. 
+In this command...
 
-- `-b` Output in the BAM format. 
-- `-o` *FILE* Output to *FILE [stdout]*.
-- `-@` *INT* Number of BAM compression threads to use in addition to main thread [0]. 
-- `-S` Ignored for compatibility with previous samtools versions. Previously this option was required if input was in SAM format, but now the correct format is automatically detected by examining the first few characters of input. 
+1. **`-O`** specifies the output format (`bam`, `sam`, or `cram`).
+2. **`-o`** sets the name of the output file (`sorted_example_alignment.bam`).
+3. **`example_alignment.bam`** is the name of the input file.
 
-## `sort`
+This sorted BAM alignment file can now be indexed using `samtools index`.
+Indexing speeds allows fast random access to this alignment, allowing the information in the alignment file to be processed faster.
 
-`samtools sort [-l level] [-m maxMem] [-o out.bam] [-O format] [-n] [-t tag]`
-`[-T tmpprefix] [-@ threads] [in.sam|in.bam|in.cram]`
+```
+samtools index sorted_example_alignment.bam
+```
 
-Sort alignments by leftmost coordinates, or by read name when `-n` is used. An appropriate `@HD-SO` sort order header tag will be added or an existing one updated if necessary.
+In this command...
 
+1. **`sorted_example_alignment.bam`** is the name of the input file.
 
-## `index`
+## Further reading
 
-`samtools index [-bc] [-m INT] aln.bam|aln.cram [out.index]`
-
-Index a coordinate-sorted BAM or CRAM file for fast random access. (Note that this does not work with SAM files even if they are bgzip compressed — to index such files, use tabix(1) instead.)
-
-This index is needed when region arguments are used to limit samtools view and similar commands to particular regions of interest.
-
-If an output filename is given, the index file will be written to out.index. Otherwise, for a CRAM file aln.cram, index file aln.cram.crai will be created; for a BAM file aln.bam, either aln.bam.bai or aln.bam.csi will be created, depending on the index format selected.
+1. The `samtools` manual: <https://www.htslib.org/doc/samtools.html>
