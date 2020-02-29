@@ -7,7 +7,7 @@ Given a file with aligned sequencing reads and a list of genomic features, `htse
 `htseq-count` can be used to align reads to a genome annotation as follows:
 
 ```
-htseq-count --format bam sorted_alignment_file.bam genome_annotation > output_file.txt
+$ htseq-count --format bam sorted_alignment_file.bam genome_annotation > output_file.txt
 ```
 
 In this command...

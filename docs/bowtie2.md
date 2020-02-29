@@ -23,7 +23,7 @@ Once an index has been created, the original reference genome/sequence is no lon
 Here's an example `bowtie2-build` command:
 
 ```
-bowtie2-build reference_sequence.fasta index_name
+$ bowtie2-build reference_sequence.fasta index_name
 ```
 
 In this command, the `reference_sequence.FASTA` is the nucleotide FASTA sequence we want to index, and `index_name` is the name of the index.
@@ -37,7 +37,7 @@ This is done using the `bowtie2` command.
 Here's an example `bowtie2` command:
 
 ```
-bowtie2 --no-unal p n -x index_name -1 reads_1.fastq -2 reads_2.fastq -S output.sam
+$ bowtie2 --no-unal p n -x index_name -1 reads_1.fastq -2 reads_2.fastq -S output.sam
 ```
 
 In this command...

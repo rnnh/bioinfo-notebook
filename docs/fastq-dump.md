@@ -9,7 +9,7 @@ How these FASTQ files are formatted depends on the `fastq-dump` options used.
 In this example, we want to download FASTQ reads for a mate-pair library.
 
 ```
-fastq-dump --gzip --skip-technical --readids --read-filter pass --dumpbase --split-3 --clip --outdir path/to/reads/ SRR_ID
+$ fastq-dump --gzip --skip-technical --readids --read-filter pass --dumpbase --split-3 --clip --outdir path/to/reads/ SRR_ID
 ```
 
 In this command...

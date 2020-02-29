@@ -11,7 +11,7 @@ A binary file for a sequence alignment is preferable over a text file, as binary
 A SAM alignment file (`example_alignment.sam`) can be converted to a BAM alignment using `samtools view`.
 
 ```
-samtools view -@ n -Sb -o example_alignment.bam example_alignment.sam
+$ samtools view -@ n -Sb -o example_alignment.bam example_alignment.sam
 ```
 
 In this command...
@@ -25,7 +25,7 @@ Now that the example alignment is in BAM format, we can sort it using `samtools 
 Sorting this alignment will allow us to create a index.
 
 ```
-samtools sort -O bam -o sorted_example_alignment.bam example_alignment.bam
+$ samtools sort -O bam -o sorted_example_alignment.bam example_alignment.bam
 ```
 
 In this command...
@@ -38,7 +38,7 @@ This sorted BAM alignment file can now be indexed using `samtools index`.
 Indexing speeds allows fast random access to this alignment, allowing the information in the alignment file to be processed faster.
 
 ```
-samtools index sorted_example_alignment.bam
+$ samtools index sorted_example_alignment.bam
 ```
 
 In this command...
