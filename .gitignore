@@ -1,7 +1,7 @@
-*.cast
 data/*.fastq
-asciinema/
 data/bowtie2_example_index*
 data/*.sam
 data/*.bam
 data/*.bai
+data/*.txt
+data/*.summary
