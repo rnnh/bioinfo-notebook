@@ -1,2 +1,6 @@
 *.cast
 data/*.fastq
+asciinema/
+data/bowtie2_example_index*
+data/*.sam
+

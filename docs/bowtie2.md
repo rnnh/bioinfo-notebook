@@ -37,7 +37,7 @@ This is done using the `bowtie2` command.
 Here's an example `bowtie2` command:
 
 ```
-$ bowtie2 --no-unal p n -x index_name -1 reads_1.fastq -2 reads_2.fastq -S output.sam
+$ bowtie2 --no-unal -p n -x index_name -1 reads_1.fastq -2 reads_2.fastq -S output.sam
 ```
 
 In this command...
@@ -48,6 +48,12 @@ In this command...
 4. **`-1`** is the file(s) containing mate 1 reads
 5. **`-2`** is the file(s) containing mate 2 reads
 6. **`-S`** is the output alignment in `sam` format
+
+## Demonstration
+
+In this video, `bowtie2-build` is used to index `example_nucleotide_sequence.fasta`, and the command `bowtie2` is used to align reads to this bowtie2 index.
+
+[![asciicast](https://asciinema.org/a/306536.svg)](https://asciinema.org/a/306536?autoplay=1)
 
 ## Further reading
 
