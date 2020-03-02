@@ -10,5 +10,6 @@
 
 1. [bowtie2](docs/bowtie2.md)
 2. [fastq-dump](docs/fastq-dump.md)
-3. [htseq-count](docs/htseq-count.md)
-4. [samtools](docs/samtools.md)
+3. [featureCounts](docs/featureCounts.md)
+4. [htseq-count](docs/htseq-count.md)
+5. [samtools](docs/samtools.md)

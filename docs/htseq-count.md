@@ -12,11 +12,17 @@ $ htseq-count --format bam sorted_alignment_file.bam genome_annotation > output_
 
 In this command...
 
-1. **`--format`** or **`-f`** is the format of the input data. Possible values are `sam` (for text SAM files) and `bam` (for binary BAM files). Default is `sam`.
-A `bam` file is used in this example.
-2. **`sorted_alignment_file.bam`** is a `bam` format alignment file, sorted by name.
-3. **`genome_annotation`** is the genome annotation file the reads in the `alignment_file` are aligned to (`.gtf` or `.gff`).
-4. **`> output_file.txt`** redirects the output (`STDOUT`) to `output_file.txt`.
+1. **`--format`** or **`-f`** is the format of the input data. Possible values are `sam` (for text SAM files) and `bam` (for binary BAM files). Default is `sam`. A `bam` file is used in this example.
+2. **`--order`** specifies whether the alignments have been sorted by name (`name`) or coordinates/position (`pos`).
+3. **`sorted_alignment_file.bam`** is a `bam` format alignment file, sorted by name.
+4. **`genome_annotation`** is the genome annotation file the reads in the `alignment_file` are aligned to (`.gtf` or `.gff`).
+5. **`> output_file.txt`** redirects the output (`STDOUT`) to `output_file.txt`.
+
+### Demonstration
+
+In this video, `htseq-counts` is used to count how many reads in an alignment file (`sorted_example_alignment.bam`) match the genes in a genome annotation (`example_genome_annotation.gtf`).
+
+[![asciicast](https://asciinema.org/a/306597.svg)](https://asciinema.org/a/306597?autoplay=1)
 
 ## The `htseq-count` output file
 
