@@ -59,6 +59,12 @@ In this command...
 1. **`example_nucleotide_sequence.fasta`** is the reference genome input.
 2. **`example_reads_1.fastq`** and **`example_reads_2.fastq`** are the names of the simulated read output files.
 
+### Demonstration
+
+In this video, `wgsim` is used to simulate reads from `example_nucleotide_sequence.fasta`.
+
+[![asciicast](https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH.svg)](https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH)
+
 ## Further reading
 
 1. The `samtools` manual: <https://www.htslib.org/doc/samtools.html>
