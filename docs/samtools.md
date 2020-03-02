@@ -63,7 +63,8 @@ In this command...
 
 In this video, `wgsim` is used to simulate reads from `example_nucleotide_sequence.fasta`.
 
-[![asciicast](https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH.svg)](https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH)
+
+<script id="asciicast-m89gXtx4cKRnKpI6amWj3BEAH" src="https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH.js" async></script>
 
 ## Further reading
 
