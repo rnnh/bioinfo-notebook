@@ -45,6 +45,12 @@ In this command...
 
 1. **`sorted_example_alignment.bam`** is the name of the input file.
 
+### Demonstration
+
+In this video, `samtools` is used to convert `example_alignment.sam` into a BAM file, sort that BAM file, and index it.
+
+[![asciicast](https://asciinema.org/a/U1Flwg3EljOfI1Sx77h8PvuNf.svg)](https://asciinema.org/a/U1Flwg3EljOfI1Sx77h8PvuNf?autoplay=1)
+
 ## Simulating short reads using `samtools wgsim`
 
 `wgsim` is a `samtools` program that can simulate short sequencing reads from a reference genome.
