@@ -5,3 +5,4 @@ data/*.bam
 data/*.bai
 data/*.txt
 data/*.summary
+data/*.gz
