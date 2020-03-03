@@ -29,6 +29,12 @@ Other options that can be used instead of `--split-3`:
 1. **`--split-files`** splits the FASTQ reads into two files: one file for mate 1s (`...1`), and another for mate 2s (`..._2`). This option will not mateless pairs into a third file.
 2. **`--split-spot`** splits the FASTQ reads into two (mate 1s and mate 2s) within one file. `--split-spot` gives you an 8-line fastq format where forward precedes reverse (see <https://www.biostars.org/p/178586/#258378>).
 
+## Demonstration
+
+In this demo, `fastq-dump` is used to download compressed FASTQ reads.
+
+[![asciicast](https://asciinema.org/a/306937.svg)](https://asciinema.org/a/306937?autoplay=1)
+
 ## Further reading
 
 1. Rob Edward's notes on `fastq-dump`: <https://edwards.sdsu.edu/research/fastq-dump/>
