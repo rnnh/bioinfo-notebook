@@ -23,7 +23,7 @@ In this command...
 
 In this video, `featureCounts` is used to assign reads in an alignment file (`sorted_example_alignment.bam`) to genes in a genome annotation file (`example_genome_annotation.gtf`).
 
-[![asciicast](https://asciinema.org/a/306584.svg)](https://asciinema.org/a/306584)
+[![asciicast](https://asciinema.org/a/306584.svg)](https://asciinema.org/a/306584?autoplay=1)
 
 ## More important options for `featureCounts`
 
