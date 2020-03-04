@@ -8,7 +8,7 @@ A virtual environment is basically a set of programs.
 
 These environments can then be shared, either as a `.yml` file or a `.txt` file.
 A `.yml` copy of a conda environment can be used to recreate that environment on another machine, regardless of the operating system platform used.
-A `.txt` copy of a conda environment is more explicit: it can be used to create anidentical copy of a conda environment using the same operating system platform as the original machine.
+A `.txt` copy of a conda environment is more explicit: it can be used to create an identical copy of a conda environment using the same operating system platform as the original machine.
 A conda virtual environment is used throughout this project: a [`.yml` copy](../envs/bioinfo-notebook.yml) and an [explicit `.txt` copy](../envs/bioinfo-notebook.txt) of this conda environment are provided.
 
 A conda environment can be activated using the following command...
