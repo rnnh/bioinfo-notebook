@@ -13,3 +13,5 @@
 3. [featureCounts](docs/featureCounts.md)
 4. [htseq-count](docs/htseq-count.md)
 5. [samtools](docs/samtools.md)
+
+HTML Test: [bowtie2.html](docs/bowtie2.html)
