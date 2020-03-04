@@ -9,8 +9,8 @@
 
 # Demonstration
 
-This is a video demonstration of `fastq-dump_to_featureCounts.sh`.
+This is a video demonstration of [fastq-dump_to_featureCounts.sh](../scripts/fastq-dump_to_featureCounts.sh).
 
 During this demonstration, the full genome sequence and genome annotation for [*Saccharomyces cerevisiae* S288C](https://www.ncbi.nlm.nih.gov/assembly/GCF_000146045.2) are used. The files [example_nucleotide_sequence.fasta](../data/example_nucleotide_sequence.fasta) and [example_genome_annotation.gtf](../data/example_genome_annotation.gtf) are fragments of the nucleotide sequence and annotation for this genome. [RNA-Seq reads for *Saccharomyces cerevisiae* (SRR8933535)](https://www.ncbi.nlm.nih.gov/sra/SRR8933535) are used as the example FASTQ files in this demonstration.
 
-[![asciicast](https://asciinema.org/a/hWfTdgkZtkpOQpsNl053zTpv9.svg)](https://asciinema.org/a/hWfTdgkZtkpOQpsNl053zTpv9)
+[![asciicast](https://asciinema.org/a/307425.svg)](https://asciinema.org/a/307425?autoplay=1)
