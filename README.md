@@ -6,10 +6,14 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/rnnh/bioinfo-notebook)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Frnnh.github.io%2Fbioinfo-notebook)
 
-## Programs
+## Quick Start Guides
 
 1. [bowtie2](docs/bowtie2.md)
 2. [fastq-dump](docs/fastq-dump.md)
 3. [featureCounts](docs/featureCounts.md)
 4. [htseq-count](docs/htseq-count.md)
 5. [samtools](docs/samtools.md)
+
+## Example scripts
+
+1. [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md)
