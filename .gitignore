@@ -7,3 +7,4 @@ data/*.txt
 data/*.summary
 data/*.gz
 data/*.bt2
+data/S_cere_GCF_000146045.2_R64_genomic.*
