@@ -5,6 +5,7 @@ From the website, `conda` provides ["Package, dependency and environment managem
 Conda is a package manager allows specific versions of programs to be installed, alongside their dependencies.
 Different sets of programs can be installed to different [virtual environments](https://www.anaconda.com/moving-conda-environments/).
 A virtual environment is basically a set of programs.
+
 These environments can then be shared, either as a `.yml` file or a `.txt` file.
 A `.yml` copy of a conda environment can be used to recreate that environment on another machine, regardless of the operating system platform used.
 A `.txt` copy of a conda environment is more explicit: it can be used to create anidentical copy of a conda environment using the same operating system platform as the original machine.
