@@ -14,7 +14,7 @@ $ fastq-dump --gzip --skip-technical --readids --read-filter pass --dumpbase --s
 
 In this command...
 
-1. **`--gzip`**: Compress output using gzip. Gzip archived reads can be read directly by [`bowtie2`](bowtie2.md).
+1. **`--gzip`**: Compress output using gzip. Gzip archived reads can be read directly by [bowtie2](bowtie2.md).
 2. **`--skip-technical`**: Dump only biological reads, skip the technical reads.
 3. **`--readids`** or **`-I`**: Append read ID after spot ID as 'accession.spot.readid'. With this flag, one sequence gets appended the ID `.1` and the other `.2`. Without this option, pair-ended reads will have identical IDs.
 4. **`--read-filter pass`**: Only returns reads that pass filtering (without `N`s).
