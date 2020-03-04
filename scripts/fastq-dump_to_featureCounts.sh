@@ -19,6 +19,10 @@ if [ "$1" = "" ] ; then
   exit 0
 fi
 
+# Beginning the main body of the script
+# The sleep commands ("sleep 1s", "sleep 2s") slow down the script to make
+# the output more readable in real-time
+
 printf "\n"
 echo ===========================================================================
 echo fastq-dump_to_featureCounts.sh
@@ -34,6 +38,7 @@ sleep 1s
 
 printf "\n"
 echo Listing files in directory ...
+sleep 1s
 ls
 sleep 2s
 
@@ -44,12 +49,20 @@ until fastq-dump --gzip --skip-technical --readids --read-filter pass \
     sleep 10s
 done
 
+sleep 1s
+echo Listing files in directory after running fastq-dump...
+sleep 1s
+ls
 sleep 2s
 
 echo Indexing reference genome FASTA file using bowtie2-build ~~~~~~~~~~~~~~~~~~
 sleep 2s
 bowtie2-build $FASTA bowtie2_$FASTA
 
+sleep 1s
+echo Listing files in directory after running bowtie2-build...
+sleep 1s
+ls
 sleep 2s
 
 echo Aligning reads to reference genome using bowtie2 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,6 +71,10 @@ bowtie2 -p $PROCESSORS --no-unal -x bowtie2_$FASTA \
 -1 $SRR\_pass_1.fastq.gz -2 $SRR\_pass_2.fastq.gz \
 -S $SRR\_$FASTA.sam
 
+sleep 1s
+echo Listing files in directory after running bowtie2...
+sleep 1s
+ls
 sleep 2s
 
 echo Converting alignment from SAM to BAM format using samtools view ~~~~~~~~~~~
@@ -65,13 +82,21 @@ sleep 2s
 samtools view -@ $PROCESSORS -Sb $SRR\_$FASTA.sam \
 > $SRR\_$FASTA.bam
 
+sleep 1s
+echo Listing files in directory after running samtools view...
+sleep 1s
+ls
 sleep 2s
 
 echo Sorting the BAM file using samtools sort ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 2s
-samtools sort $SRR\_$FASTA.bam \
+samtools sort -@ $PROCESSORS $SRR\_$FASTA.bam \
 -o sorted_$SRR\_$FASTA.bam
 
+sleep 1s
+echo Listing files in directory after running samtools sort...
+sleep 1s
+ls
 sleep 2s
 
 echo Generating count table using featureCounts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,10 +105,13 @@ featureCounts -p -s 2 -T $PROCESSORS -a $ANNOTATION \
 -o feature_counts_$SRR\_$FASTA.txt \
 sorted_$SRR\_$FASTA.bam
 
+sleep 1s
+echo Listing files in directory after running featureCounts...
+sleep 1s
+ls
 sleep 2s
 
 echo Results written to feature_counts_$SRR\_$FASTA.txt
-
 sleep 2s
 
 echo Head of feature_counts_$SRR\_$FASTA.txt
@@ -98,7 +126,3 @@ sleep 2s
 
 echo Script finished: $(date)
 sleep 2s
-
-echo Exiting shell...
-sleep 2s
-exit
