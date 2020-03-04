@@ -6,6 +6,9 @@ Conda is a package manager allows specific versions of programs to be installed,
 Different sets of programs can be installed to different [virtual environments](https://www.anaconda.com/moving-conda-environments/).
 A virtual environment is basically a set of programs.
 
+Conda is part of [Anaconda](https://www.anaconda.com/distribution/), which is available for free.
+Conda is also available through [Miniconda](https://docs.conda.io/en/latest/miniconda.html), a free minimal installer for conda.
+
 These environments can then be shared, either as a `.yml` file or a `.txt` file.
 A `.yml` copy of a conda environment can be used to recreate that environment on another machine, regardless of the operating system platform used.
 A `.txt` copy of a conda environment is more explicit: it can be used to create an identical copy of a conda environment using the same operating system platform as the original machine.
@@ -29,6 +32,6 @@ Note that the name of the active conda environment is displayed in brackets at t
 [![asciicast](https://asciinema.org/a/305992.svg)](https://asciinema.org/a/305992?autoplay=1)
 
 ## Further reading
-
-1. Conda packages: <https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html>
-2. Conda environments: <https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html>
+1. Downloading conda: <https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html>
+2. Conda packages: <https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html>
+3. Conda environments: <https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html>

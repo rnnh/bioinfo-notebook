@@ -8,6 +8,8 @@
 
 This project aims to give brief introductions for various bioinformatics tools with quick start guides. If you know how to use the command line, hopefully these guides will get you started with each program in a matter of minutes. These guides also include video demonstrations, created using [Asciinema](https://asciinema.org/~rnnh). This site will also feature scripts that tie together the various programs covered.
 
+For reproducibility, a [conda](docs/conda.md) environment is used throughout this project.
+
 If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
 
 ## Quick Start Guides
