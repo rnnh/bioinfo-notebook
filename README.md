@@ -14,12 +14,16 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 
 ## Quick Start Guides
 
-1. [bowtie2](docs/bowtie2.md) *aligns reads to sequences*
-2. [conda](docs/conda.md) *facilitates downloading and sharing sets of programs*
-3. [fastq-dump](docs/fastq-dump.md) *downloads reads from NCBI's SRA*
-4. [featureCounts](docs/featureCounts.md) *assigns alignments to genome annotation features*
-5. [htseq-count](docs/htseq-count.md) *aligns reads to genomic features*
-6. [samtools](docs/samtools.md) *manipulates alignment files and simluates sequence reads*
+- [File formats](docs/file_formats.md) *brief introduction to bioinformatics file formats*
+
+### Command line programs
+
+- [bowtie2](docs/bowtie2.md) *aligns reads to sequences*
+- [conda](docs/conda.md) *facilitates downloading and sharing sets of programs*
+- [fastq-dump](docs/fastq-dump.md) *downloads reads from NCBI's SRA*
+- [featureCounts](docs/featureCounts.md) *assigns alignments to genome annotation features*
+- [htseq-count](docs/htseq-count.md) *aligns reads to genomic features*
+- [samtools](docs/samtools.md) *manipulates alignment files and simluates sequence reads*
 
 ## Scripts
 
