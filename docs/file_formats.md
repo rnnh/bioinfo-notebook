@@ -41,6 +41,6 @@ This example FASTA file contains two linear nucleotide sequences. Each FASTA ent
 FASTA files usually end with the extension `.fasta`. This extension is arbitrary, as the content of the file determines its format, not its extension. More descriptive filename extensions can be used instead of `.fasta`, which are useful as they describe the type of sequence(s) in the file at a glance. 
 
 Here are some examples...
-- **`.fna`** can be used for *F*ASTA *n*ucleic *a*cids
-- **`.faa`** can be used for *F*ASTA *a*mino *a*cids
-- **`.frn`** can be used for *F*ASTA non-coding *RN*A
+- **`.fna`** can be used for **F**ASTA **n**ucleic **a**cids
+- **`.faa`** can be used for **F**ASTA **a**mino **a**cids
+- **`.frn`** can be used for **F**ASTA non-coding **RN**A
