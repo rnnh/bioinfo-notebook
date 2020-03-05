@@ -1,5 +1,7 @@
 # File formats
 
+*work in progress*
+
 A brief introduction to various file formats used in bioinformatics.
 
 ## Table of contents
@@ -11,6 +13,9 @@ A brief introduction to various file formats used in bioinformatics.
     - [BAM](#bam)
     - [CRAM](#cram)
     - [SAM](#sam)
+- [Genome annotation formats](#genome-annotation-formats)
+    - [GFF](#gff)
+    - [GTF](#gtf)
 
 ## Sequence formats
 
