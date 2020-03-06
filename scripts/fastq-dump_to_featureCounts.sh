@@ -55,15 +55,24 @@ sleep 1s
 ls
 sleep 2s
 
-echo Indexing reference genome FASTA file using bowtie2-build ~~~~~~~~~~~~~~~~~~
-sleep 2s
-bowtie2-build $FASTA bowtie2_$FASTA
-
-sleep 1s
-echo Listing files in directory after running bowtie2-build...
-sleep 1s
-ls
-sleep 2s
+# Checking if bowtie2 index of FASTA file exists before creating bowtie2 index
+# If bowtie2_$FASTA.1.bt2 (one of the bowtie2 index files) does not exist...
+if [ ! -f bowtie2_$FASTA.1.bt2 ]
+# ...then create the bowtie2_$FASTA index
+then
+    echo Indexing reference genome FASTA file using bowtie2-build ~~~~~~~~~~~~~~~~~~
+    sleep 2s
+    bowtie2-build $FASTA bowtie2_$FASTA
+    sleep 1s
+    echo Listing files in directory after running bowtie2-build...
+    sleep 1s
+    ls
+    sleep 2s
+# Otherwise, print a message confirming that it exists
+else
+    echo The bowtie2 index bowtie2_$FASTA exists
+    sleep 1s
+fi
 
 echo Aligning reads to reference genome using bowtie2 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 2s
