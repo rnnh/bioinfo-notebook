@@ -3,7 +3,7 @@
 # Help/usage text
 usage="$(basename "$0") [-h|--help] [-a|--annotation *.gtf -f|--fasta *.fasta -p|--processors n] <SRR ID(s)> \n
 \n
-This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated genome using bowtie2, and generates gene count table using featureCounts. \n
+This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated genome using bowtie2, and generates gene count table(s) using featureCounts. \n
 \n
 where: \n
     -h | --help          show this help text and exit \n

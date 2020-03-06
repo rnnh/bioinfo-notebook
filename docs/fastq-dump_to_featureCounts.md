@@ -20,7 +20,7 @@ During this demonstration, the full genome sequence and genome annotation for [*
 ```bash
 fastq-dump_to_featureCounts.sh [-h|--help] [-a|--annotation *.gtf -f|--fasta *.fasta -p|--processors n] <SRR ID(s)> 
  
- This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated genome using bowtie2, and generates gene count table using featureCounts. 
+ This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated genome using bowtie2, and generates gene count table(s) using featureCounts. 
  
  where: 
  -h | --help show this help text and exit 
