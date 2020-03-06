@@ -65,7 +65,7 @@ done
 # The sleep commands ("sleep 1s", "sleep 2s") slow down the script to make
 # the output more readable in real-time
 
-echo fastq-dump_to_featureCounts.sh
+echo        ~~~ F A S T Q - D U M P t o F E A T U R E C O U N T S ~~~
 echo Script started: $(date)
 
 # Loop through the input SRR IDs
