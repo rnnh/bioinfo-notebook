@@ -1,5 +1,7 @@
 # To do
 
-1. Redo video demonstration for fastq-dump to featureCounts script.
-2. Finish file formats page.
-3. Add pages/scripts covering `DESeq2`.
+- Redo video demonstration for fastq-dump to featureCounts script.
+- Finish file formats page.
+- Add pages/scripts covering `DESeq2`.
+- Add page on `bowtie`
+- Add notes on useful websites
