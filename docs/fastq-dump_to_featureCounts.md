@@ -15,7 +15,7 @@ During this demonstration, the full genome sequence and genome annotation for [*
 
 [![asciicast](https://asciinema.org/a/307425.svg)](https://asciinema.org/a/307425?autoplay=1)
 
-## Current usage
+## Usage
 
 ```bash
 fastq-dump_to_featureCounts.sh [-h|--help] [-a|--annotation *.gtf -f|--fasta *.fasta -p|--processors n] <SRR ID(s)> 
