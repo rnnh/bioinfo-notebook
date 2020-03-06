@@ -8,7 +8,7 @@ This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated g
 where: \n
     -h | --help          show this help text and exit \n
     -a | --annotation    input genome annotation file \n
-    -f | --fassta        input FASTA file for annotated genome \n
+    -f | --fasta        input FASTA file for annotated genome \n
     -p | --processors    optional: set the number (n) of processors to use (default: 1) \n
     SRR ID(s)            Sequence Read Archive Run ID(s) (SRR...) \n
 "

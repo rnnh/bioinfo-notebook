@@ -25,7 +25,7 @@ fastq-dump_to_featureCounts.sh [-h|--help] [-a|--annotation *.gtf -f|--fasta *.f
  where: 
  -h | --help show this help text and exit 
  -a | --annotation input genome annotation file 
- -f | --fassta input FASTA file for annotated genome 
+ -f | --fasta input FASTA file for annotated genome 
  -p | --processors optional: set the number (n) of processors to use (default: 1) 
  SRR ID(s) Sequence Read Archive Run ID(s) (SRR...) 
 ```
