@@ -15,6 +15,21 @@ During this demonstration, the full genome sequence and genome annotation for [*
 
 [![asciicast](https://asciinema.org/a/307425.svg)](https://asciinema.org/a/307425?autoplay=1)
 
+## Current usage
+
+```bash
+fastq-dump_to_featureCounts.sh [-h|--help] [-a|--annotation *.gtf -f|--fasta *.fasta -p|--processors n] <SRR ID(s)> 
+ 
+ This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated genome using bowtie2, and generates gene count table using featureCounts. 
+ 
+ where: 
+ -h | --help show this help text and exit 
+ -a | --annotation input genome annotation file 
+ -f | --fassta input FASTA file for annotated genome 
+ -p | --processors optional: set the number (n) of processors to use (default: 1) 
+ SRR ID(s) Sequence Read Archive Run ID(s) (SRR...) 
+```
+
 ## See also
 
 1. [fastq-dump_to_featureCounts.sh on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/scripts/fastq-dump_to_featureCounts.sh)
