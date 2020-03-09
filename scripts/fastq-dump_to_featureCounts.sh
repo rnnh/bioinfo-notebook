@@ -106,8 +106,9 @@ do
 	echo Reference genome multi-FASTA file: $FASTA
 	echo ================================================================================
 	sleep 1s
-
+	
 	if [ $VERBOSE -eq "1" ]
+	then
         	printf "\n"
         	echo Listing files in directory ...
         	sleep 1s
@@ -117,8 +118,9 @@ do
 
 
 	if [ $FASTQDUMP -eq "1" ]
-		then
+	then
         	if [ $VERBOSE -eq "1" ]
+		then
             		echo Downloading compressed FASTQ reads using fastq-dump...
         	fi
 		until fastq-dump --gzip --skip-technical --readids --read-filter pass \
@@ -128,6 +130,7 @@ do
 		done
 	else
         	if [ $VERBOSE -eq "1" ]
+		then
             		echo Downloading FASTQ reads using fasterq-dump...
         	fi
 		until fasterq-dump --progress --threads $PROCESSORS $SRR; do
@@ -138,6 +141,7 @@ do
 	fi
 
 	if [ $VERBOSE -eq "1" ]
+	then
         	sleep 1s
         	echo Listing files in directory after downloading reads...
         	sleep 1s
@@ -151,11 +155,13 @@ do
 	# ...then create the bowtie2_$FASTA index
 	then
         	if [ $VERBOSE -eq "1" ]
+		then
             		echo Indexing reference genome FASTA file using bowtie2-build...
 			sleep 2s
 		fi
 	    	bowtie2-build $FASTA bowtie2_$FASTA
 	    	if [ $VERBOSE -eq "1" ]
+		then
             		sleep 1s
             		echo Listing files in directory after running bowtie2-build...
             		sleep 1s
@@ -165,12 +171,14 @@ do
 	# Otherwise, print a message confirming that it exists
 	else
         	if [ $VERBOSE -eq "1" ]
+		then
             		echo The bowtie2 index bowtie2_$FASTA exists
             		sleep 1s
 	    	fi
 	fi
 
 	if [ $VERBOSE -eq "1" ]
+	then
         	echo Aligning reads to reference genome using bowtie2...
         	sleep 2s
     	fi
@@ -189,6 +197,7 @@ do
 	fi
 
 	if [ $VERBOSE -eq "1" ]
+	then
 		sleep 1s
         	echo Listing files in directory after running bowtie2...
         	sleep 1s
@@ -202,6 +211,7 @@ do
 	> $SRR\_$FASTA.bam
 
 	if [ $VERBOSE -eq "1" ]
+	then
         	sleep 1s
 	        echo Listing files in directory after running samtools view...
         	sleep 1s
@@ -215,6 +225,7 @@ do
 	-o sorted_$SRR\_$FASTA.bam
 
 	if [ $VERBOSE -eq "1" ]
+	then
         	sleep 1s
         	echo Listing files in directory after running samtools sort...
         	sleep 1s
@@ -229,6 +240,7 @@ do
 	sorted_$SRR\_$FASTA.bam
 
 	if [ $VERBOSE -eq "1" ]
+	then
         	sleep 1s
         	echo Listing files in directory after running featureCounts...
         	sleep 1s
