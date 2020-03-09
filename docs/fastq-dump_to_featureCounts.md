@@ -11,23 +11,30 @@
 
 This is a video demonstration of [fastq-dump_to_featureCounts.sh](../scripts/fastq-dump_to_featureCounts.sh).
 
-During this demonstration, the full genome sequence and genome annotation for [*Saccharomyces cerevisiae* S288C](https://www.ncbi.nlm.nih.gov/assembly/GCF_000146045.2) are used. The files [example_nucleotide_sequence.fasta](../data/example_nucleotide_sequence.fasta) and [example_genome_annotation.gtf](../data/example_genome_annotation.gtf) are fragments of the nucleotide sequence and annotation for this genome. [RNA-Seq reads for *Saccharomyces cerevisiae* (SRR8933535)](https://www.ncbi.nlm.nih.gov/sra/SRR8933535) are used as the example FASTQ files in this demonstration.
+During this demonstration, the full genome sequence and genome annotation for [*Saccharomyces cerevisiae* S288C](https://www.ncbi.nlm.nih.gov/assembly/GCF_000146045.2) are used. The files [example_nucleotide_sequence.fasta](../data/example_nucleotide_sequence.fasta) and [example_genome_annotation.gtf](../data/example_genome_annotation.gtf) are fragments of the nucleotide sequence and annotation for this genome. [RNA-Seq reads for *Saccharomyces cerevisiae* (SRR8933512)](https://www.ncbi.nlm.nih.gov/sra/SRR8933512) are used as the example FASTQ files in this demonstration.
 
-[![asciicast](https://asciinema.org/a/307425.svg)](https://asciinema.org/a/307425?autoplay=1)
+[![asciicast](https://asciinema.org/a/308745.svg)](https://asciinema.org/a/308745?autoplay=1)
 
 ## Usage
 
 ```
-fastq-dump_to_featureCounts.sh [-h|--help] [-a|--annotation *.gtf -f|--fasta *.fasta -p|--processors n] <SRR ID(s)> 
+fastq-dump_to_featureCounts.sh [options] -a|--annotation <annotation_file> -f|--fasta <fasta_file> <SRR ID(s)> 
  
- This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated genome using bowtie2, and generates gene count table(s) using featureCounts. 
+ This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated 
+ genome using bowtie2, and generates gene count table(s) using featureCounts.
+ It can take a single SRR ID as an input, or multiple SRR IDs separated by
+ spaces.
  
- where: 
- -h | --help show this help text and exit 
- -a | --annotation input genome annotation file 
- -f | --fasta input FASTA file for annotated genome 
- -p | --processors optional: set the number (n) of processors to use (default: 1) 
- SRR ID(s) Sequence Read Archive Run ID(s) (SRR...) 
+ Required arguments: 
+ 	 -a | --annotation	 input genome annotation file 
+ 	 -f | --fasta		 input FASTA file for annotated genome 
+ 	 SRR ID(s)		 Sequence Read Archive Run ID(s) (SRR...) 
+ 
+ Optional arguments: 
+ 	 -h | --help		 show this help text and exit 
+ 	 -p | --processors	 number (n) of processors to use (default: 1) 
+ 	 --fastq-dump		 use 'fastq-dump' instead of the 'fasterq-dump'
+ 	 --verbose		 make output of script more verbose
 ```
 
 ## See also
