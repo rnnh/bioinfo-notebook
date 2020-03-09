@@ -1,10 +1,11 @@
 #! /bin/bash
 
 # Help/usage text
-usage="$(basename "$0") [options] -a|--annotation *.gtf -f|--fasta *.fasta <SRR ID(s)> \n
+usage="$(basename "$0") [options] -a|--annotation <annotation_file> \
+	-f|--fasta <fasta_file> <SRR ID(s)> \n
 \n
 This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated \n
-genome using bowtie2, and generates gene count table(s) using featureCounts. \n
+genome using bowtie2, and generates gene count table(s) using featureCounts.\n
 It can take a single SRR ID as an input, or multiple SRR IDs separated by spaces. \n
 \n
 Required arguments: \n
@@ -103,7 +104,7 @@ do
 	sleep 2s
 
 
-	if [ $FASTQDUMP==1 ]
+	if [ $FASTQDUMP -eq "1" ]
 	then
 		echo Downloading compressed FASTQ reads using fastq-dump... ~~~~~~~~~~~~~~~~~~~~
 		until fastq-dump --gzip --skip-technical --readids --read-filter pass \
@@ -147,7 +148,7 @@ do
 
 	echo Aligning reads to reference genome using bowtie2 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 	sleep 2s
-	if [ $FASTQDUMP==1 ]
+	if [ $FASTQDUMP -eq "1" ]
 	then
 		bowtie2 -p $PROCESSORS --no-unal -x bowtie2_$FASTA \
 		-1 $SRR\_pass_1.fastq.gz -2 $SRR\_pass_2.fastq.gz \
