@@ -49,3 +49,26 @@ Here are some examples...
 - **`.fna`** can be used for **F**ASTA **n**ucleic **a**cids
 - **`.faa`** can be used for **F**ASTA **a**mino **a**cids
 - **`.frn`** can be used for **F**ASTA non-coding **RN**A
+
+### FASTQ
+
+The FASTQ format is an extension of [FASTA](#fasta) that stores both biological sequences (usually nucleotide sequences) and their corresponding quality scores. Both the sequence letter and quality score are encoded with a single character for brevity.
+
+A FASTQ file normally uses four lines per sequence:
+1. A line beginning with `@` followed by a sequence identifier and optional description (like the comment line at in a FASTA file)
+2. The raw sequence letters
+3. A line beginning with `+`, sometimes followed by the same comment as the first line
+4. A line encoding the quality values for the sequence in line 2, with the same numbers of symbols as letters in the sequence
+
+Here's an example FASTQ file:
+
+```
+@SRR8933535.1 1 length=75
+NAGGAAACAAAGGCTTACCCGTTATCATTTCCGCAAGAATGCACCCACACGACCATATATCAATGGATGTGGAGT
++SRR8933535.1 1 length=75
+#AAAAEEEEEEEEEEEEEEEEEEEEEAEEEEEAEEEEEEEAEAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAE
+@SRR8933535.2 2 length=75
+NGAGGAGTGGTGGTAGTGTTGCTTGGTGGCAAAGATGTAGTTGGTGGGAAAGCTGAAGTGGTACCGTTGGTTGGA
++SRR8933535.2 2 length=75
+#AAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAAEEEE
+```
