@@ -6,7 +6,8 @@ usage="$(basename "$0") [options] -a|--annotation <annotation_file> \
 \n
 This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated \n
 genome using bowtie2, and generates gene count table(s) using featureCounts.\n
-It can take a single SRR ID as an input, or multiple SRR IDs separated by spaces.\n
+It can take a single SRR ID as an input, or multiple SRR IDs separated by\n
+spaces.\n
 \n
 Required arguments: \n
 \t      -a | --annotation\t     input genome annotation file \n
