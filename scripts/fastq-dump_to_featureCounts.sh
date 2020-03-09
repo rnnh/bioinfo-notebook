@@ -6,18 +6,18 @@ usage="$(basename "$0") [options] -a|--annotation <annotation_file> \
 \n
 This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated \n
 genome using bowtie2, and generates gene count table(s) using featureCounts.\n
-It can take a single SRR ID as an input, or multiple SRR IDs separated by spaces. \n
+It can take a single SRR ID as an input, or multiple SRR IDs separated by spaces.\n
 \n
 Required arguments: \n
-	-a | --annotation	input genome annotation file \n
-	-f | --fasta            input FASTA file for annotated genome \n
-	SRR ID(s)		Sequence Read Archive Run ID(s) (SRR...) \n
+\t      -a | --annotation\t     input genome annotation file \n
+\t      -f | --fasta\t\t        input FASTA file for annotated genome \n
+\t      SRR ID(s)\t\t           Sequence Read Archive Run ID(s) (SRR...) \n
 \n
 Options: \n
-	-h | --help		show this help text and exit \n
-	-p | --processors	number (n) of processors to use (default: 1) \n
-	--fastq-dump		use 'fastq-dump' instead of the 'fasterq-dump'\n
-	--verbose		make output of script more verbose
+\t      -h | --help\t\t         show this help text and exit \n
+\t      -p | --processors\t	number (n) of processors to use (default: 1) \n
+\t      --fastq-dump\t\t        use 'fastq-dump' instead of the 'fasterq-dump'\n
+\t      --verbose\t\t           make output of script more verbose
 "
 
 # Setting FASTQDUMP to 0
