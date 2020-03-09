@@ -1,17 +1,28 @@
 #! /bin/bash
 
 # Help/usage text
-usage="$(basename "$0") [-h|--help] [-a|--annotation *.gtf -f|--fasta *.fasta -p|--processors n] <SRR ID(s)> \n
+usage="$(basename "$0") [options] -a|--annotation *.gtf -f|--fasta *.fasta <SRR ID(s)> \n
 \n
-This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated genome using bowtie2, and generates gene count table(s) using featureCounts. It can take a single SRR ID as an input, or multiple SRR IDs separated by spaces. \n
+This script downloads FASTQ reads from NCBI's SRA, aligns them to an annotated \n
+genome using bowtie2, and generates gene count table(s) using featureCounts. \n
+It can take a single SRR ID as an input, or multiple SRR IDs separated by spaces. \n
 \n
-where: \n
-    -h | --help          show this help text and exit \n
-    -a | --annotation    input genome annotation file \n
-    -f | --fasta        input FASTA file for annotated genome \n
-    -p | --processors    number (n) of processors to use (optional, default: 1) \n
-    SRR ID(s)            Sequence Read Archive Run ID(s) (SRR...) \n
+Required arguments: \n
+    -a | --annotation		input genome annotation file \n
+    -f | --fasta		input FASTA file for annotated genome \n
+    SRR ID(s)			Sequence Read Archive Run ID(s) (SRR...) \n
+\n
+Options: \n
+    -h | --help			show this help text and exit \n
+    -p | --processors		number (n) of processors to use (default: 1) \n
+    --fastq-dump		legacy mode, use 'fastq-dump' instead of \n
+    				the default 'fasterq-dump' \n
 "
+
+# Setting FASTQDUMP to 0
+# This will be changed to "1" if --fastq-dump is given as an argument,
+# resulting in fastq-dump being used instead of the default fasterq-dump
+FASTQDUMP=0
 
 # Setting default number of PROCESSORS to use
 PROCESSORS=1
@@ -45,6 +56,10 @@ while (( "$#" )); do
 			PROCESSORS=$2
 			shift 2
 			;;
+		--fastq-dump)
+			FASTQDUMP=1
+			shift
+			;;
 		--) # end argument parsing
 			shift
 			break
@@ -65,7 +80,7 @@ done
 # The sleep commands ("sleep 1s", "sleep 2s") slow down the script to make
 # the output more readable in real-time
 
-echo        ~~~ F A S T Q - D U M P t o F E A T U R E C O U N T S ~~~
+echo -e		~~~ F A S T Q - D U M P t o F E A T U R E C O U N T S ~~~
 echo Script started: $(date)
 
 # Loop through the input SRR IDs
@@ -87,15 +102,26 @@ do
 	ls
 	sleep 2s
 
-	echo Downloading compressed FASTQ reads using fastq-dump... ~~~~~~~~~~~~~~~~~~~~
-	until fastq-dump --gzip --skip-technical --readids --read-filter pass \
-	--dumpbase --split-3 --clip $SRR; do
-	    echo fastq-dump failed, retrying in 10 seconds...
-	    sleep 10s
-	done
+
+	if [ $FASTQDUMP==1 ]
+	then
+		echo Downloading compressed FASTQ reads using fastq-dump... ~~~~~~~~~~~~~~~~~~~~
+		until fastq-dump --gzip --skip-technical --readids --read-filter pass \
+		--dumpbase --split-3 --clip $SRR; do
+			echo fastq-dump failed, retrying in 10 seconds...
+	    		sleep 10s
+		done
+	else
+		echo Downloading FASTQ reads using fasterq-dump... ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		until fasterq-dump --progress --threads $PROCESSORS $SRR; do
+			echo fasterq-dump failed, retrying in 10 seconds...
+			rm -r fasterq.tmp.*
+			sleep 10s
+		done
+	fi
 
 	sleep 1s
-	echo Listing files in directory after running fastq-dump...
+	echo Listing files in directory after downloading reads...
 	sleep 1s
 	ls
 	sleep 2s
@@ -121,9 +147,16 @@ do
 
 	echo Aligning reads to reference genome using bowtie2 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 	sleep 2s
-	bowtie2 -p $PROCESSORS --no-unal -x bowtie2_$FASTA \
-	-1 $SRR\_pass_1.fastq.gz -2 $SRR\_pass_2.fastq.gz \
-	-S $SRR\_$FASTA.sam
+	if [ $FASTQDUMP==1 ]
+	then
+		bowtie2 -p $PROCESSORS --no-unal -x bowtie2_$FASTA \
+		-1 $SRR\_pass_1.fastq.gz -2 $SRR\_pass_2.fastq.gz \
+		-S $SRR\_$FASTA.sam
+	else
+		bowtie2 -p $PROCESSORS --no-unal -x bowtie2_$FASTA \
+		-1 $SRR\_1.fastq -2 $SRR\_2.fastq \
+		-S $SRR\_$FASTA.sam
+	fi
 
 	sleep 1s
 	echo Listing files in directory after running bowtie2...
