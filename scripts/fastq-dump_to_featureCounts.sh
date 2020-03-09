@@ -9,21 +9,26 @@ genome using bowtie2, and generates gene count table(s) using featureCounts.\n
 It can take a single SRR ID as an input, or multiple SRR IDs separated by spaces. \n
 \n
 Required arguments: \n
-    -a | --annotation		input genome annotation file \n
-    -f | --fasta		input FASTA file for annotated genome \n
-    SRR ID(s)			Sequence Read Archive Run ID(s) (SRR...) \n
+	-a | --annotation	input genome annotation file \n
+	-f | --fasta            input FASTA file for annotated genome \n
+	SRR ID(s)		Sequence Read Archive Run ID(s) (SRR...) \n
 \n
 Options: \n
-    -h | --help			show this help text and exit \n
-    -p | --processors		number (n) of processors to use (default: 1) \n
-    --fastq-dump		legacy mode, use 'fastq-dump' instead of \n
-    				the default 'fasterq-dump' \n
+	-h | --help		show this help text and exit \n
+	-p | --processors	number (n) of processors to use (default: 1) \n
+	--fastq-dump		use 'fastq-dump' instead of the 'fasterq-dump'\n
+	--verbose		make output of script more verbose
 "
 
 # Setting FASTQDUMP to 0
 # This will be changed to "1" if --fastq-dump is given as an argument,
 # resulting in fastq-dump being used instead of the default fasterq-dump
 FASTQDUMP=0
+
+# Setting VERBOSE to 0
+# This will be changed to "1" if --verbose is given as an argument,
+# resulting in more verbose script output
+VERBOSE=0
 
 # Setting default number of PROCESSORS to use
 PROCESSORS=1
@@ -61,6 +66,10 @@ while (( "$#" )); do
 			FASTQDUMP=1
 			shift
 			;;
+        --verbose)
+            VERBOSE=1
+            shift
+            ;;
 		--) # end argument parsing
 			shift
 			break
@@ -81,39 +90,45 @@ done
 # The sleep commands ("sleep 1s", "sleep 2s") slow down the script to make
 # the output more readable in real-time
 
-echo -e		~~~ F A S T Q - D U M P t o F E A T U R E C O U N T S ~~~
+echo -e		~~~~~~~~~~~~~  F A S T Q - D U M P t o F E A T U R E C O U N T S  ~~~~~~~~~~~~~
 echo Script started: $(date)
 
 # Loop through the input SRR IDs
 for SRR in $SRRs
 do
 	printf "\n"
-	echo ===========================================================================
+	echo ================================================================================
 	echo SRR ID: $SRR
 	sleep 1s
 	echo Reference genome annotation: $ANNOTATION
 	sleep 1s
 	echo Reference genome multi-FASTA file: $FASTA
-	echo ===========================================================================
+	echo ================================================================================
 	sleep 1s
 
-	printf "\n"
-	echo Listing files in directory ...
-	sleep 1s
-	ls
-	sleep 2s
+	if [ $VERBOSE -eq "1" ]
+        	printf "\n"
+        	echo Listing files in directory ...
+        	sleep 1s
+        	ls
+        	sleep 2s
+	fi
 
 
 	if [ $FASTQDUMP -eq "1" ]
-	then
-		echo Downloading compressed FASTQ reads using fastq-dump... ~~~~~~~~~~~~~~~~~~~~
+		then
+        	if [ $VERBOSE -eq "1" ]
+            		echo Downloading compressed FASTQ reads using fastq-dump...
+        	fi
 		until fastq-dump --gzip --skip-technical --readids --read-filter pass \
 		--dumpbase --split-3 --clip $SRR; do
 			echo fastq-dump failed, retrying in 10 seconds...
 	    		sleep 10s
 		done
 	else
-		echo Downloading FASTQ reads using fasterq-dump... ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        	if [ $VERBOSE -eq "1" ]
+            		echo Downloading FASTQ reads using fasterq-dump...
+        	fi
 		until fasterq-dump --progress --threads $PROCESSORS $SRR; do
 			echo fasterq-dump failed, retrying in 10 seconds...
 			rm -r fasterq.tmp.*
@@ -121,33 +136,46 @@ do
 		done
 	fi
 
-	sleep 1s
-	echo Listing files in directory after downloading reads...
-	sleep 1s
-	ls
-	sleep 2s
+	if [ $VERBOSE -eq "1" ]
+        	sleep 1s
+        	echo Listing files in directory after downloading reads...
+        	sleep 1s
+        	ls
+        	sleep 2s
+    	fi
 
 	# Checking if bowtie2 index of FASTA file exists before creating bowtie2 index
 	# If bowtie2_$FASTA.1.bt2 (one of the bowtie2 index files) does not exist...
 	if [ ! -f bowtie2_$FASTA.1.bt2 ]
 	# ...then create the bowtie2_$FASTA index
 	then
-	    echo Indexing reference genome FASTA file using bowtie2-build ~~~~~~~~~~~~~~~~~~
-	    sleep 2s
-	    bowtie2-build $FASTA bowtie2_$FASTA
-	    sleep 1s
-	    echo Listing files in directory after running bowtie2-build...
-	    sleep 1s
-	    ls
-	    sleep 2s
+        	if [ $VERBOSE -eq "1" ]
+            		echo Indexing reference genome FASTA file using bowtie2-build...
+			sleep 2s
+		fi
+	    	bowtie2-build $FASTA bowtie2_$FASTA
+	    	if [ $VERBOSE -eq "1" ]
+            		sleep 1s
+            		echo Listing files in directory after running bowtie2-build...
+            		sleep 1s
+            		ls
+            		sleep 2s
+        	fi
 	# Otherwise, print a message confirming that it exists
 	else
-	    echo The bowtie2 index bowtie2_$FASTA exists
-	    sleep 1s
+        	if [ $VERBOSE -eq "1" ]
+            		echo The bowtie2 index bowtie2_$FASTA exists
+            		sleep 1s
+	    	fi
 	fi
 
-	echo Aligning reads to reference genome using bowtie2 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-	sleep 2s
+	if [ $VERBOSE -eq "1" ]
+        	echo Aligning reads to reference genome using bowtie2...
+        	sleep 2s
+    	fi
+
+	# Checking if fastq-dump or fasterq-dump was used, as this will result
+	# in different filenames
 	if [ $FASTQDUMP -eq "1" ]
 	then
 		bowtie2 -p $PROCESSORS --no-unal -x bowtie2_$FASTA \
@@ -159,58 +187,66 @@ do
 		-S $SRR\_$FASTA.sam
 	fi
 
-	sleep 1s
-	echo Listing files in directory after running bowtie2...
-	sleep 1s
-	ls
-	sleep 2s
+	if [ $VERBOSE -eq "1" ]
+		sleep 1s
+        	echo Listing files in directory after running bowtie2...
+        	sleep 1s
+        	ls
+        	sleep 2s
 
-	echo Converting alignment from SAM to BAM format using samtools view ~~~~~~~~~~~
-	sleep 2s
+        	echo Converting alignment from SAM to BAM format using samtools view...
+        	sleep 2s
+    	fi
 	samtools view -@ $PROCESSORS -Sb $SRR\_$FASTA.sam \
 	> $SRR\_$FASTA.bam
 
-	sleep 1s
-	echo Listing files in directory after running samtools view...
-	sleep 1s
-	ls
-	sleep 2s
+	if [ $VERBOSE -eq "1" ]
+        	sleep 1s
+	        echo Listing files in directory after running samtools view...
+        	sleep 1s
+        	ls
+        	sleep 2s
 
-	echo Sorting the BAM file using samtools sort ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	sleep 2s
+        	echo Sorting the BAM file using samtools sort...
+        	sleep 2s
+    	fi
 	samtools sort -@ $PROCESSORS $SRR\_$FASTA.bam \
 	-o sorted_$SRR\_$FASTA.bam
 
-	sleep 1s
-	echo Listing files in directory after running samtools sort...
-	sleep 1s
-	ls
-	sleep 2s
-
-	echo Generating count table using featureCounts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	sleep 2s
+	if [ $VERBOSE -eq "1" ]
+        	sleep 1s
+        	echo Listing files in directory after running samtools sort...
+        	sleep 1s
+        	ls
+        	sleep 2s
+    
+        	echo Generating count table using featureCounts...
+        	sleep 2s
+    	fi
 	featureCounts -p -s 2 -T $PROCESSORS -a $ANNOTATION \
 	-o feature_counts_$SRR\_$FASTA.txt \
 	sorted_$SRR\_$FASTA.bam
 
-	sleep 1s
-	echo Listing files in directory after running featureCounts...
-	sleep 1s
-	ls
-	sleep 2s
+	if [ $VERBOSE -eq "1" ]
+        	sleep 1s
+        	echo Listing files in directory after running featureCounts...
+        	sleep 1s
+        	ls
+        	sleep 2s
 	
-	echo Results written to feature_counts_$SRR\_$FASTA.txt
-	sleep 2s
+        	echo Results written to feature_counts_$SRR\_$FASTA.txt
+        	sleep 2s
 
-	echo Head of feature_counts_$SRR\_$FASTA.txt
-	sleep 2s
-	head feature_counts_$SRR\_$FASTA.txt
-	sleep 2s
+        	echo Head of feature_counts_$SRR\_$FASTA.txt
+        	sleep 2s
+        	head feature_counts_$SRR\_$FASTA.txt
+        	sleep 2s
 
-	echo Tail of feature_counts_$SRR\_$FASTA.txt
-	sleep 2s
-	tail feature_counts_$SRR\_$FASTA.txt
-	sleep 2s
+        	echo Tail of feature_counts_$SRR\_$FASTA.txt
+        	sleep 2s
+        	tail feature_counts_$SRR\_$FASTA.txt
+        	sleep 2s
+    	fi
 done
 
 echo Script finished: $(date)
