@@ -14,7 +14,7 @@ Required arguments: \n
 \t      -f | --fasta\t\t        input FASTA file for annotated genome \n
 \t      SRR ID(s)\t\t           Sequence Read Archive Run ID(s) (SRR...) \n
 \n
-Options: \n
+Optional arguments: \n
 \t      -h | --help\t\t         show this help text and exit \n
 \t      -p | --processors\t	number (n) of processors to use (default: 1) \n
 \t      --fastq-dump\t\t        use 'fastq-dump' instead of the 'fasterq-dump'\n
@@ -101,9 +101,9 @@ do
 	echo ================================================================================
 	echo SRR ID: $SRR
 	sleep 1s
-	echo Reference genome annotation: $ANNOTATION
+	echo Genome annotation: $ANNOTATION
 	sleep 1s
-	echo Reference genome multi-FASTA file: $FASTA
+	echo Genome multi-FASTA file: $FASTA
 	echo ================================================================================
 	sleep 1s
 	
@@ -156,7 +156,7 @@ do
 	then
         	if [ $VERBOSE -eq "1" ]
 		then
-            		echo Indexing reference genome FASTA file using bowtie2-build...
+            		echo Indexing genome FASTA file using bowtie2-build...
 			sleep 2s
 		fi
 	    	bowtie2-build $FASTA bowtie2_$FASTA
