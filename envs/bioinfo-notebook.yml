@@ -7,6 +7,7 @@ dependencies:
   - _libgcc_mutex=0.1=main
   - asciinema=2.0.2=py37_1000
   - blas=1.0=mkl
+  - bowtie=1.2.3=py37hc9558a2_0
   - bowtie2=2.3.5.1=py37he513fc3_0
   - bzip2=1.0.8=h7b6447c_0
   - ca-certificates=2020.1.1=0

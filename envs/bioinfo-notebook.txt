@@ -61,6 +61,7 @@ https://conda.anaconda.org/bioconda/linux-64/perl-business-isbn-data-20140910.00
 https://conda.anaconda.org/bioconda/linux-64/perl-file-temp-0.2304-pl526_2.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/python-3.7.6-h0371630_2.conda
 https://conda.anaconda.org/conda-forge/linux-64/asciinema-2.0.2-py37_1000.tar.bz2
+https://conda.anaconda.org/bioconda/linux-64/bowtie-1.2.3-py37hc9558a2_0.tar.bz2
 https://conda.anaconda.org/bioconda/linux-64/bowtie2-2.3.5.1-py37he513fc3_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/certifi-2019.11.28-py37_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/curl-7.68.0-hbc83047_0.conda
