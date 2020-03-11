@@ -236,7 +236,7 @@ do
         	sleep 2s
     	fi
 	featureCounts -p -s 2 -T $PROCESSORS -a $ANNOTATION \
-	-o feature_counts_$SRR\_$FASTA.txt \
+	-o feature_counts_$SRR\_$FASTA.tsv \
 	sorted_$SRR\_$FASTA.bam
 
 	if [ $VERBOSE -eq "1" ]
@@ -247,17 +247,17 @@ do
         	ls
         	sleep 2s
 	
-        	echo Results written to feature_counts_$SRR\_$FASTA.txt
+        	echo Results written to feature_counts_$SRR\_$FASTA.tsv
         	sleep 2s
 
-        	echo Head of feature_counts_$SRR\_$FASTA.txt
+        	echo Head of feature_counts_$SRR\_$FASTA.tsv
         	sleep 2s
-        	head feature_counts_$SRR\_$FASTA.txt
+        	head feature_counts_$SRR\_$FASTA.tsv
         	sleep 2s
 
-        	echo Tail of feature_counts_$SRR\_$FASTA.txt
+        	echo Tail of feature_counts_$SRR\_$FASTA.tsv
         	sleep 2s
-        	tail feature_counts_$SRR\_$FASTA.txt
+        	tail feature_counts_$SRR\_$FASTA.tsv
         	sleep 2s
     	fi
 done
