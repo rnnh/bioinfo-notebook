@@ -10,9 +10,9 @@ A brief introduction to various file formats used in bioinformatics.
     - [FASTA](#fasta)
     - [FASTQ](#fastq)
 - [Alignment formats](#alignment-formats)
+    - [SAM](#sam)
     - [BAM](#bam)
     - [CRAM](#cram)
-    - [SAM](#sam)
 - [Genome annotation formats](#genome-annotation-formats)
     - [GFF](#gff)
     - [GTF](#gtf)
@@ -72,3 +72,29 @@ NGAGGAGTGGTGGTAGTGTTGCTTGGTGGCAAAGATGTAGTTGGTGGGAAAGCTGAAGTGGTACCGTTGGTTGGA
 +SRR8933535.2 2 length=75
 #AAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAAEEEE
 ```
+
+## Alignment formats
+
+These are formats for storing alignments of nucleotide or amino acid sequences.
+
+### SAM
+
+Sequence Alignment Map (SAM) is a text-based format originally used for storing biological sequences aligned to a reference sequence.
+The format has been extended to include unmapped sequences, and it may contain other data (such as base-call and alignment qualities).
+
+The SAM format consists of a header and an alignment section.
+Headings begin with the `@` symbol, which distinguishes them from the alignment section.
+Alignment sections contain the following mandatory fields...
+
+1. `QNAME` **Q**uery template **name**.
+2. `FLAG` Bitwise **flag**.
+3. `RNAME` **R**eference sequence **name**.
+4. `POS` 1-based leftmost mapping **post**ition.
+5. `MAPQ` **Map**ping **q**uality.
+6. `CIGAR` **CIGAR** string.
+7. `RNEXT` **R**ef. name of the mate/**next** read.
+8. `PNEXT` **P**osition of the mate/**next** read.
+9. `TLEN` Observed **t**emplate **len**gth.
+10. `SEQ` Segment **seq**uence.
+11. `QUAL` Phred-based base **qual**ity +33.
+
