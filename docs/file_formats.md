@@ -121,6 +121,10 @@ CRAM has the following major objectives:
 3. Effortless transition to CRAM from using BAM files
 4. Support for controlled loss of BAM data
 
+## Genome annotation formats
+
+*coming soon*
+
 ## References
 - [SAM format specification](https://samtools.github.io/hts-specs/SAMv1.pdf)
 - [CRAM format specification (version 3.0)](https://github.com/samtools/hts-specs/blob/5a5d05fa157c679f34db8920ce3acab1d9f3dfd1/CRAMv3.pdf)
