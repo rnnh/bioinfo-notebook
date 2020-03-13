@@ -74,6 +74,7 @@ NGAGGAGTGGTGGTAGTGTTGCTTGGTGGCAAAGATGTAGTTGGTGGGAAAGCTGAAGTGGTACCGTTGGTTGGA
 ## Alignment formats
 
 These are formats for storing alignments of nucleotide or amino acid sequences.
+The alignment formats discussed here can be manipulated using [SAMtools](samtools.md).
 
 ### SAM
 
@@ -112,7 +113,7 @@ A position-sorted BAM file can be indexed to allow random access.
 ## CRAM
 
 CRAM is a sequencing read file format that is highly space efficient by using reference-based compression of sequence data and offers both lossless and lossy modes of compression.
-CRAM files are typically 30 to 60% smaller than their BAM equivalents.
+CRAM files are typically 30 to 60% smaller than their [BAM](#bam) equivalents.
 CRAM has the following major objectives:
 
 1. Significantly better lossless compression than BAM
@@ -121,6 +122,6 @@ CRAM has the following major objectives:
 4. Support for controlled loss of BAM data
 
 ## References
-
+- [SAM format specification](https://samtools.github.io/hts-specs/SAMv1.pdf)
 - [CRAM format specification (version 3.0)](https://github.com/samtools/hts-specs/blob/5a5d05fa157c679f34db8920ce3acab1d9f3dfd1/CRAMv3.pdf)
 - [The Sequence Alignment/Map format and SAMtools](https://doi.org/10.1093/bioinformatics/btp352)
