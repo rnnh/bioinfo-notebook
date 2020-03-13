@@ -1,7 +1,5 @@
 # File formats
 
-*work in progress*
-
 A brief introduction to various file formats used in bioinformatics.
 
 ## Table of contents
@@ -79,22 +77,50 @@ These are formats for storing alignments of nucleotide or amino acid sequences.
 
 ### SAM
 
-Sequence Alignment Map (SAM) is a text-based format originally used for storing biological sequences aligned to a reference sequence.
-The format has been extended to include unmapped sequences, and it may contain other data (such as base-call and alignment qualities).
+**S**equence **A**lignment/**M**ap (**SAM**) is a text-based alignment format that supports single- and paired-end reads produced by different sequencing platforms.
+It can support short and long reads (up to 128Mbp).
+The format has been extended to include unmapped sequences, and it may contain other data such as base-call & alignment qualities.
 
 The SAM format consists of a header and an alignment section.
 Headings begin with the `@` symbol, which distinguishes them from the alignment section.
-Alignment sections contain the following mandatory fields...
+All lines in a SAM file are tab-delimited.
+Alignment sections contain 11 mandatory fields, with other fields being optional.
+Although the mandatory fields must be present, their value can be a `*` or a `0` depending on the field.
+Optional fields are presented as key-value pairs in the format `TAG:TYPE:VALUE`.
 
-1. `QNAME` **Q**uery template **name**.
-2. `FLAG` Bitwise **flag**.
-3. `RNAME` **R**eference sequence **name**.
-4. `POS` 1-based leftmost mapping **post**ition.
-5. `MAPQ` **Map**ping **q**uality.
-6. `CIGAR` **CIGAR** string.
-7. `RNEXT` **R**ef. name of the mate/**next** read.
-8. `PNEXT` **P**osition of the mate/**next** read.
-9. `TLEN` Observed **t**emplate **len**gth.
-10. `SEQ` Segment **seq**uence.
-11. `QUAL` Phred-based base **qual**ity +33.
+The mandatory fields in a SAM file are...
 
+1. **`QNAME`** **Q**uery template **name**. Reads/segments with the same QNAME are from the same template. A read may occupy multiple alignment lines when its alignment is chimeric or when multiple mappings are given.
+2. **`FLAG`** Bitwise **flag** (pairing, strand, mate strand, etc.).
+3. **`RNAME`** **R**eference sequence **name**.
+4. **`POS`** 1-based leftmost mapping **pos**ition. The first base in a reference sequence has coordinate 1. `POS` is set to 0 for an unmapped read.
+5. **`MAPQ`** **Map**ping **q**uality. If equal to 255, the mapping quality is not available.
+6. **`CIGAR`** Extended **C**onsise **I**diosyncratic **G**apped **A**lignment **R**eport string. `M` for match/mismatch, `I` for insertion and `D` for deletion compared with the reference, `N` for skipped bases on the reference, `S` for soft clipping, `H` for hard clipping, and `P` for padding.
+7. **`RNEXT`** **R**eference name of the mate/**next** read in the template. For the last read, the next read is the first read in the template.
+8. **`PNEXT`** **P**osition of the primary alignment of the mate/**next** read.
+9. **`TLEN`** Observed **t**emplate **len**gth.
+10. **`SEQ`** Segment **seq**uence.
+11. **`QUAL`** Phred-based base **qual**ity (same as the quailty string in [FASTQ](#fastq)) plus 33.
+
+SAM files can be manipulated using [SAMtools](samtools.md).
+
+### BAM
+
+**B**inary **A**lignment **M**ap is a binary representation of [SAM](#sam), containing the same information in binary format for improved performance.
+A position-sorted BAM file can be indexed to allow random access.
+
+## CRAM
+
+CRAM is a sequencing read file format that is highly space efficient by using reference-based compression of sequence data and offers both lossless and lossy modes of compression.
+CRAM files are typically 30 to 60% smaller than their BAM equivalents.
+CRAM has the following major objectives:
+
+1. Significantly better lossless compression than BAM
+2. Full compatibility with BAM
+3. Effortless transition to CRAM from using BAM files
+4. Support for controlled loss of BAM data
+
+## References
+
+- [CRAM format specification (version 3.0)](https://github.com/samtools/hts-specs/blob/5a5d05fa157c679f34db8920ce3acab1d9f3dfd1/CRAMv3.pdf)
+- [The Sequence Alignment/Map format and SAMtools](https://doi.org/10.1093/bioinformatics/btp352)

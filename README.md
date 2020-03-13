@@ -23,7 +23,7 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 - [fastq-dump](docs/fastq-dump.md) *downloads reads from NCBI's SRA*
 - [featureCounts](docs/featureCounts.md) *assigns alignments to genome annotation features*
 - [htseq-count](docs/htseq-count.md) *aligns reads to genomic features*
-- [samtools](docs/samtools.md) *manipulates alignment files and simluates sequence reads*
+- [SAMtools](docs/samtools.md) *manipulates alignment files and simluates sequence reads*
 
 ## Scripts
 

@@ -1,7 +1,7 @@
-# samtools
+# SAMtools
 
-`samtools` is a set of utilities that manipulate alignments in the BAM format.
-It imports from and exports to the SAM (Sequence Alignment/Map) format, does sorting, merging and indexing, and allows to retrieve reads in any regions swiftly. 
+SAMtools is a set of utilities that can manipulate alignment formats.
+It imports from and exports to the [SAM](file_formats.md#sam), [BAM](file_formats.md#bam) & [CRAM](file_formats.md#cram); does sorting, merging & indexing; and allows reads in any region to be retrieved swiftly. 
 
 ## Converting a `sam` alignment file to a sorted, indexed `bam` file using `samtools`
 
@@ -71,6 +71,7 @@ In this video, `wgsim` is used to simulate reads from `example_nucleotide_sequen
 
 [![asciicast](https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH.svg)](https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH?autoplay=1)
 
-## Further reading
+## See also
 
-1. The `samtools` manual: <https://www.htslib.org/doc/samtools.html>
+- [Alignment formats](file_formats.md#alignment-formats)
+- The `samtools` manual: <https://www.htslib.org/doc/samtools.html>
