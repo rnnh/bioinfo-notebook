@@ -170,7 +170,7 @@ These may occur anywhere in the file, including at the end of a feature line.
 
 #### Example GTF file
 
-Here are the first 12 lines of [example_genome_annotation.gtf](data/example_genome_annotation.gtf):
+Here are the first 12 lines of [example_genome_annotation.gtf](../data/example_genome_annotation.gtf):
 
 ```
 #gtf-version 2.2
