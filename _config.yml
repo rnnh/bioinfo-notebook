@@ -1,5 +1,5 @@
 title: bioinfo-notebook
-logo: assets/bioinfo-notebook_logo.png
+logo: assets/bioinfo-notebook_logo.svg
 description: Quick start guides for bioinformatics programs, with video demonstrations and scripts.
 show_downloads: true
 theme: jekyll-theme-minimal
