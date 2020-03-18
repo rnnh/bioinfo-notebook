@@ -4,7 +4,7 @@
 @EXPLICIT
 https://repo.anaconda.com/pkgs/main/linux-64/_libgcc_mutex-0.1-main.conda
 https://repo.anaconda.com/pkgs/main/linux-64/blas-1.0-mkl.conda
-https://repo.anaconda.com/pkgs/main/linux-64/ca-certificates-2020.1.1-0.conda
+https://conda.anaconda.org/anaconda/linux-64/ca-certificates-2020.1.1-0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/intel-openmp-2020.0-166.conda
 https://repo.anaconda.com/pkgs/main/linux-64/ld_impl_linux-64-2.33.1-h53a641e_7.conda
 https://repo.anaconda.com/pkgs/main/linux-64/libgfortran-ng-7.3.0-hdf63c60_0.conda
@@ -21,7 +21,7 @@ https://repo.anaconda.com/pkgs/main/linux-64/libiconv-1.15-h63c8f33_5.conda
 https://repo.anaconda.com/pkgs/main/linux-64/libuuid-1.0.3-h1bed415_2.conda
 https://repo.anaconda.com/pkgs/main/linux-64/libxcb-1.13-h1bed415_1.conda
 https://repo.anaconda.com/pkgs/main/linux-64/ncurses-6.2-he6710b0_0.tar.bz2
-https://repo.anaconda.com/pkgs/main/linux-64/openssl-1.1.1d-h7b6447c_4.conda
+https://conda.anaconda.org/anaconda/linux-64/openssl-1.1.1-h7b6447c_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/pcre-8.43-he6710b0_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/perl-5.26.2-h14c3975_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/tbb-2020.0-hfd86e86_0.conda
@@ -63,12 +63,13 @@ https://repo.anaconda.com/pkgs/main/linux-64/python-3.7.6-h0371630_2.conda
 https://conda.anaconda.org/conda-forge/linux-64/asciinema-2.0.2-py37_1000.tar.bz2
 https://conda.anaconda.org/bioconda/linux-64/bowtie-1.2.3-py37hc9558a2_0.tar.bz2
 https://conda.anaconda.org/bioconda/linux-64/bowtie2-2.3.5.1-py37he513fc3_0.tar.bz2
-https://repo.anaconda.com/pkgs/main/linux-64/certifi-2019.11.28-py37_0.conda
+https://conda.anaconda.org/anaconda/linux-64/certifi-2019.11.28-py37_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/curl-7.68.0-hbc83047_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/kiwisolver-1.1.0-py37he6710b0_0.conda
 https://conda.anaconda.org/bioconda/linux-64/perl-business-isbn-3.004-pl526_0.tar.bz2
 https://conda.anaconda.org/bioconda/noarch/perl-xml-sax-1.02-pl526_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/noarch/pyparsing-2.4.6-py_0.conda
+https://conda.anaconda.org/anaconda/noarch/pytz-2019.3-py_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/qt-5.9.7-h5867ecd_1.conda
 https://repo.anaconda.com/pkgs/main/linux-64/sip-4.19.8-py37hf484d3e_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/six-1.14.0-py37_0.conda
@@ -86,6 +87,7 @@ https://repo.anaconda.com/pkgs/main/linux-64/numpy-base-1.18.1-py37hde5b4d6_1.co
 https://conda.anaconda.org/bioconda/linux-64/sra-tools-2.10.0-pl526he1b5a44_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/wheel-0.34.2-py37_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/pip-20.0.2-py37_1.conda
+https://conda.anaconda.org/anaconda/linux-64/pandas-1.0.2-py37h0573a6f_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/matplotlib-3.1.3-py37_0.conda
 https://conda.anaconda.org/bioconda/linux-64/htseq-0.11.2-py37h637b7d7_1.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/matplotlib-base-3.1.3-py37hef1b27d_0.conda
