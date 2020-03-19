@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser(
     description = "Combines the featureCounts output tables in the target \
     directory.")
 
-#-d DIRECTORY -cd -o FILENAME
+# -d PATH -o CUSTOM_FILENAME
 parser.add_argument("-d", "--directory", dest = "path",
                     help = "path to target directory. \
                             Default: current directory")
@@ -56,7 +56,6 @@ srr = str()
 for filename in os.listdir():
     if filename.startswith(target_file_prefix):
         target_file_count = target_file_count + 1
-        old_species_name = species_name
         filename_list = filename.split("_")
         srr = filename_list[2]
         species_name = filename_list[3] + "_" + filename_list[4]
@@ -68,11 +67,13 @@ for filename in os.listdir():
         featCounts_df.columns = featCounts_headers
         gene_ids = featCounts_df["Geneid"]
         counts = featCounts_df[srr]
-        if species_name == old_species_name:
-            counts_table = pd.concat([counts_table, counts], axis = 1,
+        # Add the gene IDs and counts to the counts_table DataFrame as columns
+        # if it's empty; otherwise add the counts only
+        if counts_table.empty:
+            counts_table = pd.concat([gene_ids, counts], axis = 1,
                                      sort = False)
         else:
-            counts_table = pd.concat([gene_ids, counts], axis = 1,
+            counts_table = pd.concat([counts_table, counts], axis = 1,
                                      sort = False)
         del featCounts_headers
 
