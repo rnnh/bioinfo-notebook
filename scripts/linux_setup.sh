@@ -45,8 +45,10 @@ then
 	exit 1
 fi
 
+
 echo Updating Linux software...
 sleep 2s # Slows down script to make terminal output more readable
+# This is the only command that requires admin rights, and it's not essential
 sudo apt-get update
 
 echo Downloading Miniconda installation script...
