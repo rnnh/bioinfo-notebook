@@ -113,6 +113,6 @@ echo -e Script finished! \n
 echo -e Please restart your Linux system for these changes to take effect. \n
 
 echo The bioinfo-notebook environment can be activated using the command...
-echo -e	\t \$ conda activate bioinfo-notebook
+echo -e	"\t \$ conda activate bioinfo-notebook"
 echo A conda virtual environment can be deactivated using the command...
-echo -e	\t \$ conda deactivate
+echo -e	"\t \$ conda deactivate"
