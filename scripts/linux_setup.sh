@@ -1,7 +1,7 @@
 #! /bin/bash/
 
 # Help/usage text
-usage="$(basename "$0")
+usage="$(basename "$0") \n
 \n
 This script downloads and installs Miniconda3, and uses conda to install \n
 the 'bioinfo-notebook' virtual environment. \n
@@ -91,7 +91,7 @@ then
 # If the Linux system is not 64-bit...
 else
 	# Create the virtual environment using an "environment".yml file
-	conda env create -f ~/bioinfo-notebook/envs/bioinfo-notebook.txt
+	conda env create -f ~/bioinfo-notebook/envs/bioinfo-notebook.yml
 fi
 
 echo -e Script finished! \n
