@@ -6,8 +6,18 @@ usage="$(basename "$0") \n
 This script downloads and installs Miniconda3, and uses conda to install \n
 the 'bioinfo-notebook' virtual environment. \n
 \n
-This script requires admin rights, please run as sudo, for example... \n
-\t \$ sudo bash $0 \n
+Before running this script... \n
+\n
+\t 1. Please run the following command:  \n
+\t \t \$ sudo apt-get update \n
+\t This will ensure that the software installed will be up-to-date. \n
+\n
+\t 2. Please ensure that the 'bioinfo-notebook/' directory is in your \n
+\t home directory (~). The path to this directory should look like this: \n
+\t \t $HOME/bioinfo-notebook \n
+\n
+The 'bash' command is used to run this script: \n
+\t \$ bash $0 \n
 \n
 Optional arguments: \n
 \t      -h | --help\t         show this help text and exit \n
@@ -44,12 +54,6 @@ then
 	echo or create a copy of bioinfo-notebook/ in $HOME
 	exit 1
 fi
-
-
-echo Updating Linux software...
-sleep 2s # Slows down script to make terminal output more readable
-# This is the only command that requires admin rights, and it's not essential
-sudo apt-get update
 
 echo Downloading Miniconda installation script...
 sleep 2s # Slows down script to make terminal output more readable
