@@ -57,11 +57,13 @@ sleep 2s # Slows down script to make terminal output more readable
 if [ "$(uname -m)" == "x86_64" ];
 then
 	# Download the script to install the 64-bit version of miniconda
-	wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+	wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+		-O miniconda.sh
 # If the Linux system is not 64-bit...
 else
 	# Download the script to install the 32-bit version of miniconda
-	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh -O miniconda.sh
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh \
+		-O miniconda.sh
 fi
 
 echo Installing Miniconda3...
@@ -75,7 +77,8 @@ echo Setting up Miniconda3...
 sleep 2s # Slows down script to make terminal output more readable
 source "$HOME/miniconda/etc/profile.d/conda.sh"
 hash -r
-conda config --set always_yes yes --set changeps1 yes
+conda config --set always_yes yes --set changeps1 yes \
+	--set auto_activate_base false
 conda update -q conda
 conda init
 
@@ -89,12 +92,17 @@ sleep 2s # Slows down script to make terminal output more readable
 if [ "$(uname -m)" == "x86_64" ];
 then
 	# Create the virtual environment using the explicit spec list
-	conda create --name bioinfo-notebook --file ~/bioinfo-notebook/envs/bioinfo-notebook.txt
+	conda create --name bioinfo-notebook \
+		--file ~/bioinfo-notebook/envs/bioinfo-notebook.txt
 # If the Linux system is not 64-bit...
 else
 	# Create the virtual environment using an "environment".yml file
 	conda env create -f ~/bioinfo-notebook/envs/bioinfo-notebook.yml
 fi
+
+echo Removing unused packages and caches using conda...
+sleep 2s # Slows down script to make terminal output more readable
+conda clean --all --yes
 
 echo -e Script finished! \n
 
