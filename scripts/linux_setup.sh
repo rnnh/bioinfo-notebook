@@ -1,9 +1,27 @@
 #! /bin/bash/
 
-# Linux Setup Script
+# Help/usage text
+usage="$(basename "$0")
+\n
+This script downloads and installs Miniconda3, and uses conda to install \n
+the 'bioinfo-notebook' virtual environment. \n
+\n
+This script requires admin rights, please run as sudo, for example... \n
+\t \$ sudo bash $0 \n
+\n
+Optional arguments: \n
+\t      -h | --help\t\t         show this help text and exit \n
+"
 
-# This script downloads and installs Miniconda3, and uses conda to install
-# the "bioinfo-notebook" virtual environment
+# Iterating through the input arguments with a while loop
+while (( "$#" )); do
+	case "$1" in
+		-h|--help)
+			echo -e $usage
+			exit 0
+			;;
+	esac
+done
 
 # Changing directory to the home directory ("~" or "$HOME")
 cd ~
