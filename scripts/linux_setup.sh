@@ -10,7 +10,7 @@ This script requires admin rights, please run as sudo, for example... \n
 \t \$ sudo bash $0 \n
 \n
 Optional arguments: \n
-\t      -h | --help\t\t         show this help text and exit \n
+\t      -h | --help\t         show this help text and exit \n
 "
 
 # Iterating through the input arguments with a while loop
@@ -101,6 +101,6 @@ echo -e Script finished! \n
 echo -e Please restart your Linux system for these changes to take effect. \n
 
 echo The bioinfo-notebook environment can be activated using the command...
-echo -e	\$ conda activate bioinfo-notebook
+echo -e	\t \$ conda activate bioinfo-notebook
 echo A conda virtual environment can be deactivated using the command...
-echo -e	\$ conda deactivate
+echo -e	\t \$ conda deactivate
