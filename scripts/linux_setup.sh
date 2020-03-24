@@ -1,11 +1,16 @@
 #! /bin/bash/
 
-'''
-Linux Setup Script
+# Linux Setup Script
 
-This script downloads and installs Miniconda3, and uses conda to install
-the "bioinfo-notebook" virtual environment
-'''
+# This script downloads and installs Miniconda3, and uses conda to install
+# the "bioinfo-notebook" virtual environment
+
+echo Checking if the bioinfo-notebook environment is already installed...
+sleep 2s # Slows down script to make terminal output more readable
+if [ -d ~/miniconda/envs/bioinfo-notebook ]; then 
+	echo The bioinfo-notebook environment already exists, exiting script.
+	exit 0
+fi
 
 echo Checking if bioinfo-notebook/ is in the home directory...
 sleep 2s # Slows down script to make terminal output more readable
@@ -44,10 +49,11 @@ echo Setting up Miniconda3...
 sleep 2s # Slows down script to make terminal output more readable
 source "$HOME/miniconda/etc/profile.d/conda.sh"
 hash -r
-conda config --set always_yes yes --set changeps1 no
+conda config --set always_yes yes --set changeps1 yes
 conda update -q conda
+conda init
 
-echo Displaying information about current conda install...
+echo Displaying information about current conda installation...
 sleep 2s # Slows down script to make terminal output more readable
 conda info -a
 
@@ -64,4 +70,9 @@ else
 	conda env create -f ~/bioinfo-notebook/envs/bioinfo-notebook.txt
 fi
 
-echo Script finished
+echo -e Script finished \n
+
+echo The bioinfo-notebook environment can be activated using the command...
+echo	\$ conda activate bioinfo-notebook
+echo A conda virtual environment can be deactivated using the command...
+echo	\$ conda deactivate
