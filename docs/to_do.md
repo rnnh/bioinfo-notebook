@@ -8,8 +8,8 @@
 - Add page on `fasterq-dump`
 - Add entry on Stockholm format
 - Finish script to manipulate FASTA headers
-- Finish script to combine featureCounts tables
+- ~~~Finish script to combine featureCounts tables~~~
 - Add page introducing the command line
-- Add page on using Linux through Windows: Windows Subsystem for Linux, and VirtualBox
+- Add page on using Linux through Windows: ~~~Windows Subsystem for Linux,~~~ and VirtualBox
 - Add command line exercise
 - Add page on GWIPS-viz
