@@ -25,11 +25,27 @@ install:
   - conda info -a
 
   # Creating conda environment using envs/bioinfo-notebook.txt
-  - conda create --name bioinfo-notebook --file envs/bioinfo-notebook.txt
-  - conda activate bioinfo-notebook
+  - conda create --name bioinfo-notebook-explicit --file envs/bioinfo-notebook.txt
+  - conda activate bioinfo-notebook-explicit
+  - conda deactivate
+
+  # Creating conda environment using envs/bioinfo-notebook.yml
+  - conda env create --name bioinfo-notebook-yml --file envs/bioinfo-notebook.yml
+  - conda activate bioinfo-notebook-yml
+  - conda deactivate
 
 script:
-  # Confirming that programs work in conda environment
+  # Confirming that programs work in conda environments
+  # bioinfo-notebook-explicit
+  - conda activate bioinfo-notebook-explicit
   - bowtie2 --version
   - samtools --version
   - fastq-dump --version
+  - conda deactivate
+  
+  # bioinfo-notebook-yml
+  - conda activate bioinfo-notebook-yml
+  - bowtie2 --version
+  - samtools --version
+  - fastq-dump --version
+  - conda deactivate
