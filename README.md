@@ -6,7 +6,10 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/rnnh/bioinfo-notebook)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Frnnh.github.io%2Fbioinfo-notebook)
 
-This project aims to give brief introductions for various bioinformatics tools with quick start guides, and provide scripts that tie these tools together. If you know how to use the command line, hopefully these guides will get you started with each program in a matter of minutes.
+This project aims to give brief introductions for various bioinformatics tools with quick start guides, and provide scripts that tie these tools together.
+
+If you would like to try the scripts or the commands in the guides on this website, a Linux system such as Ubuntu is recommended.
+If you are using a Windows or Mac computer, you can use Ubuntu through [VirtualBox](ubuntu_virtualbox.md) or [Windows Subsystem for Linux](wsl.md).
 
 For reproducibility, a [conda](docs/conda.md) environment is used throughout this project. Video demonstrations created using [Asciinema](https://asciinema.org/~rnnh) are also provided.
 
@@ -15,6 +18,11 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 ## Quick Start Guides
 
 - [File formats](docs/file_formats.md) *brief introduction to bioinformatics file formats*
+
+### Using Ubuntu through a Windows or Mac computer
+
+- [Using Ubuntu through a Virtual Machine](ubuntu_virtualbox.md)
+- [Windows Subsystem for Linux](wsl.md)
 
 ### Command line programs
 

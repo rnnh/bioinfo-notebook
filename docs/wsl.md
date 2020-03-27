@@ -44,4 +44,5 @@ The dollar sign (`$`) indicates that this command line uses the `bash` shell lan
 
 ## See also
 
+- [Using Ubuntu through a Virtual Machine](ubuntu_virtualbox.md) 
 - [conda](conda.md)
