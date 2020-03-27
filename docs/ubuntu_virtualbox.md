@@ -23,13 +23,13 @@ The file required to install VirtualBox is around 108 or 123 MB in size, dependi
 
 ### Direct links to download required files
 
-1. [The Ubuntu disk image (filename: `ubuntu-18.04.4-desktop-amd64.iso`)]<http://releases.ubuntu.com/18.04.4/ubuntu-18.04.4-desktop-amd64.iso>
-2. [VirtualBox installer for Windows]<https://download.virtualbox.org/virtualbox/6.1.4/VirtualBox-6.1.4-136177-Win.exe>
-3. [VirtualBox installer for Mac]<https://download.virtualbox.org/virtualbox/6.1.4/VirtualBox-6.1.4-136177-OSX.dmg>
-4. [VirtualBox Extension Pack (all platforms)]<https://download.virtualbox.org/virtualbox/6.1.4/Oracle_VM_VirtualBox_Extension_Pack-6.1.4.vbox-extpack>
+1. [The Ubuntu disk image (filename: `ubuntu-18.04.4-desktop-amd64.iso`)](http://releases.ubuntu.com/18.04.4/ubuntu-18.04.4-desktop-amd64.iso)
+2. [VirtualBox installer for Windows](https://download.virtualbox.org/virtualbox/6.1.4/VirtualBox-6.1.4-136177-Win.exe)
+3. [VirtualBox installer for Mac](https://download.virtualbox.org/virtualbox/6.1.4/VirtualBox-6.1.4-136177-OSX.dmg)
+4. [VirtualBox Extension Pack (all platforms)](https://download.virtualbox.org/virtualbox/6.1.4/Oracle_VM_VirtualBox_Extension_Pack-6.1.4.vbox-extpack)
 
 If the above links do not work, they may have expired.
-In this case, the above files can be found on the [VirtualBox website]<https://www.virtualbox.org/wiki/Downloads> and the [Ubuntu website]<https://ubuntu.com/download/desktop>.
+In this case, the above files can be found on the [VirtualBox website](https://www.virtualbox.org/wiki/Downloads) and the [Ubuntu website](https://ubuntu.com/download/desktop).
 
 ## How to create an Ubuntu virtual machine using VirtualBox
 
