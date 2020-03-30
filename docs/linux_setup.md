@@ -1,6 +1,6 @@
 # Linux setup script
 
-[linux_setup.sh](../scripts/linux_setup.md) is a `bash` shell script that...
+[linux_setup.sh](../scripts/linux_setup.sh) is a `bash` shell script that...
 
 1. Downloads and installs [Miniconda3](conda.md)
 2. Installs the `bioinfo-notebook` [virtual environment using conda](conda.md#cloning-and-activating-a-conda-environment)
@@ -24,7 +24,7 @@ The Linux setup script is then run from this cloned GitHub repo.
 ## Usage
 
 ```
-This script downloads and installs Miniconda3, and uses conda to install \n
+This script downloads and installs Miniconda3, and uses conda to install
 the 'bioinfo-notebook' virtual environment.
 
 Before running this script...
@@ -43,3 +43,9 @@ The 'bash' command is used to run this script:
 Optional arguments:
 	-h | --help	show this help text and exit
 ```
+
+## See also
+
+- [Conda](conda.md)
+- [Using Ubuntu through a Virtual Machine](ubuntu_virtualbox.md)
+- [Windows Subsystem for Linux](wsl.md)
