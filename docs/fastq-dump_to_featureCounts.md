@@ -36,6 +36,7 @@ fastq-dump_to_featureCounts.sh [options] -a|--annotation <annotation_file> -f|--
  	 --fastq-dump		 use 'fastq-dump' instead of the 'fasterq-dump'
  	 --verbose		 make output of script more verbose
  	 --removereads		 remove reads once they have been aligned
+ 	 --log			 redirect terminal output to log file
 ```
 
 ## See also

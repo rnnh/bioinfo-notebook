@@ -19,7 +19,8 @@ Optional arguments: \n
 \t      -p | --processors\t	number (n) of processors to use (default: 1) \n
 \t      --fastq-dump\t\t        use 'fastq-dump' instead of the 'fasterq-dump'\n
 \t      --verbose\t\t           make output of script more verbose\n
-\t	--removereads\t\t	remove reads once they have been aligned
+\t	--removereads\t\t	remove reads once they have been aligned\n
+\t	--log\t\t\t		redirect terminal output to log file
 "
 
 # Setting FASTQDUMP to 0
@@ -37,6 +38,12 @@ VERBOSE=0
 # resulting in *.fastq and *.fastq.gz reads being removed once they have
 # been aligned to the reference genome using bowtie2
 REMOVEREADS=0
+
+# Setting LOG to 0
+# This will be changed to "1" if --log is given as an argument,
+# resulting in the terminal output from this script being redirected to a log
+# file
+LOG=0
 
 # Setting default number of PROCESSORS to use
 PROCESSORS=1
@@ -82,6 +89,10 @@ while (( "$#" )); do
 			REMOVEREADS=1
 			shift
 			;;
+		--log)
+			LOG=1
+			shift
+			;;
 		--) # end argument parsing
 			shift
 			break
@@ -97,6 +108,14 @@ while (( "$#" )); do
 			;;
 	esac
 done
+
+if [ $LOG -eq "1" ]
+then
+	# Redirecting terminal output to log file
+	exec 3>&1 4>&2
+	trap 'exec 2>&4 1>&3' 0 1 2 3
+	exec 1>fd_to_fC_$(date +%Y%m%d_%H%M%S).log 2>&1
+fi
 
 # Beginning the main body of the script
 # The sleep commands ("sleep 1s", "sleep 2s") slow down the script to make
