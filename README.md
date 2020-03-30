@@ -42,3 +42,7 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 - [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md). This script downloads FASTQ reads, aligns them to a reference genome, and counts how many reads align to each gene in that reference genome. Video demonstration:
 
 [![asciicast](https://asciinema.org/a/308745.svg)](https://asciinema.org/a/308745?autoplay=1)
+
+- [combining_featCount_tables.py](docs/combining_featCount_tables.md) This is a Python script that creates a single CSV feature count table from the featureCounts output tables in the target directory. Video demonstration:
+
+[![asciicast](https://asciinema.org/a/311771.svg)](https://asciinema.org/a/311771?autoplay=1)
