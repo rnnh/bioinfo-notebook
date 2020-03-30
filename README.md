@@ -35,5 +35,10 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 
 ## Scripts
 
-1. [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md). This script downloads FASTQ reads, aligns them to a reference genome, and counts how many reads align to each gene in that reference genome. Video demonstration:
+- [linux_setup.sh](docs/linux_setup.md). This script downloads and installs Miniconda3, and installs the bioinfo-notebook virtual environment using conda. Video demonstration:
+
+[![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
+
+- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md). This script downloads FASTQ reads, aligns them to a reference genome, and counts how many reads align to each gene in that reference genome. Video demonstration:
+
 [![asciicast](https://asciinema.org/a/308745.svg)](https://asciinema.org/a/308745?autoplay=1)
