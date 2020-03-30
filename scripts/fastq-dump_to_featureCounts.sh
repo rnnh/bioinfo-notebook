@@ -164,7 +164,7 @@ do
 		then
             		echo Downloading FASTQ reads using fasterq-dump...
         	fi
-		if [ $LOG -eq "0"]
+		if [ $LOG -eq "0" ]
 		then
 			until fasterq-dump --progress --threads $PROCESSORS $SRR; do
 				echo fasterq-dump failed, retrying in 10 seconds...
