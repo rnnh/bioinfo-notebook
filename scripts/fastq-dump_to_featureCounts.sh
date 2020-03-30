@@ -19,7 +19,8 @@ Optional arguments: \n
 \t      -p | --processors\t	number (n) of processors to use (default: 1) \n
 \t      --fastq-dump\t\t        use 'fastq-dump' instead of the 'fasterq-dump'\n
 \t      --verbose\t\t           make output of script more verbose\n
-\t	--removereads\t\t	remove reads once they have been aligned\n
+\t	--removetemp\t\t	remove read and alignment files once they are\n
+\t	\t\t\t  		no longer needed (minimises disk space needed) \n
 \t	--log\t\t\t		redirect terminal output to log file
 "
 
@@ -33,11 +34,11 @@ FASTQDUMP=0
 # resulting in more verbose script output
 VERBOSE=0
 
-# Setting REMOVEREADS to 0
-# This will be changed to "1" if --removereads is given as an argument,
-# resulting in *.fastq and *.fastq.gz reads being removed once they have
-# been aligned to the reference genome using bowtie2
-REMOVEREADS=0
+# Setting REMOVETEMP to 0
+# This will be changed to "1" if --removetemp is given as an argument,
+# resulting in *.fastq, *.fastq.gz, *.sam, *.bam and *.tsv.summary, being
+# removed once they are no longer needed to create a featureCounts table
+REMOVETEMP=0
 
 # Setting LOG to 0
 # This will be changed to "1" if --log is given as an argument,
@@ -85,8 +86,8 @@ while (( "$#" )); do
 			VERBOSE=1
 			shift
 			;;
-		--removereads)
-			REMOVEREADS=1
+		--removetemp)
+			REMOVETEMP=1
 			shift
 			;;
 		--log)
@@ -163,11 +164,20 @@ do
 		then
             		echo Downloading FASTQ reads using fasterq-dump...
         	fi
-		until fasterq-dump --progress --threads $PROCESSORS $SRR; do
-			echo fasterq-dump failed, retrying in 10 seconds...
-			rm -r fasterq.tmp.*
-			sleep 10s
-		done
+		if [ $LOG -eq "0"]
+		then
+			until fasterq-dump --progress --threads $PROCESSORS $SRR; do
+				echo fasterq-dump failed, retrying in 10 seconds...
+				rm -r fasterq.tmp.*
+				sleep 10s
+			done
+		else
+			until fasterq-dump --threads $PROCESSORS $SRR; do
+				echo fasterq-dump failed, retrying in 10 seconds...
+				rm -r fasterq.tmp.*
+				sleep 10s
+			done
+		fi
 	fi
 
 	if [ $VERBOSE -eq "1" ]
@@ -296,6 +306,14 @@ do
         	tail feature_counts_$SRR\_$FASTA.tsv
         	sleep 2s
     	fi
+
+
+	if [ $REMOVETEMP -eq "1"]
+	then
+		echo Removing temporary files...
+		rm *.fastq *.fastq.gz *.sam *.bam *.tsv.summary
+	fi
+
 done
 
 echo Script finished: $(date)
