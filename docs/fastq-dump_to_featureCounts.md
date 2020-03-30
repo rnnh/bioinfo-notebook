@@ -35,6 +35,7 @@ fastq-dump_to_featureCounts.sh [options] -a|--annotation <annotation_file> -f|--
  	 -p | --processors	 number (n) of processors to use (default: 1) 
  	 --fastq-dump		 use 'fastq-dump' instead of the 'fasterq-dump'
  	 --verbose		 make output of script more verbose
+ 	 --removereads		 remove reads once they have been aligned
 ```
 
 ## See also

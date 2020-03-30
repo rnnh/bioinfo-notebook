@@ -18,7 +18,8 @@ Optional arguments: \n
 \t      -h | --help\t\t         show this help text and exit \n
 \t      -p | --processors\t	number (n) of processors to use (default: 1) \n
 \t      --fastq-dump\t\t        use 'fastq-dump' instead of the 'fasterq-dump'\n
-\t      --verbose\t\t           make output of script more verbose
+\t      --verbose\t\t           make output of script more verbose\n
+\t	--removereads\t\t	remove reads once they have been aligned
 "
 
 # Setting FASTQDUMP to 0
@@ -30,6 +31,12 @@ FASTQDUMP=0
 # This will be changed to "1" if --verbose is given as an argument,
 # resulting in more verbose script output
 VERBOSE=0
+
+# Setting REMOVEREADS to 0
+# This will be changed to "1" if --removereads is given as an argument,
+# resulting in *.fastq and *.fastq.gz reads being removed once they have
+# been aligned to the reference genome using bowtie2
+REMOVEREADS=0
 
 # Setting default number of PROCESSORS to use
 PROCESSORS=1
@@ -67,10 +74,14 @@ while (( "$#" )); do
 			FASTQDUMP=1
 			shift
 			;;
-        --verbose)
-            VERBOSE=1
-            shift
-            ;;
+		--verbose)
+			VERBOSE=1
+			shift
+			;;
+		--removereads)
+			REMOVEREADS=1
+			shift
+			;;
 		--) # end argument parsing
 			shift
 			break
@@ -194,6 +205,12 @@ do
 		bowtie2 -p $PROCESSORS --no-unal -x bowtie2_$FASTA \
 		-1 $SRR\_1.fastq -2 $SRR\_2.fastq \
 		-S $SRR\_$FASTA.sam
+	fi
+
+	if [ $REMOVEREADS -eq "1"]
+	then
+		echo Removing .fastq reads...
+		rm *.fastq *.fastq.gz
 	fi
 
 	if [ $VERBOSE -eq "1" ]
