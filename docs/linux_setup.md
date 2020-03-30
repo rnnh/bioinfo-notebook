@@ -47,5 +47,6 @@ Optional arguments:
 ## See also
 
 - [Conda](conda.md)
+- [Cloning and activating a conda environment](conda.md#cloning-and-activating-a-conda-environment)
 - [Using Ubuntu through a Virtual Machine](ubuntu_virtualbox.md)
 - [Windows Subsystem for Linux](wsl.md)
