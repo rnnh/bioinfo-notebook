@@ -311,7 +311,12 @@ do
 	if [ $REMOVETEMP -eq "1" ]
 	then
 		echo Removing temporary files...
-		rm *.fastq *.fastq.gz *.sam *.bam *.tsv.summary
+		if [ $FASTQDUMP -eq "1" ]
+		then
+			rm *.fastq.gz *.sam *.bam *.tsv.summary
+		else
+			rm *.fastq *.sam *.bam *.tsv.summary
+		fi
 	fi
 
 done
