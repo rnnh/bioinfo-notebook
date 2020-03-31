@@ -14,3 +14,10 @@
 - Add command line exercise
 - Add page on GWIPS-viz
 - Rewrite README.md, make project/website easier to navigate
+- Add page on `OrthoFinder`
+- Add page on `Augustus`
+- Add page on `HMMER`
+- Add page on `BLAST`
+- Add page on `edgeR`
+- Add page on `R` in general
+- Add page on `Nextflow`
