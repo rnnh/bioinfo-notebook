@@ -12,8 +12,11 @@ Video demonstrations created using [Asciinema](https://asciinema.org/~rnnh) are 
 If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
 
 - [Project contents](#project-contents)
-	- [Part I: General guides](#part-I-general-guides)
+	- [Part I: General guides](#part-i-general-guides)
+	- [Part II: Program guides](#part-ii-program-guides)
+	- [Part III: Scripts](#part-iii-scripts)
 - [Installation instructions](#installation-instructions)
+	- [Installation video demonstration](#installation-video-demonstration)
 
 ## Project contents
 
@@ -63,6 +66,6 @@ $ git clone https://github.com/rnnh/bioinfo-notebook.git
 $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 ```
 
-### Video demonstration
+### Installation video demonstration
 
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
