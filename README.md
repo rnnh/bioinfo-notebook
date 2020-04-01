@@ -11,10 +11,11 @@ For reproducibility, [conda](docs/conda.md) environments are used throughout thi
 Video demonstrations created using [Asciinema](https://asciinema.org/~rnnh) are also provided.
 If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
 
-- [Contents](#contents)
+- [Project contents](#project-contents)
+	- [Part I: General guides](#part-I-general-guides)
 - [Installation instructions](#installation-instructions)
 
-## Contents
+## Project contents
 
 ### Part I: General guides
 
