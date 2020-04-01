@@ -72,7 +72,7 @@ $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 
 After following these instructions, there will be a copy of the [bioinfo-notebook GitHub repo](https://www.github.com/rnnh/bioinfo-notebook/) on your Ubuntu system in the `~/bioinfo-notebook/` directory.
 This means there will be a copy of all the documents and scripts in this project on your computer.
-The `bioinfo-notebook` virtual environment will also be installed on your Ubuntu system using [conda](docs/conda.md).
+The `bioinfo-notebook` virtual environment--- which includes all of the programs covered in this project--- will also be installed on your Ubuntu system using [conda](docs/conda.md).
 
 ### Video demonstration of installation
 
