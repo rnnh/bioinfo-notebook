@@ -17,6 +17,7 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 
 - [Installation instructions](#installation-instructions)
 	- [Video demonstration of installation](#Video-demonstration-of-installation)
+- [Repository structure](#repository-structure)
 
 ### Part I: General guides
 
@@ -71,3 +72,40 @@ $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 ### Video demonstration of installation
 
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
+
+## Repository structure
+
+```
+bioinfo-notebook
+├── assets
+│   └── bioinfo-notebook_logo.svg
+├── data
+│   ├── example_genome_annotation.gtf
+│   └── example_nucleotide_sequence.fasta
+├── docs
+│   ├── bowtie2.md
+│   ├── combining_featCount_tables.md
+│   ├── conda.md
+│   ├── fastq-dump.md
+│   ├── fastq-dump_to_featureCounts.md
+│   ├── featureCounts.md
+│   ├── file_formats.md
+│   ├── htseq-count.md
+│   ├── linux_setup.md
+│   ├── samtools.md
+│   ├── to_do.md
+│   ├── ubuntu_virtualbox.md
+│   └── wsl.md
+├── envs            # conda environment files
+│   ├── bioinfo-notebook.txt
+│   └── bioinfo-notebook.yml
+├── scripts
+│   ├── combining_featCount_tables.py
+│   ├── fastq-dump_to_featureCounts.sh
+│   └── linux_setup.sh
+├── _config.yml     # Configures github.io project website
+├── .gitignore
+├── LICENSE
+├── README.md
+└── .travis.yml     # Configures Travis CI testing
+```
