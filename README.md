@@ -11,6 +11,32 @@ For reproducibility, [conda](docs/conda.md) environments are used throughout thi
 Video demonstrations created using [Asciinema](https://asciinema.org/~rnnh) are also provided.
 If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
 
+- [Contents](#contents)
+- [Installation instructions](#installation)
+
+## Contents
+
+### Part I: General guides
+
+- [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
+- [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
+- [File formats used in bioinformatics](docs/file_formats.md)
+
+### Part II: Program guides
+
+- [bowtie2](docs/bowtie2.md)
+- [conda](docs/conda.md)
+- [fastq-dump](docs/fastq-dump.md)
+- [featureCounts](docs/featureCounts.md)
+- [htseq-count](docs/htseq-count.md)
+- [samtools](docs/samtools.md)
+
+### Part III: Scripts
+
+- [linux_setup.sh](docs/linux_setup.md)
+- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md)
+- [combining_featCount_tables.py](docs/combining_featCount_tables.md)
+
 ## Installation
 
 1. This project is written to be used through the Ubuntu operating system.
@@ -39,26 +65,3 @@ $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 ### Video demonstration
 
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
-
-## Contents
-
-### Part I: General guides
-
-- [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
-- [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
-- [File formats used in bioinformatics](docs/file_formats.md)
-
-### Part II: Program guides
-
-- [bowtie2](docs/bowtie2.md)
-- [conda](docs/conda.md)
-- [fastq-dump](docs/fastq-dump.md)
-- [featureCounts](docs/featureCounts.md)
-- [htseq-count](docs/htseq-count.md)
-- [samtools](docs/samtools.md)
-
-### Part III: Scripts
-
-- [linux_setup.sh](docs/linux_setup.md)
-- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md)
-- [combining_featCount_tables.py](docs/combining_featCount_tables.md)
