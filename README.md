@@ -31,34 +31,27 @@ $ sudo apt-get update # Updates lists of software that can be installed
 $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 ```
 
-## Quick Start Guides
-
-- [File formats](docs/file_formats.md) *brief introduction to bioinformatics file formats*
-
-### Using Ubuntu through a Windows or Mac computer
-
-- [Using Ubuntu through a Virtual Machine](docs/ubuntu_virtualbox.md)
-- [Windows Subsystem for Linux](docs/wsl.md)
-
-### Command line programs
-
-- [bowtie2](docs/bowtie2.md) *aligns reads to sequences*
-- [conda](docs/conda.md) *facilitates downloading and sharing sets of programs*
-- [fastq-dump](docs/fastq-dump.md) *downloads reads from NCBI's SRA*
-- [featureCounts](docs/featureCounts.md) *assigns alignments to genome annotation features*
-- [htseq-count](docs/htseq-count.md) *aligns reads to genomic features*
-- [SAMtools](docs/samtools.md) *manipulates alignment files and simluates sequence reads*
-
-## Scripts
-
-- [linux_setup.sh](docs/linux_setup.md). This script downloads and installs Miniconda3, and installs the bioinfo-notebook virtual environment using conda. Video demonstration:
-
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
 
-- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md). This script downloads FASTQ reads, aligns them to a reference genome, and counts how many reads align to each gene in that reference genome. Video demonstration:
+## Contents
 
-[![asciicast](https://asciinema.org/a/308745.svg)](https://asciinema.org/a/308745?autoplay=1)
+### Part I: General guides
 
-- [combining_featCount_tables.py](docs/combining_featCount_tables.md) This is a Python script that creates a single CSV feature count table from the featureCounts output tables in the target directory. Video demonstration:
+- [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
+- [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
+- [File formats used in bioinformatics](docs/file_formats.md)
 
-[![asciicast](https://asciinema.org/a/311771.svg)](https://asciinema.org/a/311771?autoplay=1)
+### Part II: Program guides
+
+- [bowtie2](docs/bowtie2.md)
+- [conda](docs/conda.md)
+- [fastq-dump](docs/fastq-dump.md)
+- [featureCounts](docs/featureCounts.md)
+- [htseq-count](docs/htseq-count.md)
+- [samtools](docs/samtools.md)
+
+### Part III: Scripts
+
+- [linux_setup.sh](docs/linux_setup.md) Downloads and installs Miniconda3, and installs the bioinfo-notebook virtual environment using conda.
+- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) Downloads FASTQ reads, aligns them to a reference genome, and counts how many reads align to each gene in that reference genome.
+- [combining_featCount_tables.py](docs/combining_featCount_tables.md) Creates a single CSV feature count table from the featureCounts output tables in the target directory.
