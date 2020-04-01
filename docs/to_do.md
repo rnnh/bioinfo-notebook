@@ -13,7 +13,7 @@
 - ~~Add page on using Linux through Windows: Windows Subsystem for Linux, and VirtualBox~~
 - Add command line exercise
 - Add page on GWIPS-viz
-- Rewrite README.md, make project/website easier to navigate
+- ~~Rewrite README.md, make project/website easier to navigate~~
 - Add page on `OrthoFinder`
 - Add page on `Augustus`
 - Add page on `HMMER`
