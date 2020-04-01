@@ -1,4 +1,6 @@
-# Bioinformatics Notebook
+# [Bioinformatics Notebook](https://rnnh.github.io/bioinfo-notebook/)
+
+by [Ronan Harrington](https://github.com/rnnh)
 
 [![Build Status](https://travis-ci.com/rnnh/bioinfo-notebook.svg?branch=master)](https://travis-ci.com/rnnh/bioinfo-notebook)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -6,10 +8,11 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/rnnh/bioinfo-notebook)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Frnnh.github.io%2Fbioinfo-notebook)
 
-This project aims to give brief introductions for various bioinformatics tools with quick start guides, and provide scripts that tie these tools together.
-For reproducibility, [conda](docs/conda.md) environments are used throughout this project.
-Video demonstrations created using [Asciinema](https://asciinema.org/~rnnh) are also provided.
+This project provides introductions to various bioinformatics tools with short guides, video demonstrations, and scripts that tie these tools together.
+The documents in this project can be read locally in a plain-text editor, or viewed online at <https://rnnh.github.io/bioinfo-notebook/>.
 If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
+
+## Table of contents
 
 - [Project contents](#project-contents)
 	- [Part I: General guides](#part-i-general-guides)
