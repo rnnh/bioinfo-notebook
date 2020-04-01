@@ -18,18 +18,25 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 	- [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
 	- [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
 
-2. Once you have an Ubuntu system set up, run the following command in your home directory (`~`) to download this project:
+2. Once you have an Ubuntu system set up, run the following command to update the lists of available software:
+
+```bash
+$ sudo apt-get update # Updates lists of software that can be installed
+```
+
+2. Run the following command in your home directory (`~`) to download this project:
 
 ```bash
 $ git clone https://github.com/rnnh/bioinfo-notebook.git
 ```
 
-3. After downloading this project, run the [Linux setup script](docs/linux_setup.md) with these commands:
+3. After downloading this project, run the [Linux setup script](docs/linux_setup.md) with this command:
 
 ```bash
-$ sudo apt-get update # Updates lists of software that can be installed
 $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 ```
+
+### Video demonstration
 
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
 
@@ -52,6 +59,6 @@ $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 
 ### Part III: Scripts
 
-- [linux_setup.sh](docs/linux_setup.md) Downloads and installs Miniconda3, and installs the bioinfo-notebook virtual environment using conda.
-- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) Downloads FASTQ reads, aligns them to a reference genome, and counts how many reads align to each gene in that reference genome.
-- [combining_featCount_tables.py](docs/combining_featCount_tables.md) Creates a single CSV feature count table from the featureCounts output tables in the target directory.
+- [linux_setup.sh](docs/linux_setup.md)
+- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md)
+- [combining_featCount_tables.py](docs/combining_featCount_tables.md)
