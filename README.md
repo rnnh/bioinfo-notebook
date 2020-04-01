@@ -12,7 +12,7 @@ Video demonstrations created using [Asciinema](https://asciinema.org/~rnnh) are 
 If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
 
 - [Contents](#contents)
-- [Installation instructions](#installation)
+- [Installation instructions](#installation-instructions)
 
 ## Contents
 
@@ -37,7 +37,7 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 - [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md)
 - [combining_featCount_tables.py](docs/combining_featCount_tables.md)
 
-## Installation
+## Installation instructions
 
 1. This project is written to be used through the Ubuntu operating system.
  If you are using a Windows/Mac operating system, begin with these pages on setting up Ubuntu:
