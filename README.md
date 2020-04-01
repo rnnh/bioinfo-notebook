@@ -19,7 +19,7 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 	- [Part II: Program guides](#part-ii-program-guides)
 	- [Part III: Scripts](#part-iii-scripts)
 - [Installation instructions](#installation-instructions)
-	- [Installation video demonstration](#installation-video-demonstration)
+	- [Video demonstration of installation](#Video-demonstration-of-installation)
 
 ## Project contents
 
@@ -69,6 +69,10 @@ $ git clone https://github.com/rnnh/bioinfo-notebook.git
 $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 ```
 
-### Installation video demonstration
+After following these instructions, there will be a copy of the [bioinfo-notebook GitHub repo](https://www.github.com/rnnh/bioinfo-notebook/) on your Ubuntu system in the `~/bioinfo-notebook/` directory.
+This means there will be a copy of all the documents and scripts in this project on your computer.
+The `bioinfo-notebook` virtual environment will also be installed on your Ubuntu system using [conda](docs/conda.md).
+
+### Video demonstration of installation
 
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
