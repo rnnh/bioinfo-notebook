@@ -13,16 +13,10 @@ The documents in this project can be read locally in a plain-text editor, or vie
 
 If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
 
-## Table of contents
+## Contents
 
-- [Project contents](#project-contents)
-	- [Part I: General guides](#part-i-general-guides)
-	- [Part II: Program guides](#part-ii-program-guides)
-	- [Part III: Scripts](#part-iii-scripts)
 - [Installation instructions](#installation-instructions)
 	- [Video demonstration of installation](#Video-demonstration-of-installation)
-
-## Project contents
 
 ### Part I: General guides
 
