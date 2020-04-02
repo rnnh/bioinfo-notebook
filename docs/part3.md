@@ -6,6 +6,6 @@ has_children: true
 has_toc: True
 ---
 
-# Part III: Scripts
+# 3. Scripts
 
 These are scripts that use the programs discussed in this project.

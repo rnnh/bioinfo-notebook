@@ -6,6 +6,6 @@ has_children: true
 has_toc: True
 ---
 
-# Part II: Program guides
+# 2. Program guides
 
 These are guides to individual programs.
