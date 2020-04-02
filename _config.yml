@@ -1,5 +1,8 @@
-title: bioinfo-notebook
+remote_theme: pmarsceill/just-the-docs
 logo: assets/bioinfo-notebook_logo.svg
-description: Quick start guides for bioinformatics programs, with video demonstrations and scripts.
-show_downloads: true
-theme: jekyll-theme-minimal
+search_enabled: true
+search_tokenizer_separator: /[\s/]+/
+aux_links:
+  "Bioinformatics Notebook on GitHub":
+    - "//github.com/rnnh/bioinfo-notebook"
+heading_anchors: true
