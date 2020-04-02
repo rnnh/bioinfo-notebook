@@ -1,4 +1,4 @@
-# File formats
+# File formats used in bioinformatics
 
 A brief introduction to various file formats used in bioinformatics.
 
