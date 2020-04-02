@@ -1,3 +1,10 @@
+---
+layout: default
+title: samtools
+parent: Program guides
+nav_order: 6
+---
+
 # SAMtools
 
 SAMtools is a set of utilities that can manipulate alignment formats.

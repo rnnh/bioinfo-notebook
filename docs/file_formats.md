@@ -1,3 +1,10 @@
+---
+layout: default
+title: File formats used in bioinformatics
+parent: General guides
+nav_order: 3
+---
+
 # File formats used in bioinformatics
 
 A brief introduction to various file formats used in bioinformatics.

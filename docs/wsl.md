@@ -1,3 +1,10 @@
+---
+layout: default
+title: Windows Subsystem for Linux
+parent: General guides
+nav_order: 1
+---
+
 # Windows Subsystem for Linux
 
 Windows Subsystem for Linux (WSL) is a feature of Windows 10.

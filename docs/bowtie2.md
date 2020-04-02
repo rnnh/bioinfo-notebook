@@ -1,3 +1,10 @@
+---
+layout: default
+title: bowtie2
+parent: Program guides
+nav_order: 1
+---
+
 # bowtie2
 
 From the manual: [*"Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences"*](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml).

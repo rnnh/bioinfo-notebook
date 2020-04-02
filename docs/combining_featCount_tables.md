@@ -1,3 +1,11 @@
+---
+layout: default
+title: combining featCount tables.py
+parent: Scripts
+nav_order: 3
+---
+
+
 # combining featCount tables.py
 
 This is a Python script that creates a single CSV feature count table from the featureCounts output tables in the target directory.

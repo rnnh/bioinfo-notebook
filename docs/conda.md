@@ -1,3 +1,10 @@
+---
+layout: default
+title: conda
+parent: program guides
+nav_order: 2
+---
+
 # conda
 
 From the website, `conda` provides ["Package, dependency and environment management for any language—Python, R, Ruby, Lua, Scala, Java, JavaScript, C/ C++, FORTRAN, and more"](https://docs.conda.io/en/latest/).

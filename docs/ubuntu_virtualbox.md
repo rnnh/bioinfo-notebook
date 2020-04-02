@@ -1,3 +1,11 @@
+---
+layout: default
+title: Using Ubuntu through a Virtual Machine
+parent: General guides
+nav_order: 2
+---
+
+
 # Using Ubuntu through a Virtual Machine
 
 *Ubuntu* is a Linux operating system that is widely used for bioinformatics.

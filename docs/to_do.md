@@ -1,3 +1,9 @@
+---
+layout: default
+title: To do
+nav_exclude: true
+---
+
 # To do
 
 - ~~Redo video demonstration for fastq-dump to featureCounts script.~~

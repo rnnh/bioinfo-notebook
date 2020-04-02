@@ -1,3 +1,10 @@
+---
+layout: default
+title: Linux setup script
+parent: Scripts
+nav_order: 1
+---
+
 # Linux setup script
 
 [linux_setup.sh](../scripts/linux_setup.sh) is a `bash` shell script that...

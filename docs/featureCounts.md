@@ -1,3 +1,11 @@
+---
+layout: default
+title: featureCounts
+parent: Program guides
+nav_order: 4
+---
+
+
 # featureCounts
 
 `featureCounts` is a program that counts how many reads map to genomic features, such as genes, exon, promoter and genomic bins.
