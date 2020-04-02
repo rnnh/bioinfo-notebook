@@ -1,9 +1,3 @@
----
-layout: default
-title: Home
-nav_exclude: true
----
-
 # [Bioinformatics Notebook](https://github.com/rnnh/bioinfo-notebook.git)
 
 by [Ronan Harrington](https://github.com/rnnh)
