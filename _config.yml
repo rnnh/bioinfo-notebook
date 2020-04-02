@@ -1,5 +1,5 @@
 remote_theme: pmarsceill/just-the-docs
-logo: assets/bioinfo-notebook_logo.svg
+# logo: assets/bioinfo-notebook_logo.svg
 search_enabled: true
 search_tokenizer_separator: /[\s/]+/
 aux_links:
