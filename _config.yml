@@ -1,4 +1,6 @@
 remote_theme: pmarsceill/just-the-docs
+baseurl: "/bioinfo-notebook" # the subpath of your site, e.g. /blog
+url: "https://rnnh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 title: Bioinformatics Notebook
 logo: assets/bioinfo-notebook_logo.svg
 search_enabled: true
