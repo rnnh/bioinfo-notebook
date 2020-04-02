@@ -19,13 +19,13 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 	- [Video demonstration of installation](#Video-demonstration-of-installation)
 - [Repository structure](#repository-structure)
 
-### Part I: General guides
+### [Part I: General guides](docs/part1.md)
 
 - [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
 - [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
 - [File formats used in bioinformatics](docs/file_formats.md)
 
-### Part II: Program guides
+### [Part II: Program guides](docs/part2.md)
 
 - [bowtie2](docs/bowtie2.md)
 - [conda](docs/conda.md)
@@ -34,7 +34,7 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 - [htseq-count](docs/htseq-count.md)
 - [samtools](docs/samtools.md)
 
-### Part III: Scripts
+### [Part III: Scripts](docs/part3.md)
 
 - [linux_setup.sh](docs/linux_setup.md)
 - [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md)
