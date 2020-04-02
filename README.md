@@ -1,4 +1,4 @@
-# [Bioinformatics Notebook](https://rnnh.github.io/bioinfo-notebook/)
+# [Bioinformatics Notebook](https://github.com/rnnh/bioinfo-notebook.git)
 
 by [Ronan Harrington](https://github.com/rnnh)
 
