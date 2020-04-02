@@ -46,24 +46,24 @@ After following these instructions, there will be a copy of the [bioinfo-noteboo
 This means there will be a copy of all the documents and scripts in this project on your computer.
 The `bioinfo-notebook` virtual environment, which includes all of the command line programs covered in this project, will also be installed on your Ubuntu system using [conda](docs/conda.md).
 
-1. This project is written to be used through the Ubuntu operating system.
+**1.** This project is written to be used through the Ubuntu operating system.
  If you are using a Windows/Mac operating system, begin with these pages on setting up Ubuntu:
 	- [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
 	- [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
 
-2. Once you have an Ubuntu system set up, run the following command to update the lists of available software:
+**2.** Once you have an Ubuntu system set up, run the following command to update the lists of available software:
 
 ```bash
 $ sudo apt-get update # Updates lists of software that can be installed
 ```
 
-3. Run the following command in your home directory (`~`) to download this project:
+**3.** Run the following command in your home directory (`~`) to download this project:
 
 ```bash
 $ git clone https://github.com/rnnh/bioinfo-notebook.git
 ```
 
-4. After downloading this project, run the [Linux setup script](docs/linux_setup.md) with this command:
+**4.** After downloading this project, run the [Linux setup script](docs/linux_setup.md) with this command:
 
 ```bash
 $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
