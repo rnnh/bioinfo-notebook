@@ -1,7 +1,7 @@
 ---
 layout: default
 title: samtools
-parent: Program guides
+parent: 2. Program guides
 nav_order: 6
 ---
 

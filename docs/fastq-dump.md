@@ -1,7 +1,7 @@
 ---
 layout: default
 title: fastq-dump
-parent: Program guides
+parent: 2. Program guides
 nav_order: 3
 ---
 

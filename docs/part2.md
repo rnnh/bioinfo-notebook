@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Program guides
+title: 2. Program guides
 nav_order: 2
 has_children: true
 has_toc: True

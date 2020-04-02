@@ -1,7 +1,7 @@
 ---
 layout: default
 title: featureCounts
-parent: Program guides
+parent: 2. Program guides
 nav_order: 4
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Windows Subsystem for Linux
-parent: General guides
+parent: 1. General guides
 nav_order: 1
 ---
 

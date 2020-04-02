@@ -1,7 +1,7 @@
 ---
 layout: default
 title: combining featCount tables.py
-parent: Scripts
+parent: 3. Scripts
 nav_order: 3
 ---
 

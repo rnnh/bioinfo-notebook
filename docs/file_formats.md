@@ -1,7 +1,7 @@
 ---
 layout: default
 title: File formats used in bioinformatics
-parent: General guides
+parent: 1. General guides
 nav_order: 3
 ---
 

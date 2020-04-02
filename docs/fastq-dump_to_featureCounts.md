@@ -1,7 +1,7 @@
 ---
 layout: default
 title: fastq-dump to featureCounts
-parent: Scripts
+parent: 3. Scripts
 nav_order: 2
 ---
 
