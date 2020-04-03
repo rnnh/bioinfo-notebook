@@ -25,8 +25,8 @@ In this command...
 2. **`--skip-technical`**: Dump only biological reads, skip the technical reads.
 3. **`--readids`** or **`-I`**: Append read ID after spot ID as 'accession.spot.readid'. With this flag, one sequence gets appended the ID `.1` and the other `.2`. Without this option, pair-ended reads will have identical IDs.
 4. **`--read-filter pass`**: Only returns reads that pass filtering (without `N`s).
-5. **--dumpbase`** or **`-B`**: Formats sequence using base space (default for other than SOLiD). Included to avoid colourspace (in which pairs of bases are represented by numbers).
-6. **`--split-3`** separates the read into left and right ends. If there is a left end without a matching right end, or a right end without a matching left end, they will be put in a single file.
+5. **`--dumpbase`** or **`-B`**: Formats sequence using base space (default for other than SOLiD). Included to avoid colourspace (in which pairs of bases are represented by numbers).
+6. **`--split-3`** separates the reads into left and right ends. If there is a left end without a matching right end, or a right end without a matching left end, they will be put in a single file.
 7. **`--clip`** or **`-W`**: Some of the sequences in the SRA contain tags that need to be removed. This will remove those sequences.
 8. **`--outdir`** or **`-O`**: *(Optional)* Output directory, default is current working directory.
 9. **`SRR_ID`**: This is is the ID of the run from SRA to be downloaded. This ID begins with "SRR" and is followed by around seven digits (e.g. `SRA1234567`).
