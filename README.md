@@ -59,6 +59,7 @@ The `bioinfo-notebook` virtual environment, which includes all of the command li
 
 **1.** This project is written to be used through the Ubuntu operating system.
  If you are using a Windows/Mac operating system, begin with these pages on setting up Ubuntu:
+ 
 	- [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
 	- [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
 
