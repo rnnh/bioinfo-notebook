@@ -1,3 +1,12 @@
+---
+layout: default
+title: Home
+nav_order: 1
+description: "Quick start guides for bioinformatics programs, with video demonstrations and scripts."
+permalink: /
+---
+
+
 # [Bioinformatics Notebook](https://github.com/rnnh/bioinfo-notebook.git)
 
 by [Ronan Harrington](https://github.com/rnnh)
