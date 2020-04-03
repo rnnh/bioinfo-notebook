@@ -2,7 +2,6 @@
 layout: default
 title: featureCounts
 parent: 2. Program guides
-nav_order: 4
 ---
 
 

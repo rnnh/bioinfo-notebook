@@ -2,7 +2,6 @@
 layout: default
 title: conda
 parent: 2. Program guides
-nav_order: 2
 ---
 
 # conda

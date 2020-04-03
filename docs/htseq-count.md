@@ -2,7 +2,6 @@
 layout: default
 title: htseq-count
 parent: 2. Program guides
-nav_order: 5
 ---
 
 

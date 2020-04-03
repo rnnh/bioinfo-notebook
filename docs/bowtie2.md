@@ -2,7 +2,6 @@
 layout: default
 title: bowtie2
 parent: 2. Program guides
-nav_order: 1
 ---
 
 # bowtie2
