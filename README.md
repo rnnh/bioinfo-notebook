@@ -36,8 +36,10 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 
 ### [2. Program guides](docs/part2.md)
 
+- [bowtie](docs/bowtie.md)
 - [bowtie2](docs/bowtie2.md)
 - [conda](docs/conda.md)
+- [fasterq-dump](docs/fasterq-dump.md)
 - [fastq-dump](docs/fastq-dump.md)
 - [featureCounts](docs/featureCounts.md)
 - [htseq-count](docs/htseq-count.md)

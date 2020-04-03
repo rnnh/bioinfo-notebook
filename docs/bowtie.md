@@ -1,3 +1,9 @@
+---
+layout: default
+title: bowtie
+parent: 2. Program guides
+---
+
 # bowtie
 
 `bowtie` can be used to:

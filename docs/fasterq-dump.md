@@ -1,3 +1,9 @@
+---
+layout: default
+title: fasterq-dump
+parent: 2. Program guides
+---
+
 # fasterq-dump
 
 `fasterq-dump` is a tool for downloading sequencing reads from [NCBI's Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra).
