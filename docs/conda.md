@@ -6,8 +6,7 @@ parent: 2. Program guides
 
 # conda
 
-From the website, `conda` provides ["Package, dependency and environment management for any language—
-Python, R, Ruby, Lua, Scala, Java, JavaScript, C/ C++, FORTRAN, and more"](https://docs.conda.io/en/latest/).
+From the website, `conda` provides ["Package, dependency and environment management for any language"](https://docs.conda.io/en/latest/).
 
 Conda is a package manager allows specific versions of programs to be installed, alongside their dependencies.
 Different sets of programs can be installed to different [virtual environments](https://www.anaconda.com/moving-conda-environments/).
