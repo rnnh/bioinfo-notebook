@@ -94,15 +94,20 @@ bioinfo-notebook
 │   ├── example_genome_annotation.gtf
 │   └── example_nucleotide_sequence.fasta
 ├── docs
+│   ├── bowtie.md
 │   ├── bowtie2.md
 │   ├── combining_featCount_tables.md
 │   ├── conda.md
+│   ├── fasterq-dump.md
 │   ├── fastq-dump.md
 │   ├── fastq-dump_to_featureCounts.md
 │   ├── featureCounts.md
 │   ├── file_formats.md
 │   ├── htseq-count.md
 │   ├── linux_setup.md
+│   ├── part1.md    # Navigation page for website
+│   ├── part2.md    # Navigation page for website
+│   ├── part3.md    # Navigation page for website
 │   ├── samtools.md
 │   ├── to_do.md
 │   ├── ubuntu_virtualbox.md

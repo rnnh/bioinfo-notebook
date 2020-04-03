@@ -9,4 +9,4 @@ has_toc: True
 
 # 3. Scripts
 
-These are scripts that use the programs discussed in this project. {: .fs-6 .fw-300 }
+These are scripts that use the programs discussed in this project.

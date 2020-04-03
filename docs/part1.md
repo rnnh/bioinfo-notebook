@@ -9,4 +9,4 @@ has_toc: True
 
 # 1. General guides
 
-These are general guides for installing Ubuntu, using the command line, and the types of files used in bioinformatics. {: .fs-6 .fw-300 }
+These are general guides for installing Ubuntu, using the command line, and the types of files used in bioinformatics.
