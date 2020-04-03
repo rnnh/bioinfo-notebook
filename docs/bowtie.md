@@ -48,7 +48,7 @@ In this command...
 In this video, `bowtie-build` is used to index `S_cere_GCF_000146045.2_R64_genomic.fna`, which is a copy of the [*Saccharomyces cerevisiae* S288C genome from RefSeq](https://www.ncbi.nlm.nih.gov/assembly/GCF_000146045.2).
 The `bowtie` command is then used to align [*Saccharomyces cerevisiae* RNAseq reads](https://www.ncbi.nlm.nih.gov/sra/SRR11462797) to this bowtie index.
 
-[![asciicast](https://asciinema.org/a/316272.svg)](https://asciinema.org/a/316272)
+[![asciicast](https://asciinema.org/a/316272.svg)](https://asciinema.org/a/316272?autoplay=1)
 
 ## Further reading
 

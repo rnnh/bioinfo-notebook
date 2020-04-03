@@ -60,7 +60,7 @@ In this command...
 
 In this video, `bowtie2-build` is used to index `example_nucleotide_sequence.fasta`, and the command `bowtie2` is used to align reads to this bowtie2 index.
 
-[![asciicast](https://asciinema.org/a/7t5Me8tFPFhDwIKGxH9M76ylN.svg)](https://asciinema.org/a/7t5Me8tFPFhDwIKGxH9M76ylN?autoplay=1)
+[![asciicast](https://asciinema.org/a/306546.svg)](https://asciinema.org/a/306546?autoplay=1)
 
 ## Further reading
 
