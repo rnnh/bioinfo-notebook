@@ -30,3 +30,4 @@ nav_exclude: true
 - Add page on `FastQC`
 - Add page on `cutadapt`
 - Add page on `trimmomatic`
+- Entry on BED/bigWig
