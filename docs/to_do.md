@@ -27,3 +27,6 @@ nav_exclude: true
 - Add page on `edgeR`
 - Add page on `R` in general
 - Add page on `Nextflow`
+- Add page on `FastQC`
+- Add page on `cutadapt`
+- Add page on `trimmomatic`
