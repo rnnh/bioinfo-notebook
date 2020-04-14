@@ -8,7 +8,7 @@ nav_exclude: true
 
 The `pwd` commands in these solutions are added to clarify the working directories used.
 
-1. Change the working directory from `bioinfo-notebook/` to `bioinfo-notebook/data/`.
+**1.** Change the working directory from `bioinfo-notebook/` to `bioinfo-notebook/data/`.
 
 ```bash
 ronan@dell:~/bioinfo-notebook$ pwd
@@ -18,7 +18,7 @@ ronan@dell:~/bioinfo-notebook/data$ pwd
 /home/ronan/bioinfo-notebook/data
 ```
 
-2. Change the working directory from `bioinfo-notebook/data` to `bioinfo-notebook/docs`, using `../` in your command.
+**2.** Change the working directory from `bioinfo-notebook/data` to `bioinfo-notebook/docs`, using `../` in your command.
 
 ```bash
 ronan@dell:~/bioinfo-notebook/data$ pwd
@@ -28,7 +28,7 @@ ronan@dell:~/bioinfo-notebook/docs$ pwd
 /home/ronan/bioinfo-notebook/docs
 ```
 
-3. List the files in the `bioinfo-notebook/docs/` directory.
+**3.** List the files in the `bioinfo-notebook/docs/` directory.
 
 ```bash
 ronan@dell:~/bioinfo-notebook/docs$ pwd
@@ -46,7 +46,7 @@ fastq-dump_to_featureCounts.md  ubuntu_virtualbox.md
 featureCounts.md                wsl.md
 ```
 
-4. Select a file in the `bioinfo-notebook/docs/` directory, and display the first 6 lines of it using the `head` command.
+**4.** Select a file in the `bioinfo-notebook/docs/` directory, and display the first 6 lines of it using the `head` command.
 
 ```bash
 ronan@dell:~/bioinfo-notebook/docs$ pwd
@@ -63,7 +63,7 @@ nav_exclude: true
 1. Change the working directory from `bioinfo-notebook/` to `bioinfo-notebook/data/`.
 ```
 
-5. Display the last 2 lines of all the files in the `bioinfo-notebook/docs/` directory, using the `tail` command.
+**5.** Display the last 2 lines of all the files in the `bioinfo-notebook/docs/` directory, using the `tail` command.
 
 ```bash
 ronan@dell:~/bioinfo-notebook/docs$ pwd
@@ -150,7 +150,7 @@ These are scripts that use the programs discussed in this project.
 - [conda](conda.md)
 ```
 
-6. From the `bioinfo-notebook/docs/` directory, list the files in the `bioinfo-notebook/envs/` directory.
+**6.** From the `bioinfo-notebook/docs/` directory, list the files in the `bioinfo-notebook/envs/` directory.
 
 ```bash
 ronan@dell:~/bioinfo-notebook/docs$ pwd
