@@ -101,6 +101,7 @@ bioinfo-notebook/
 │   ├── bowtie.md
 │   ├── bowtie2.md
 │   ├── cl_intro.md
+│   ├── cl_solutions.md
 │   ├── combining_featCount_tables.md
 │   ├── conda.md
 │   ├── fasterq-dump.md

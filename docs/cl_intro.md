@@ -358,6 +358,8 @@ These tasks only require one command each.
 5. Display the last 2 lines of all the files in the `bioinfo-notebook/docs/` directory, using the `tail` command.
 6. From the `bioinfo-notebook/docs/` directory, list the files in the `bioinfo-notebook/envs/` directory.
 
+[Solutions to this exercise](cl_solutions.md).
+
 ## See also
 
 - [Windows Subsystem for Linux](wsl.md)
