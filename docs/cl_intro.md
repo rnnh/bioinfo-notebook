@@ -16,8 +16,8 @@ If you are not using Ubuntu, please see the pages with instructions on installin
 ## Contents
 
 - [Opening the terminal](#opening-the-terminal)
-- [The working directory](#The-working-directory)
-- [Cloning the bioinfo-notebook project into your home directory](#Cloning-the-bioinfo-notebook-project-into-your-home-directory)
+- [The working directory](#the-working-directory)
+- [Cloning the bioinfo-notebook project into your home directory](#cloning-the-bioinfo-notebook-project-into-your-home-directory)
 - [Changing working directories](#changing-working-directories)
 - [Listing directory content with the `ls` command](#listing-directory-content-with-the-ls-command)
 - [Relative paths](#relative-paths)
@@ -25,7 +25,7 @@ If you are not using Ubuntu, please see the pages with instructions on installin
 - [The `tail` command](#the-tail-command)
 - [Using the `--help` argument](#using-the---help-argument)
 - [Running the Linux setup shell script](#running-the-linux-setup-shell-script)
-    - [Video demonstration](#Video-demonstration)
+    - [Video demonstration](#video-demonstration)
 - [See also](#see-also)
 
 ## Opening the terminal
