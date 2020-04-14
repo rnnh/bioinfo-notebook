@@ -347,7 +347,9 @@ The Linux setup script is then run from this cloned GitHub repo.
 Look at the [structure of the bioinfo-notebook repository](../README.md#repository-structure).
 This outlines how this repository (another term for a GitHub project folder) is structured: it outlines which files and directories are in this project.
 Most of the files in this project are within subdirectories of the `bioinfo-notebook/` directory.
-Once you have read this page, and [copied this project to your Ubuntu system](#cloning-the-bioinfo-notebook-project-into-your-home-directory), try to do the following:
+
+Once you have read this page, and [copied this project to your Ubuntu system](#cloning-the-bioinfo-notebook-project-into-your-home-directory), try the following small tasks.
+These tasks only require one command each.
 
 1. Change the working directory from `bioinfo-notebook/` to `bioinfo-notebook/data/`.
 2. Change the working directory from `bioinfo-notebook/data` to `bioinfo-notebook/docs`, using `../` in your command.
