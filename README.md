@@ -91,13 +91,13 @@ $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
 ## Repository structure
 
 ```
-bioinfo-notebook
-├── assets
+bioinfo-notebook/
+├── assets/
 │   └── bioinfo-notebook_logo.svg
-├── data
+├── data/
 │   ├── example_genome_annotation.gtf
 │   └── example_nucleotide_sequence.fasta
-├── docs
+├── docs/
 │   ├── bowtie.md
 │   ├── bowtie2.md
 │   ├── cl_intro.md
@@ -117,10 +117,10 @@ bioinfo-notebook
 │   ├── to_do.md
 │   ├── ubuntu_virtualbox.md
 │   └── wsl.md
-├── envs            # conda environment files
+├── envs/           # conda environment files
 │   ├── bioinfo-notebook.txt
 │   └── bioinfo-notebook.yml
-├── scripts
+├── scripts/
 │   ├── combining_featCount_tables.py
 │   ├── fastq-dump_to_featureCounts.sh
 │   └── linux_setup.sh
