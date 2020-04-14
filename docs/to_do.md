@@ -25,7 +25,7 @@ nav_exclude: true
 - Add page on `HMMER`
 - Add page on `BLAST`
 - Add page on `edgeR`
-- Add page on `R` in general
+- Add page on how to read `R` scripts
 - Add page on `Nextflow`
 - Add page on `FastQC`
 - Add page on `cutadapt`
