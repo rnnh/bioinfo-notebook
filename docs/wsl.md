@@ -2,7 +2,7 @@
 layout: default
 title: Windows Subsystem for Linux
 parent: 1. General guides
-nav_order: 1
+nav_order: 2
 ---
 
 # Windows Subsystem for Linux

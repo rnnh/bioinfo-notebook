@@ -1,6 +1,6 @@
 ---
 layout: default
-title: samtools
+title: SAMtools
 parent: 2. Program guides
 ---
 

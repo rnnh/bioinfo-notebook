@@ -2,15 +2,31 @@
 layout: default
 title: Introduction to the command line
 parent: 1. General guides
+nav_order: 1
 ---
 
 # Introduction to the command line
 
-This is a brief introduction to using the command line in Ubuntu.
+This is a brief introduction to the command line in Ubuntu.
 If you are not using Ubuntu, please see the pages with instructions on installing Ubuntu:
 
 - [Windows Subsystem for Linux (WSL, Windows only)](wsl.md)
 - [using Ubuntu through a Virtual Machine (Mac or Windows)](ubuntu_virtualbox.md)
+
+## Contents
+
+- [Opening the terminal](#opening-the-terminal)
+- [The working directory](#The-working-directory)
+- [Cloning the bioinfo-notebook project into your home directory](#Cloning-the-bioinfo-notebook-project-into-your-home-directory)
+- [Changing working directories](#changing-working-directories)
+- [Listing directory content with the `ls` command](#listing-directory-content-with-the-ls-command)
+- [Relative paths](#relative-paths)
+- [Using the `head` command](#using-the-head-command)
+- [The `tail` command](#the-tail-command)
+- [Using the `--help` argument](#using-the---help-argument)
+- [Running the Linux setup shell script](#running-the-linux-setup-shell-script)
+    - [Video demonstration](#Video-demonstration)
+- [See also](#see-also)
 
 ## Opening the terminal
 
@@ -103,6 +119,21 @@ Desktop/   Documents/ Downloads/
 In Ubuntu (and other Linux systems), directory names are case-sensitive.
 This means that `~/downloads/` is a different directory than `~/Downloads/`.
 
+The command `cd ../` can be used to move to move up one directory, `cd ../../` can be used to move up two directories, etc.
+In this example, moving up one directory from `/home/ronan/bioinfo-notebook/data/` changes the working directory to `/home/ronan/bioinfo-notebook/`.
+Moving up two directories from `/home/ronan/bioinfo-notebook/data/` changes the working directory to `/home/ronan/`.
+
+```bash
+ronan@dell:~/bioinfo-notebook/data$ pwd
+/home/ronan/bioinfo-notebook/data
+ronan@dell:~/bioinfo-notebook/data$ cd ../
+ronan@dell:~/bioinfo-notebook$ pwd
+/home/ronan/bioinfo-notebook
+ronan@dell:~/bioinfo-notebook$ cd data/
+ronan@dell:~/bioinfo-notebook/data$ cd ../../
+ronan@dell:~$ pwd
+/home/ronan
+```
 ## Listing directory content with the `ls` command
 
 The `ls` command can be used to list the files and directories within the current working directory.
@@ -150,7 +181,7 @@ TCTATACCCTGTGCCATTTACCCATAACGCCCATCATTATCCACATTTTGATATCTATATCTCATTCGGC
 ```
 
 The `head` command takes optional *arguments*.
-command line arguments are extra instructions given to a program when it runs.
+Command line arguments are extra instructions given to a program when it runs.
 One of the arguments that can be given to `head` is `-n`, which specifies how many lines we want to print per file.
 The command `head -n 5 data/example_nucleotide_sequence.fasta` prints the first 5 lines of the file `example_nucleotide_sequence.fasta`.
 
@@ -189,6 +220,8 @@ CACTCGTTACCCTGTCCCATTCAACCATACCACTCCGAACCACCATCCATCCCTCTACTTACTACCACTC
 ACCCACCGTTACCCTCCAATTACCCATATCCAACCCACTGCCACTTACCCTACCATTACCCTACCATCCA
 ```
 
+## The `tail` command
+
 The `tail` command is the equivalent of the command `head`, but prints the last part of files instead.
 
 ```bash
@@ -208,3 +241,112 @@ GGTGGTGAGGTAAGTGCCGTGGATTGTGATGATGGAGAGGGAGGGTAGTTGACATGGAGTTAGAATTGGG
 TCAGTGTTAGTGTTAGTGTTAGTATTAGGGTGTGGTGTGTGGGTGTGGTGTGGGTGTGGGTGTGGGTGTG
 GGTGTGGGTGTGGGTGTGGTGTGGTGTGTGGGTGTGGTGTGGGTGTGGTGTGTGTGGG
 ```
+
+## Using the `--help` argument
+
+For a lot of command line programs, using the command with the `--help` (or `-h`) argument will display a short help message on how that command is used.
+
+```bash
+ronan@dell:~$ head --help
+Usage: head [OPTION]... [FILE]...
+Print the first 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[-]NUM       print the first NUM bytes of each file;
+                             with the leading '-', print all but the last
+                             NUM bytes of each file
+  -n, --lines=[-]NUM       print the first NUM lines instead of the first 10;
+                             with the leading '-', print all but the last
+                             NUM lines of each file
+  -q, --quiet, --silent    never print headers giving file names
+  -v, --verbose            always print headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/head>
+or available locally via: info '(coreutils) head invocation'
+```
+
+For more in-depth help with a command, the `man` (manual) command is useful, if it is available.
+This will open a manual for the program within the terminal.
+The `Up` and `Down` arrow keys (or `j` and `k`) can be used to scroll through these manuals, and `q` is used to exit.
+
+```bash
+ronan@dell:~$ man head
+
+HEAD(1)                          User Commands                         HEAD(1)
+
+NAME
+       head - output the first part of files
+
+SYNOPSIS
+       head [OPTION]... [FILE]...
+
+DESCRIPTION
+...
+ Manual page head(1) line 1 (press h for help or q to quit)
+```
+
+## Running the Linux setup shell script
+
+A *shell script* can be used to run commands sequentially, without having to input them individually into the command line.
+One of the shell scripts (ending in `.sh`) included in this project is [scripts/linux_setup.sh](linux_setup.md).
+This script downloads and installs [conda](conda) and the `bioinfo-notebook` conda environment.
+This is a quick way to install command line programs discussed in this project, e.g. [bowtie2](bowtie2.md), [featureCounts](featureCounts.md) and [SAMtools](samtools.md).
+
+A `bash` shell script can be run using `bash` followed by a relative path to the script.
+The shell script `linux_setup.sh` also includes help text, which can be accessed with the `--help` or `-h` argument.
+
+```bash
+ronan@dell:~/bioinfo-notebook$ pwd
+/home/ronan/bioinfo-notebook
+ronan@dell:~/bioinfo-notebook$ bash scripts/linux_setup.sh --help
+linux_setup.sh 
+ 
+ This script downloads and installs Miniconda3, and uses conda to install 
+ the 'bioinfo-notebook' virtual environment. 
+ 
+ Before running this script... 
+ 
+ 	 1. Please run the following command: 
+ 	 	 $ sudo apt-get update 
+ 	 This will ensure that the software installed will be up-to-date. 
+ 
+ 	 2. Please ensure that the 'bioinfo-notebook/' directory is in your 
+ 	 home directory (~). The path to this directory should look like this: 
+ 	 	 /home/ronan/bioinfo-notebook 
+ 
+ The 'bash' command is used to run this script: 
+ 	 $ bash scripts/linux_setup.sh 
+ 
+ Optional arguments: 
+ 	 -h | --help	 show this help text and exit
+```
+
+### Video demonstration
+
+In this demonstration, the bioinfo-notebook GitHub project (also known as a repository or repo) is cloned into the home directory of the Linux system (Ubuntu).
+This means that all the files for this project will be downloaded from GitHub into the `~/bioinfo-notebook/` directory.
+A GitHub repo can be cloned using the command `$ git clone` followed by the URL of the target repo (which can be found on GitHub using the “Clone or download” button).
+The Linux setup script is then run from this cloned GitHub repo.
+
+[![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
+
+
+## See also
+
+- [Windows Subsystem for Linux](wsl.md)
+- [Using Ubuntu through a Virtual Machine](ubuntu_virtualbox.md)
+- [conda](conda.md)
+- [Linux setup script](linux_setup.md)
+- [File formats used in bioinformatics](file_formats.md)
+- [The DataCamp "Introduction to Shell" interactive course](https://www.datacamp.com/courses/introduction-to-shell-for-data-science)

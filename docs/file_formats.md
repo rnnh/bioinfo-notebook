@@ -2,7 +2,7 @@
 layout: default
 title: File formats used in bioinformatics
 parent: 1. General guides
-nav_order: 3
+nav_order: 4
 ---
 
 # File formats used in bioinformatics

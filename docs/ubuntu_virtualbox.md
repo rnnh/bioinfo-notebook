@@ -2,7 +2,7 @@
 layout: default
 title: Using Ubuntu through a Virtual Machine
 parent: 1. General guides
-nav_order: 2
+nav_order: 3
 ---
 
 
