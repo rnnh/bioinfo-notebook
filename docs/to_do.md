@@ -17,7 +17,7 @@ nav_exclude: true
 - ~~Finish script to combine featureCounts tables~~
 - ~~Add page introducing the command line~~
 - ~~Add page on using Linux through Windows: Windows Subsystem for Linux, and VirtualBox~~
-- Add command line exercise
+- ~~Add command line exercise~~
 - Add page on GWIPS-viz
 - ~~Rewrite README.md, make project/website easier to navigate~~
 - Add page on `OrthoFinder`
