@@ -26,6 +26,7 @@ If you are not using Ubuntu, please see the pages with instructions on installin
 - [Using the `--help` argument](#using-the---help-argument)
 - [Running the Linux setup shell script](#running-the-linux-setup-shell-script)
     - [Video demonstration](#video-demonstration)
+- [Exercise](#exercise)
 - [See also](#see-also)
 
 ## Opening the terminal
@@ -341,6 +342,19 @@ The Linux setup script is then run from this cloned GitHub repo.
 
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
 
+## Exercise
+
+Look at the [structure of the bioinfo-notebook repository](../README.md#repository-structure).
+This outlines how this repository (another term for a GitHub project folder) is structured: it outlines which files and directories are in this project.
+Most of the files in this project are within subdirectories of the `bioinfo-notebook/` directory.
+Once you have read this page, and [copied this project to your Ubuntu system](#cloning-the-bioinfo-notebook-project-into-your-home-directory), try to do the following:
+
+1. Change the working directory from `bioinfo-notebook/` to `bioinfo-notebook/data/`.
+2. Change the working directory from `bioinfo-notebook/data` to `bioinfo-notebook/docs`, using `../` in your command.
+3. List the files in the `bioinfo-notebook/docs/` directory.
+4. Select a file in the `bioinfo-notebook/docs/` directory, and display the first 6 lines of it using the `head` command.
+5. Display the last 2 lines of all the files in the `bioinfo-notebook/docs/` directory, using the `tail` command.
+6. From the `bioinfo-notebook/docs/` directory, list the files in the `bioinfo-notebook/envs/` directory.
 
 ## See also
 
