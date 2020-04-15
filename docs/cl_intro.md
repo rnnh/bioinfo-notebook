@@ -52,11 +52,14 @@ In examples on this page, `ronan@dell:~ $` will be used as an example bash promp
 
 ## The working directory
 
-The *working directory* is the directory (also known as "folder") that the command line is currently using.
-Any files that you create will be in this directory, and any commands you run will use files in this directory (unless you use a path).
+A *directory* is the same as a folder on your desktop.
+If you have a "Pictures" folder on your computer's desktop, this folder is a directory within the desktop directory: it's path is `Desktop/Pictures/`.
+The *working directory* is the directory that the command line is currently using.
+Any files that you create will be in this directory, and any commands you run will use files in this directory (unless you use a [path](#relative-paths)).
 
 To see the current working directory, type `pwd` into the command line and press Enter (or Return).
 This will run the "print working directory" command, which will print the path to the current directory in the terminal.
+In the context of command line programs, "print" just means "display in the terminal".
 
 ```bash
 ronan@dell:~$ pwd
@@ -148,7 +151,7 @@ assets  _config.yml  data  docs  envs  LICENSE  README.md  scripts  temp
 ## Relative paths
 
 From the `bioinfo-notebook/` working directory, all of the files in this project can be accessed using *relative paths*.
-Without paths, the program only knows which file or directory to look for.
+Without paths, the program only knows which file or directory to look for in the working directory.
 With paths, the program knows which file or directory to look for *and* how to get to it from the working directory.
 
 The `ls` command can be used to list the content of the `bioinfo-notebook/data/` from the `bioinfo-notebook/` working directory using `ls data/`.
@@ -163,6 +166,7 @@ example_genome_annotation.gtf  example_nucleotide_sequence.fasta
 ## Using the `head` command
 
 The `head` command can be used to view the first part (the head) of a file or files.
+This command is useful for examining very large files quickly.
 From the `bioinfo-notebook/` working directory, use `head data/example_nucleotide_sequence.fasta` to view the head of that FASTA file.
 
 ```bash
@@ -220,6 +224,10 @@ CTACCCTAACACAGCCCTAATCTAACCCTGGCCAACCTGTCTCTCAACTTACCCTCCATTACCCTGCCTC
 CACTCGTTACCCTGTCCCATTCAACCATACCACTCCGAACCACCATCCATCCCTCTACTTACTACCACTC
 ACCCACCGTTACCCTCCAATTACCCATATCCAACCCACTGCCACTTACCCTACCATTACCCTACCATCCA
 ```
+
+The asterisk command is especially useful for selecting files with the same *file extension*.
+The file extension is the part of the filename after the full stop that specifies the file type: for example, a file ending in `.txt` is a text file.
+In a directory with many text files, `*.txt` selects all of the text files.
 
 ## The `tail` command
 
