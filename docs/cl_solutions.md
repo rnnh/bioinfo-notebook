@@ -69,6 +69,8 @@ nav_exclude: true
 ronan@dell:~/bioinfo-notebook/docs$ pwd
 /home/ronan/bioinfo-notebook/docs
 ronan@dell:~/bioinfo-notebook/docs$ tail -n 2 *
+```
+```
 ==> bowtie2.md <==
 
 1. The `bowtie2` manual: <http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml>
