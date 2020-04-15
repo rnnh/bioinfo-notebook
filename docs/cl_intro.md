@@ -163,6 +163,126 @@ ronan@dell:~/bioinfo-notebook$ ls data/
 example_genome_annotation.gtf  example_nucleotide_sequence.fasta
 ```
 
+## Making directories with `mkdir`
+
+The command `mkdir` can be used to create a directory.
+Here is the [--help](#using-the---help-argument) text for the command `mkdir`:
+
+```bash
+ronan@dell:~$ mkdir --help
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
+```
+
+In this example, `mkdir` is used to create a directory called `example`, which is located in (and is therefore a subdirectory of) the home directory (`~`).
+This is the equivalent of making a new folder within a folder on your desktop.
+
+```bash
+ronan@dell:~$ clear
+ronan@dell:~$ pwd
+/home/ronan
+ronan@dell:~$ mkdir example
+ronan@dell:~$ cd example/
+ronan@dell:~/example$ pwd
+/home/ronan/example
+```
+
+## Removing files and directories with the `rm` command
+
+The `rm` (remove) command is used to remove files and directories.
+This command must be used *with care,* as it is not the same as deleting a file or directory on a desktop.
+Deleted files on a desktop are moved to a Recycle Bin or Trash folder, and are only permanently deleted once they are removed from this folder.
+When using the `rm` command, files and directories are permanently deleted; they cannot be recovered.
+
+Here is the [--help](#using-the---help-argument) text for the `rm` command:
+
+```bash
+ronan@dell:~$ rm --help
+Usage: rm [OPTION]... [FILE]...
+Remove (unlink) the FILE(s).
+
+  -f, --force           ignore nonexistent files and arguments, never prompt
+  -i                    prompt before every removal
+  -I                    prompt once before removing more than three files, or
+                          when removing recursively; less intrusive than -i,
+                          while still giving protection against most mistakes
+      --interactive[=WHEN]  prompt according to WHEN: never, once (-I), or
+                          always (-i); without WHEN, prompt always
+      --one-file-system  when removing a hierarchy recursively, skip any
+                          directory that is on a file system different from
+                          that of the corresponding command line argument
+      --no-preserve-root  do not treat '/' specially
+      --preserve-root   do not remove '/' (default)
+  -r, -R, --recursive   remove directories and their contents recursively
+  -d, --dir             remove empty directories
+  -v, --verbose         explain what is being done
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, rm does not remove directories.  Use the --recursive (-r or -R)
+option to remove each listed directory, too, along with all of its contents.
+
+To remove a file whose name starts with a '-', for example '-foo',
+use one of these commands:
+  rm -- -foo
+
+  rm ./-foo
+
+Note that if you use rm to remove a file, it might be possible to recover
+some of its contents, given sufficient expertise and/or time.  For greater
+assurance that the contents are truly unrecoverable, consider using shred.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/rm>
+or available locally via: info '(coreutils) rm invocation'
+```
+
+To remove files, simply type `rm` followed by the name of the file, and press `Enter`/`Return`:
+
+```bash
+ronan@dell:~/example$ pwd
+/home/ronan/example
+ronan@dell:~/example$ ls
+example_file.txt
+ronan@dell:~/example$ rm example_file.txt # Remove the file 'example_file.txt'
+ronan@dell:~/example$ ls
+ronan@dell:~/example$ 
+```
+
+To remove directories, `rm -r` must be typed, followed by the name of the directory.
+**Use the `rm -r` command with caution,** as it will permanently delete entire directories and *all* of their contents.
+This includes files and other directories within this directory.
+There are many stories of the [`rm` command being used accidentally, with disastrous consequences](https://www.independent.co.uk/life-style/gadgets-and-tech/news/man-accidentally-deletes-his-entire-company-with-one-line-of-bad-code-a6984256.html).
+
+In this example, `rm -r` is used to remove the `example/` directory from the home directory:
+
+```bash
+ronan@dell:~/example$ pwd
+/home/ronan/example
+ronan@dell:~/example$ cd ../
+ronan@dell:~$ pwd
+/home/ronan
+ronan@dell:~$ rm -r example/
+ronan@dell:~$ cd example
+bash: cd: example: No such file or directory
+ronan@dell:~$ 
+```
+
 ## Using the `head` command
 
 The `head` command can be used to view the first part (the head) of a file or files.
