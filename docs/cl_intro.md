@@ -138,6 +138,51 @@ ronan@dell:~/bioinfo-notebook/data$ cd ../../
 ronan@dell:~$ pwd
 /home/ronan
 ```
+
+## Comments and broken lines
+
+The number sign or hash (`#`) is used for *comments* in bash.
+Comments are used in programming to explain or annotate code; they are not run as code.
+Anything written after a `#` symbol in the command line is a comment.
+
+```bash
+ronan@dell:~/bioinfo-notebook$ pwd # This prints the working directory
+/home/ronan/bioinfo-notebook
+ronan@dell:~/bioinfo-notebook$ ls # This lists the contents of the directory
+assets  _config.yml  data  docs  envs  LICENSE  README.md  scripts  temp
+```
+
+Long lines of code can be hard to read.
+For legibility, long lines of command line code can be broken up with the backslash (`\`).
+The `\` characters split lines to make them more readable, they do not affect how the code functions.
+
+```bash
+ronan@dell:~/bioinfo-notebook/data$ head example_nucleotide_sequence.fasta 
+>NC_001133.9 Saccharomyces cerevisiae S288C chromosome I, complete sequence
+CCACACCACACCCACACACCCACACACCACACCACACACCACACCACACCCACACACACACATCCTAACA
+CTACCCTAACACAGCCCTAATCTAACCCTGGCCAACCTGTCTCTCAACTTACCCTCCATTACCCTGCCTC
+CACTCGTTACCCTGTCCCATTCAACCATACCACTCCGAACCACCATCCATCCCTCTACTTACTACCACTC
+ACCCACCGTTACCCTCCAATTACCCATATCCAACCCACTGCCACTTACCCTACCATTACCCTACCATCCA
+CCATGACCTACTCACCATACTGTTCTTCTACCCACCATATTGAAACGCTAACAAATGATCGTAAATAACA
+CACACGTGCTTACCCTACCACTTTATACCACCACCACATGCCATACTCACCCTCACTTGTATACTGATTT
+TACGTACGCACACGGATGCTACAGTATATACCATCTCAAACTTACCCTACTCTCAGATTCCACTTCACTC
+CATGGCCCATCTCTCACTGAATCAGTACCAAATGCACTCACATCATTATGCACGGCACTTGCCTCAGCGG
+TCTATACCCTGTGCCATTTACCCATAACGCCCATCATTATCCACATTTTGATATCTATATCTCATTCGGC
+ronan@dell:~/bioinfo-notebook/data$ head \
+> example_nucleotide_sequence.fasta 
+>NC_001133.9 Saccharomyces cerevisiae S288C chromosome I, complete sequence
+CCACACCACACCCACACACCCACACACCACACCACACACCACACCACACCCACACACACACATCCTAACA
+CTACCCTAACACAGCCCTAATCTAACCCTGGCCAACCTGTCTCTCAACTTACCCTCCATTACCCTGCCTC
+CACTCGTTACCCTGTCCCATTCAACCATACCACTCCGAACCACCATCCATCCCTCTACTTACTACCACTC
+ACCCACCGTTACCCTCCAATTACCCATATCCAACCCACTGCCACTTACCCTACCATTACCCTACCATCCA
+CCATGACCTACTCACCATACTGTTCTTCTACCCACCATATTGAAACGCTAACAAATGATCGTAAATAACA
+CACACGTGCTTACCCTACCACTTTATACCACCACCACATGCCATACTCACCCTCACTTGTATACTGATTT
+TACGTACGCACACGGATGCTACAGTATATACCATCTCAAACTTACCCTACTCTCAGATTCCACTTCACTC
+CATGGCCCATCTCTCACTGAATCAGTACCAAATGCACTCACATCATTATGCACGGCACTTGCCTCAGCGG
+TCTATACCCTGTGCCATTTACCCATAACGCCCATCATTATCCACATTTTGATATCTATATCTCATTCGGC
+
+```
+
 ## Listing directory content with the `ls` command
 
 The `ls` command can be used to list the files and directories within the current working directory.
@@ -190,6 +235,7 @@ or available locally via: info '(coreutils) mkdir invocation'
 ```
 
 In this example, `mkdir` is used to create a directory called `example`, which is located in (and is therefore a subdirectory of) the home directory (`~`).
+The home directory is located at `/home/` followed by your UNIX username.
 This is the equivalent of making a new folder within a folder on your desktop.
 
 ```bash
@@ -267,7 +313,6 @@ ronan@dell:~/example$
 To remove directories, `rm -r` must be typed, followed by the name of the directory.
 **Use the `rm -r` command with caution,** as it will permanently delete entire directories and *all* of their contents.
 This includes files and other directories within this directory.
-There are many stories of the [`rm` command being used accidentally, with disastrous consequences](https://www.independent.co.uk/life-style/gadgets-and-tech/news/man-accidentally-deletes-his-entire-company-with-one-line-of-bad-code-a6984256.html).
 
 In this example, `rm -r` is used to remove the `example/` directory from the home directory:
 
@@ -423,6 +468,71 @@ SYNOPSIS
 DESCRIPTION
 ...
  Manual page head(1) line 1 (press h for help or q to quit)
+```
+
+## Downloading files with `wget`
+
+The `wget` command can be used to download files from the directory using the command line.
+It can take a URL as an argument, and download the file found at that URL into the working directory.
+
+In this example, `wget` is used to download the amino acid sequence of [haemoglobin subunit alpha from UniProt](https://www.uniprot.org/uniprot/P69905):
+
+```bash
+ronan@dell:~/bioinfo-notebook$ pwd
+/home/ronan/bioinfo-notebook
+ronan@dell:~/bioinfo-notebook$ wget \
+> https://www.uniprot.org/uniprot/P69905.fasta
+--2020-04-15 16:52:27--  https://www.uniprot.org/uniprot/P69905.fasta
+Resolving www.uniprot.org (www.uniprot.org)... 128.175.245.202, 193.62.192.81
+Connecting to www.uniprot.org (www.uniprot.org)|128.175.245.202|:443... connected.
+HTTP request sent, awaiting response... 200 
+Length: 233 [text/plain]
+Saving to: ‘P69905.fasta’
+
+P69905.fasta        100%[===================>]     233  --.-KB/s    in 0s      
+
+2020-04-15 16:52:28 (7.91 MB/s) - ‘P69905.fasta’ saved [233/233]
+
+ronan@dell:~/bioinfo-notebook$ head P69905.fasta # Examining the start of the downloaded file 
+>sp|P69905|HBA_HUMAN Hemoglobin subunit alpha OS=Homo sapiens OX=9606 GN=HBA1 PE=1 SV=2
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG
+KKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFKLLSHCLLVTLAAHLPAEFTP
+AVHASLDKFLASVSTVLTSKYR
+```
+
+## Moving and copying with `mv` and `cp`
+
+The `mv` and `cp` commands can be used to move and copy files or directories from the command line.
+Both of these commands take a target file/directory and a destination file/directory as arguments.
+The `cp` commands creates a copy of a file/directory, whereas `mv` moves it to a new destination.
+The `mv` command can be used to rename files, by moving it to the same directory, but with a new file name.
+
+```bash
+ronan@dell:~/bioinfo-notebook$ mv P69905.fasta data/ # Moving the P69905.fasta file to the data/ directory
+
+ronan@dell:~/bioinfo-notebook$ cd data/ # Changing directory to data/
+
+ronan@dell:~/bioinfo-notebook/data$ ls # Listing files in data/ to confirm that the FASTA file has been moved
+example_genome_annotation.gtf      P69905.fasta
+example_nucleotide_sequence.fasta  S_cere_GCF_000146045.2_R64_genomic.fna
+
+ronan@dell:~/bioinfo-notebook/data$ mv P69905.fasta haem.fasta # Using mv to rename the FASTA file to haem.fasta
+
+ronan@dell:~/bioinfo-notebook/data$ ls # Listing the files in the directory
+example_genome_annotation.gtf      haem.fasta
+example_nucleotide_sequence.fasta  S_cere_GCF_000146045.2_R64_genomic.fna
+
+ronan@dell:~/bioinfo-notebook/data$ cp haem.fasta ../ # Creating a copy of haem.fasta in the directory above data/, i.e. the bioinfo-notebook/ directory
+
+ronan@dell:~/bioinfo-notebook/data$ ls # Listing the files in the directory
+example_genome_annotation.gtf      haem.fasta
+example_nucleotide_sequence.fasta  S_cere_GCF_000146045.2_R64_genomic.fna
+
+ronan@dell:~/bioinfo-notebook/data$ cd ../ # Changing directory to bioinfo-notebook/
+
+ronan@dell:~/bioinfo-notebook$ ls # Listing the files in the directory
+assets       data  envs        LICENSE    scripts
+_config.yml  docs  haem.fasta  README.md  temp
 ```
 
 ## Running the Linux setup shell script
