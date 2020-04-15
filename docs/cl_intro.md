@@ -7,8 +7,12 @@ nav_order: 1
 
 # Introduction to the command line
 
-This is a brief introduction to the command line in Ubuntu.
-If you are not using Ubuntu, please see the pages with instructions on installing Ubuntu:
+This is an introduction to the command line in Ubuntu for absolute beginners.
+It covers some basic commands that are widely used in the Linux command line, as well as the file structure of Linux.
+Examples are provided throughout.
+it is recommend that you try out commands as you read about them in your own Ubuntu system.
+
+If you are not using Ubuntu, please see these pages with instructions on installing Ubuntu:
 
 - [Windows Subsystem for Linux (WSL, Windows only)](wsl.md)
 - [using Ubuntu through a Virtual Machine (Mac or Windows)](ubuntu_virtualbox.md)
@@ -17,23 +21,30 @@ If you are not using Ubuntu, please see the pages with instructions on installin
 
 - [Opening the terminal](#opening-the-terminal)
 - [The working directory](#the-working-directory)
-- [Cloning the bioinfo-notebook project into your home directory](#cloning-the-bioinfo-notebook-project-into-your-home-directory)
+- [Cloning the `bioinfo-notebook` project into your home directory](#cloning-the-bioinfo-notebook-project-into-your-home-directory)
 - [Changing working directories](#changing-working-directories)
+- [Comments and broken lines](#comments-and-broken-lines)
 - [Listing directory content with the `ls` command](#listing-directory-content-with-the-ls-command)
 - [Relative paths](#relative-paths)
+- [Making directories with `mkdir`](#making-directories-with-mkdir)
+- [Removing files and directories with the `rm` command](#removing-files-and-directories-with-the-rm-command)
 - [Using the `head` command](#using-the-head-command)
 - [The `tail` command](#the-tail-command)
 - [Using the `--help` argument](#using-the---help-argument)
+- [Downloading files with `wget`](#downloading-files-with-wget)
+- [Moving and copying with `mv` and `cp`](#moving-and-copying-with-mv-and-cp)
 - [Running the Linux setup shell script](#running-the-linux-setup-shell-script)
     - [Video demonstration](#video-demonstration)
-- [Exercise](#exercise)
+- [Exercises](#exercises)
 - [See also](#see-also)
 
 ## Opening the terminal
 
-Once you have installed Ubuntu- either as a virtual machine or a Linux subsystem- open the Ubuntu terminal to use the command line.
-If you are using the Ubuntu app from the Microsoft Store in Windows 10 (Windows Subsystem for Linux), you are already using the Ubuntu terminal.
-If you are using an Ubuntu virtual machine: click on the "Show Applications" button in Ubuntu (the nine dots in the bottom left corner of the screen), click on the "Type to search..." bar at the top of the screen, type "Terminal" and press Enter to open the command line.
+Once you have installed Ubuntu- either as a virtual machine or a Linux subsystem- open the Ubuntu *terminal* to use the command line.
+The terminal is the window in which the command line runs.
+
+- If you are using the Ubuntu app from the Microsoft Store in Windows 10 (Windows Subsystem for Linux), you are already using the Ubuntu terminal.
+- If you are using an Ubuntu virtual machine: click on the "Show Applications" button in Ubuntu (the nine dots in the bottom left corner of the screen), click on the "Type to search..." bar at the top of the screen, type "Terminal" and press Enter to open the command line.
 
 The Ubuntu command line will look like this:
 
@@ -45,7 +56,7 @@ This is called the *bash prompt*...
 
 - *Your UNIX username* is the username you created when installing Ubuntu
 - *Your computer's alias* is the name Ubuntu uses to refer to your computer. This will likely contain the model of your computer (e.g. `Latitude-E7270`).
-- The tilde (`~`) indicates that your home directory is the current *working directory*.
+- The tilde (`~`) indicates that your home directory is the current *working directory*. The home directory is located at `/home/` followed by your UNIX username.
 - The dollar sign (`$`) indicates that the terminal is using the `bash` shell language.
 
 In examples on this page, `ronan@dell:~ $` will be used as an example bash prompt.
@@ -53,13 +64,13 @@ In examples on this page, `ronan@dell:~ $` will be used as an example bash promp
 ## The working directory
 
 A *directory* is the same as a folder on your desktop.
-If you have a "Pictures" folder on your computer's desktop, this folder is a directory within the desktop directory: it's path is `Desktop/Pictures/`.
+If you have a "Pictures" folder on your computer's desktop, this folder is a directory within the desktop directory: its [path](#relative-paths) is `Desktop/Pictures/`.
 The *working directory* is the directory that the command line is currently using.
 Any files that you create will be in this directory, and any commands you run will use files in this directory (unless you use a [path](#relative-paths)).
 
-To see the current working directory, type `pwd` into the command line and press Enter (or Return).
+To see the current working directory, type `pwd` into the command line and press `Enter` (or `Return`).
 This will run the "print working directory" command, which will print the path to the current directory in the terminal.
-In the context of command line programs, "print" just means "display in the terminal".
+In the context of command line programs, "print" means "display in the terminal".
 
 ```bash
 ronan@dell:~$ pwd
@@ -74,9 +85,9 @@ The `git clone` command takes the URL of a [GitHub](www.github.com) project, and
 To copy the `bioinfo-notebook` project into your Ubuntu system using `git clone`...
 
 1. Copy the URL of this project: <https://github.com/rnnh/bioinfo-notebook>
-2. In the Ubuntu command line, type `git clone`. Do *not* press Enter/Return yet.
+2. In the Ubuntu command line, type `git clone`. Do *not* press `Enter`/`Return` yet.
 3. Paste the URL of this project into the command line; either by right-clicking the terminal window and selecting `Paste` in VirtualBox, or just right-clicking the Ubuntu window in WSL.
-4. Once `git clone` followed by the URL of this project is in the command line, press Enter/Return.
+4. Once `git clone` followed by the URL of this project is in the command line, press `Enter`/`Return`.
 
 It should look like this...
 
@@ -235,7 +246,6 @@ or available locally via: info '(coreutils) mkdir invocation'
 ```
 
 In this example, `mkdir` is used to create a directory called `example`, which is located in (and is therefore a subdirectory of) the home directory (`~`).
-The home directory is located at `/home/` followed by your UNIX username.
 This is the equivalent of making a new folder within a folder on your desktop.
 
 ```bash
@@ -397,6 +407,7 @@ In a directory with many text files, `*.txt` selects all of the text files.
 ## The `tail` command
 
 The `tail` command is the equivalent of the command `head`, but prints the last part of files instead.
+This is useful for quickly examining the information at the ends of files.
 
 ```bash
 ronan@dell:~/bioinfo-notebook$ pwd
@@ -580,7 +591,7 @@ The Linux setup script is then run from this cloned GitHub repo.
 
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
 
-## Exercise
+## Exercises
 
 Look at the [structure of the bioinfo-notebook repository](../README.md#repository-structure).
 This outlines how this repository (another term for a GitHub project folder) is structured: it outlines which files and directories are in this project.
