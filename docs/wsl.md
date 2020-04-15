@@ -51,5 +51,6 @@ The dollar sign (`$`) indicates that this command line uses the `bash` shell lan
 
 ## See also
 
+- [Introduction to the command line](cl_intro.md)
 - [Using Ubuntu through a Virtual Machine](ubuntu_virtualbox.md) 
 - [conda](conda.md)

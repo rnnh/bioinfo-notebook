@@ -98,6 +98,7 @@ To increase the screen resolution of the Ubuntu virtual machine, you will need t
 
 ## See also
 
+- [Introduction to the command line](cl_intro.md)
 - [Windows Subsystem for Linux](wsl.md)
 - [The Ubuntu Website](https://ubuntu.com/)
 - [The VirtualBox Website](https://www.virtualbox.org/)
