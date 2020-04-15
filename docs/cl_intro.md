@@ -8,14 +8,14 @@ nav_order: 1
 # Introduction to the command line
 
 This is an introduction to the command line in Ubuntu for absolute beginners.
-It covers some basic commands that are widely used in the Linux command line, as well as the file structure of Linux.
+It covers some commands and concepts that are widely used in the Linux command line.
 Examples are provided throughout.
-it is recommend that you try out commands as you read about them in your own Ubuntu system.
+it is recommend that you try out commands as you read about them in your own Ubuntu system, as well as the exercise towards the end of the page.
 
 If you are not using Ubuntu, please see these pages with instructions on installing Ubuntu:
 
 - [Windows Subsystem for Linux (WSL, Windows only)](wsl.md)
-- [using Ubuntu through a Virtual Machine (Mac or Windows)](ubuntu_virtualbox.md)
+- [Using Ubuntu through a Virtual Machine (Mac or Windows)](ubuntu_virtualbox.md)
 
 ## Contents
 
@@ -35,7 +35,7 @@ If you are not using Ubuntu, please see these pages with instructions on install
 - [Moving and copying with `mv` and `cp`](#moving-and-copying-with-mv-and-cp)
 - [Running the Linux setup shell script](#running-the-linux-setup-shell-script)
     - [Video demonstration](#video-demonstration)
-- [Exercises](#exercises)
+- [Exercise](#exercise)
 - [See also](#see-also)
 
 ## Opening the terminal
@@ -44,7 +44,7 @@ Once you have installed Ubuntu- either as a virtual machine or a Linux subsystem
 The terminal is the window in which the command line runs.
 
 - If you are using the Ubuntu app from the Microsoft Store in Windows 10 (Windows Subsystem for Linux), you are already using the Ubuntu terminal.
-- If you are using an Ubuntu virtual machine: click on the "Show Applications" button in Ubuntu (the nine dots in the bottom left corner of the screen), click on the "Type to search..." bar at the top of the screen, type "Terminal" and press Enter to open the command line.
+- If you are using an Ubuntu virtual machine: click on the "Show Applications" button in Ubuntu (the nine dots in the bottom left corner of the screen), click on the "Type to search..." bar at the top of the screen, type "Terminal" and press `Enter` to open the command line.
 
 The Ubuntu command line will look like this:
 
@@ -54,7 +54,7 @@ The Ubuntu command line will look like this:
 
 This is called the *bash prompt*...
 
-- *Your UNIX username* is the username you created when installing Ubuntu
+- *Your UNIX username* is the username you created when installing Ubuntu.
 - *Your computer's alias* is the name Ubuntu uses to refer to your computer. This will likely contain the model of your computer (e.g. `Latitude-E7270`).
 - The tilde (`~`) indicates that your home directory is the current *working directory*. The home directory is located at `/home/` followed by your UNIX username.
 - The dollar sign (`$`) indicates that the terminal is using the `bash` shell language.
@@ -81,7 +81,7 @@ ronan@dell:~$ pwd
 
 We will use the files and directories of the `bioinfo-notebook` project to demonstrate how to use the command line.
 This project can be copied into your home directory using the `git clone` command.
-The `git clone` command takes the URL of a [GitHub](www.github.com) project, and copies all of the files and directories of that project into the working directory.
+The `git clone` command takes the URL of a [GitHub](https://github.com/) project, and copies all of the files and directories of that project into the working directory.
 To copy the `bioinfo-notebook` project into your Ubuntu system using `git clone`...
 
 1. Copy the URL of this project: <https://github.com/rnnh/bioinfo-notebook>
@@ -591,7 +591,7 @@ The Linux setup script is then run from this cloned GitHub repo.
 
 [![asciicast](https://asciinema.org/a/314853.svg)](https://asciinema.org/a/314853?autoplay=1)
 
-## Exercises
+## Exercise
 
 Look at the [structure of the bioinfo-notebook repository](../README.md#repository-structure).
 This outlines how this repository (another term for a GitHub project folder) is structured: it outlines which files and directories are in this project.
