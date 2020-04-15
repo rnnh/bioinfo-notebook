@@ -33,8 +33,8 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 ### [1. General guides](docs/part1.md)
 
 - [Introduction to the command line](docs/cl_intro.md)
-- [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
-- [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
+- [Windows Subsystem for Linux](docs/wsl.md)
+- [Using Ubuntu through a Virtual Machine](docs/ubuntu_virtualbox.md)
 - [File formats used in bioinformatics](docs/file_formats.md)
 
 ### [2. Program guides](docs/part2.md)
@@ -63,8 +63,8 @@ The `bioinfo-notebook` virtual environment, which includes all of the command li
 **1.** This project is written to be used through the Ubuntu operating system.
  If you are using a Windows/Mac operating system, begin with these pages on setting up Ubuntu:
  
-- [Windows Subsystem for Linux (Windows only)](docs/wsl.md)
-- [Using Ubuntu through a Virtual Machine (Mac or Windows)](docs/ubuntu_virtualbox.md)
+- [Windows Subsystem for Linux](docs/wsl.md)
+- [Using Ubuntu through a Virtual Machine](docs/ubuntu_virtualbox.md)
 
 **2.** Once you have an Ubuntu system set up, run the following command to update the lists of available software:
 
