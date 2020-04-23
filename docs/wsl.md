@@ -18,6 +18,8 @@ Before you begin, make sure you have around 1.20 GB of free disk space.
 
 ### Enable WSL
 
+*Note:* Enabling the WSL feature will take a few minutes, and you will need to restart your computer for it to take effect.
+
 1. In the search box on the taskbar, type "control panel", and then select Control Panel.
 2. In the Control Panel, select "Programs".
 3. Under Programs and Features, select "Turn Windows features on or off".
