@@ -9,4 +9,5 @@ has_toc: True
 
 # 2. Program guides
 
-These are guides to individual programs.
+These are brief guides to individual programs.
+They are not comprehensive, but instead aim to introduce the essential features of each program.
