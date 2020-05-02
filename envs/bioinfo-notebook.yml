@@ -54,7 +54,7 @@ dependencies:
   - ncurses=6.2=he6710b0_0
   - numpy=1.18.1=py37h4f9e942_0
   - numpy-base=1.18.1=py37hde5b4d6_1
-  - openssl=1.1.1=h7b6447c_0
+  - openssl=1.1.1g=h7b6447c_0
   - pandas=1.0.2=py37h0573a6f_0
   - pcre=8.43=he6710b0_0
   - perl=5.26.2=h14c3975_0
@@ -144,3 +144,4 @@ dependencies:
   - wheel=0.34.2=py37_0
   - xz=5.2.4=h14c3975_4
   - zlib=1.2.11=h7b6447c_3
+
