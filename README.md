@@ -39,6 +39,7 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 
 ### [2. Program guides](docs/part2.md)
 
+- [BLAST](docs/blast.md)
 - [bowtie](docs/bowtie.md)
 - [bowtie2](docs/bowtie2.md)
 - [conda](docs/conda.md)
@@ -98,6 +99,7 @@ bioinfo-notebook/
 │   ├── example_genome_annotation.gtf
 │   └── example_nucleotide_sequence.fasta
 ├── docs/
+│   ├── blast.md
 │   ├── bowtie.md
 │   ├── bowtie2.md
 │   ├── cl_intro.md
