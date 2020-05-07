@@ -9,6 +9,28 @@ parent: 2. Program guides
 The Basic Local Alignment Search Tool (BLAST) is an algorithm and program for comparing primary biological sequence information, such as the amino-acid sequences of proteins or the nucleotides of DNA and/or RNA sequences.
 BLAST is one of the most widely used tools in bioinformatics; it can be applied to different problems or projects in a myriad ways.
 
+## Contents
+
+- [How BLAST works](#how-blast-works)
+- [The command line version of BLAST](#the-command-line-version-of-blast)
+- [Types of BLAST search](#types-of-blast-search)
+- [E-value and Bit-score](#e-value-and-bit-score)
+- [Creating a BLAST database using `makeblastdb`](#creating-a-blast-database-using-makeblastdb)
+- [Searching against a BLAST nucleotide database using `blastn`](#searching-against-a-blast-nucleotide-database-using-blastn)
+- [BLAST `-outfmt 6` results](#blast--outfmt 6-results)
+- [Video demonstration](#video-demonstration)
+- [See also](#see-also)
+- [References](#references)
+
+## How BLAST works
+
+There are two main steps in BLAST:
+
+1. Make a list of "words" (sets of characters/residues) of length *k* in the query sequence. By default, *k* = 3 for amino acid sequences, and *k* = 11 for nucleotide sequences.
+2. An alignment is made for database (subject) sequences that share many words with the query sequence. This is a local alignment in which only High-scoring Segment Pairs (HSPs) are reported. In other words, BLAST finds islands of similarity between sequences.
+
+## The command line version of BLAST
+
 BLAST can be used online, or through the command line.
 Most biologists are familiar with [NCBI's web application for BLAST](<https://blast.ncbi.nlm.nih.gov/Blast.cgi>).
 If you use this web application regularly, the command line BLAST program is worth your consideration.
@@ -18,6 +40,37 @@ The command line version of BLAST has several advantages over the web version:
 2. BLAST searches on the command line can be made more specific by adding additional arguments.
 3. BLAST searches carried out on the command line can be automated, and incorporated into larger scripts.
 4. The command line BLAST program can output search results in various structured text formats.
+
+The command line version of BLAST can be downloaded via conda using the following command:
+
+```bash
+$ conda install -c bioconda blast
+```
+
+## Types of BLAST search
+
+There are five main types of BLAST search:
+
+1. **BLASTp** searches a protein database with a protein query sequence.
+2. **BLASTn** searches a nucleic acid database with nucleic acid query sequence.
+3. **BLASTx** searches a protein database with nucleic acid query sequence, which is translated into an amino acid sequence.
+4. **tBLASTx** searches a nucleic acid database with nucleic acid query sequence. In this case, both the database (subject) sequences and query sequence are translated into amino acid sequences.
+5. **tBLASTn** searches a nucleic acid database with protein query sequence. In this case, the nucleic acid database is translated into a set of amino acid sequences.
+
+While the type of query and subject sequences required for each of these BLAST searches differs, the command line arguments that can be used for these BLAST searches are interchangeable.
+
+## E-value and Bit-score
+
+Two important variables when interpreting BLAST results are *E-value* and *bit-score*.
+These are both derived from the *raw alignment score (S)*, which is based on the number of residues (i.e. individual amino/nucleic acids) that two sequences have in common.
+The more identical residues that two sequences have at the same position in an alignment, the higher the alignment score.
+
+- **Bit-score (S')** is the raw alignment score (S) normalised with respect to the scoring system used for the alignment.
+- **E-value** or Expectation value is the number of different alignments with scores equivalent to or better than S that is expected to occur in a database search by chance. The lower the E value, the more significant the score and the alignment. An exact match between query and subject sequences results in an E-value of zero.
+
+While bit-scores are comparable between searches, as they are normalised, they do not take the size of the database into account.
+E-values, however, do account for the size of the database.
+This means that for a given set of query sequences, the E-values from BLAST results against different databases are comparable.
 
 ## Creating a BLAST database using `makeblastdb`
 
@@ -105,3 +158,15 @@ The results from these BLAST searches are written to tab-separated values (`.tsv
 This output format is specified with the flag `-outfmt 6`.
 
 [![asciicast](https://asciinema.org/a/327279.svg)](https://asciinema.org/a/327279?autoplay=1)
+
+## See also
+
+- [File formats used in bioinformatics](file_formats.md)
+- [Introduction to the command line](cl_intro.md)
+- [conda](conda.md)
+- [NCBI's web application for BLAST](<https://blast.ncbi.nlm.nih.gov/Blast.cgi>)
+
+## References
+
+- [BLAST® Command Line Applications User Manual](https://www.ncbi.nlm.nih.gov/books/NBK279690/)
+- [BLAST Glossary](https://www.ncbi.nlm.nih.gov/books/NBK62051/)

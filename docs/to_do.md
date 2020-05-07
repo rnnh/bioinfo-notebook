@@ -23,7 +23,7 @@ nav_exclude: true
 - Add page on `OrthoFinder`
 - Add page on `Augustus`
 - Add page on `HMMER`
-- Add page on `BLAST`
+- ~~Add page on `BLAST`~~
 - Add page on `edgeR`
 - Add page on how to read `R` scripts
 - Add page on `Nextflow`
