@@ -41,11 +41,13 @@ The command line version of BLAST has several advantages over the web version:
 3. BLAST searches carried out on the command line can be automated, and incorporated into larger scripts.
 4. The command line BLAST program can output search results in various structured text formats.
 
-The command line version of BLAST can be downloaded via conda using the following command:
+The command line version of BLAST can be downloaded via [conda](conda.md) using the following command:
 
 ```bash
 $ conda install -c bioconda blast
 ```
+
+This program is included in the [bioinfo-notebook conda environment](../envs/bioinfo-notebook.txt).
 
 ## Types of BLAST search
 
