@@ -17,7 +17,7 @@ BLAST is one of the most widely used tools in bioinformatics; it can be applied 
 - [E-value and Bit-score](#e-value-and-bit-score)
 - [Creating a BLAST database using `makeblastdb`](#creating-a-blast-database-using-makeblastdb)
 - [Searching against a BLAST nucleotide database using `blastn`](#searching-against-a-blast-nucleotide-database-using-blastn)
-- [BLAST `-outfmt 6` results](#blast--outfmt 6-results)
+- [BLAST `-outfmt 6` results](#blast--outfmt-6-results)
 - [Video demonstration](#video-demonstration)
 - [See also](#see-also)
 - [References](#references)
