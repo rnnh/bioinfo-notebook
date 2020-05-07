@@ -26,8 +26,10 @@ BLAST is one of the most widely used tools in bioinformatics; it can be applied 
 
 There are two main steps in BLAST:
 
-1. Make a list of "words" (sets of characters/residues) of length *k* in the query sequence. By default, *k* = 3 for amino acid sequences, and *k* = 11 for nucleotide sequences.
+1. A list of "words" (sets of characters/residues) of length *k* is created for the query sequence. By default, *k* = 3 for amino acid sequences, and *k* = 11 for nucleotide sequences.
 2. An alignment is made for database (subject) sequences that share many words with the query sequence. This is a local alignment in which only High-scoring Segment Pairs (HSPs) are reported. In other words, BLAST finds islands of similarity between sequences.
+
+![An outline of the BLAST algorithm](https://www.ncbi.nlm.nih.gov/books/NBK62051/bin/blast_glossary-Image001.jpg "An outline of the BLAST algorithm")
 
 ## The command line version of BLAST
 
