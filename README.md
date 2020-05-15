@@ -61,7 +61,7 @@ After following these instructions, there will be a copy of the [bioinfo-noteboo
 This means there will be a copy of all the documents and scripts in this project on your computer.
 The `bioinfo-notebook` virtual environment, which includes all of the command line programs covered in this project, will also be installed on your Ubuntu system using [conda](docs/conda.md).
 
-**1.** This project is written to be used through a Linux or Mac (macOS Mojave or later) operating system.
+**1.** This project is written to be used through a UNIX (Linux or Mac with macOS Mojave or later) operating system.
  If you are using a Windows operating system, begin with these pages on setting up Ubuntu:
  
 - [Windows Subsystem for Linux](docs/wsl.md)
