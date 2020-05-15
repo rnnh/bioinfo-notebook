@@ -7,12 +7,12 @@ nav_order: 1
 
 # Introduction to the command line
 
-This is an introduction to the command line in Ubuntu for absolute beginners.
-It covers some commands and concepts that are widely used in the Linux command line.
+This is an introduction to the *UNIX (Mac/Linux)* command line for absolute beginners.
+It covers some commands and concepts that are widely used in the UNIX command line.
 Examples are provided throughout.
-it is recommend that you try out commands as you read about them in your own Ubuntu system, as well as the exercise towards the end of the page.
+It is recommend that you try out commands as you read about them in your own UNIX system, as well as the exercise towards the end of the page.
 
-If you are not using Ubuntu, please see these pages with instructions on installing Ubuntu:
+If you are using Windows, please see these pages with instructions on installing Ubuntu (a UNIX operating system):
 
 - [Windows Subsystem for Linux (WSL, Windows only)](wsl.md)
 - [Using Ubuntu through a Virtual Machine (Mac or Windows)](ubuntu_virtualbox.md)
@@ -40,13 +40,14 @@ If you are not using Ubuntu, please see these pages with instructions on install
 
 ## Opening the terminal
 
-Once you have installed Ubuntu- either as a virtual machine or a Linux subsystem- open the Ubuntu *terminal* to use the command line.
+Once you are using a UNIX operating system (i.e. a Mac system, a Linux system, or Ubuntu through either a virtual machine or a Linux subsystem on a Windows machine) open the *terminal* to use the command line.
 The terminal is the window in which the command line runs.
 
+- If you are using a Mac, click on Spotlight Search (the magnifying glass icon in the top-right corner of the screen), type "Terminal", and open the Terminal application.
 - If you are using the Ubuntu app from the Microsoft Store in Windows 10 (Windows Subsystem for Linux), you are already using the Ubuntu terminal.
 - If you are using an Ubuntu virtual machine: click on the "Show Applications" button in Ubuntu (the nine dots in the bottom left corner of the screen), click on the "Type to search..." bar at the top of the screen, type "Terminal" and press `Enter` to open the command line.
 
-The Ubuntu command line will look like this:
+The UNIX command line will look like this:
 
 ```
 (Your UNIX username)@(Your computer's alias):~$ _
@@ -54,8 +55,8 @@ The Ubuntu command line will look like this:
 
 This is called the *bash prompt*...
 
-- *Your UNIX username* is the username you created when installing Ubuntu.
-- *Your computer's alias* is the name Ubuntu uses to refer to your computer. This will likely contain the model of your computer (e.g. `Latitude-E7270`).
+- *Your UNIX username* is the your system username.
+- *Your computer's alias* is the name UNIX uses to refer to your computer. This will likely contain the model of your computer (e.g. `Latitude-E7270`).
 - The tilde (`~`) indicates that your home directory is the current *working directory*. The home directory is located at `/home/` followed by your UNIX username.
 - The dollar sign (`$`) indicates that the terminal is using the `bash` shell language.
 
@@ -82,10 +83,10 @@ ronan@dell:~$ pwd
 We will use the files and directories of the `bioinfo-notebook` project to demonstrate how to use the command line.
 This project can be copied into your home directory using the `git clone` command.
 The `git clone` command takes the URL of a [GitHub](https://github.com/) project, and copies all of the files and directories of that project into the working directory.
-To copy the `bioinfo-notebook` project into your Ubuntu system using `git clone`...
+To copy the `bioinfo-notebook` project into your UNIX system using `git clone`...
 
 1. Copy the URL of this project: <https://github.com/rnnh/bioinfo-notebook>
-2. In the Ubuntu command line, type `git clone`. Do *not* press `Enter`/`Return` yet.
+2. In the UNIX command line, type `git clone`. Do *not* press `Enter`/`Return` yet.
 3. Paste the URL of this project into the command line; either by right-clicking the terminal window and selecting `Paste` in VirtualBox, or just right-clicking the Ubuntu window in WSL.
 4. Once `git clone` followed by the URL of this project is in the command line, press `Enter`/`Return`.
 
@@ -131,7 +132,7 @@ ronan@dell:~$ cd D
 Desktop/   Documents/ Downloads/
 ```
 
-In Ubuntu (and other Linux systems), directory names are case-sensitive.
+In UNIX, directory names are case-sensitive.
 This means that `~/downloads/` is a different directory than `~/Downloads/`.
 
 The command `cd ../` can be used to move to move up one directory, `cd ../../` can be used to move up two directories, etc.
@@ -376,7 +377,7 @@ CACTCGTTACCCTGTCCCATTCAACCATACCACTCCGAACCACCATCCATCCCTCTACTTACTACCACTC
 ACCCACCGTTACCCTCCAATTACCCATATCCAACCCACTGCCACTTACCCTACCATTACCCTACCATCCA
 ```
 
-In the Ubuntu terminal, an asterisk (`*`) acts as a *wildcard*.
+In the UNIX terminal, an asterisk (`*`) acts as a *wildcard*.
 This means that any files or directories that can replace this character will replace it.
 For example, the `bioinfo-notebook/data/` directory contains two files: `example_genome_annotation.gtf` and `example_nucleotide_sequence.fasta`.
 Using the command `head -n 5 data/*` will print the first 5 lines of both of these files.
@@ -584,7 +585,7 @@ linux_setup.sh
 
 ### Video demonstration
 
-In this demonstration, the bioinfo-notebook GitHub project (also known as a repository or repo) is cloned into the home directory of the Linux system (Ubuntu).
+In this demonstration, the bioinfo-notebook GitHub project (also known as a repository or repo) is cloned into the home directory of the UNIX system (in this case, the UNIX system used is Ubuntu).
 This means that all the files for this project will be downloaded from GitHub into the `~/bioinfo-notebook/` directory.
 A GitHub repo can be cloned using the command `$ git clone` followed by the URL of the target repo (which can be found on GitHub using the “Clone or download” button).
 The Linux setup script is then run from this cloned GitHub repo.
@@ -597,7 +598,7 @@ Look at the [structure of the bioinfo-notebook repository](../README.md#reposito
 This outlines how this repository (another term for a GitHub project folder) is structured: it outlines which files and directories are in this project.
 Most of the files in this project are within subdirectories of the `bioinfo-notebook/` directory.
 
-Once you have read this page, and [copied this project to your Ubuntu system](#cloning-the-bioinfo-notebook-project-into-your-home-directory), try the following small tasks.
+Once you have read this page, and [copied this project to your UNIX system](#cloning-the-bioinfo-notebook-project-into-your-home-directory), try the following small tasks.
 These tasks only require one command each.
 
 1. Change the working directory from `bioinfo-notebook/` to `bioinfo-notebook/data/`.
