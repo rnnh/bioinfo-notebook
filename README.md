@@ -57,12 +57,12 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 
 ## Installation instructions
 
-After following these instructions, there will be a copy of the [bioinfo-notebook GitHub repo](https://www.github.com/rnnh/bioinfo-notebook/) on your Ubuntu system in the `~/bioinfo-notebook/` directory.
+After following these instructions, there will be a copy of the [bioinfo-notebook GitHub repo](https://www.github.com/rnnh/bioinfo-notebook/) on your system in the `~/bioinfo-notebook/` directory.
 This means there will be a copy of all the documents and scripts in this project on your computer.
 The `bioinfo-notebook` virtual environment, which includes all of the command line programs covered in this project, will also be installed on your Ubuntu system using [conda](docs/conda.md).
 
-**1.** This project is written to be used through the Ubuntu operating system.
- If you are using a Windows/Mac operating system, begin with these pages on setting up Ubuntu:
+**1.** This project is written to be used through a Linux or Mac (macOS Mojave or later) operating system.
+ If you are using a Windows operating system, begin with these pages on setting up Ubuntu:
  
 - [Windows Subsystem for Linux](docs/wsl.md)
 - [Using Ubuntu through a Virtual Machine](docs/ubuntu_virtualbox.md)
