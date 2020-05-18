@@ -22,6 +22,15 @@ VirtualBox is a program that can be used to create, manage, and access virtual m
 A disk image is a file that acts like a compact disc, or another storage device.
 VirtualBox and the Ubuntu disk image are freely available online.
 
+## Contents
+
+- [Files required to set up an Ubuntu virtual machine](#files-required-to-set-up-an-ubuntu-virtual-machine)
+	- [Direct links to download required files](#direct-links-to-download-required-files)
+- [How to create an Ubuntu virtual machine using VirtualBox](#how-to-create-an-ubuntu-virtual-machine-using-virtualbox)
+- [Increasing the screen resolution of the Ubuntu virtual machine](#increasing-the-screen-resolution-of-the-ubuntu-virtual-machine)
+- [See also](#see-also)
+- [References](#references)
+
 ## Files required to set up an Ubuntu virtual machine
 
 To set up an Ubuntu virtual machine, you will need an Ubuntu disk image, a file to install VirtualBox, and the VirtualBox Extension Package.
