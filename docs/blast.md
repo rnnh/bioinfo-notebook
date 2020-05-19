@@ -147,7 +147,7 @@ In this format...
 11. `e_value` is the expect value (E-value) for the alignment.
 12. `bit_score` is the bit-score of the alignment.
 
-All BLAST output formats above 4 (i.e. `--outfmt > 4`) have use this tabular layout, formatted in different ways.
+All BLAST output formats above 4 (i.e. `--outfmt > 4`) use this tabular layout, formatted in different ways.
 For example, `--outfmt 10` gives the same information in a comma-separated values (`.csv`) file instead of a tab-separated values (`.tsv`) file.
 
 ## Video demonstration
