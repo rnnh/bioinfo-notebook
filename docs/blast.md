@@ -97,7 +97,7 @@ In this command...
 The program `blastn` is used for searching nucleotide databases with a nucleotide query.
 
 ```bash
-$ blastn -query query_file.fna -db nucl_database_name -out results_file.tsv -outfmt 6 -evalue x -max_hsps y
+$ blastn -query query_file.fna -db nucl_database_name -out results_file.tsv -outfmt 6 -evalue x -max_hsps y -num_threads n
 ```
 
 In this command...
@@ -108,6 +108,7 @@ In this command...
 4. `-outfmt` is used to specify how this results file should be formatted. In this case, as `-outfmt` is `6`, the results will be written to a file as tab-separated values: this is why `results_file.tsv` has a `.tsv` extension.
 5. `-evalue` is used to set an E-value threshold (`x`). Results which have an E-value greater than this threshold will not be written to the results file.
 6. `-max_hsps` is used to set a High-scoring Segment Pairs (HSPs) threshold (`y`). When given, no more than `y` HSPs (alignments) for each query-subject pair will be written to the results file.
+7. `-num_threads` is used to set the number (*`n`*) of threads/processors to use (default 1).
 
 The last two arguments given in this command- `-evalue` and `-max_hsps`- are optional, but they are useful as they allow the results to be filtered before being written to the file.
 Using these arguments will result in more specific results, and will reduce the need to manually filter results later.
@@ -145,6 +146,9 @@ In this format...
 10. `s_end` is the end of the alignment in the subject sequence.
 11. `e_value` is the expect value (E-value) for the alignment.
 12. `bit_score` is the bit-score of the alignment.
+
+All BLAST output formats above 4 (i.e. `--outfmt > 4`) have use this tabular layout, formatted in different ways.
+For example, `--outfmt 10` gives the same information in a comma-separated values (`.csv`) file instead of a tab-separated values (`.tsv`) file.
 
 ## Video demonstration
 
