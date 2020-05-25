@@ -31,3 +31,4 @@ nav_exclude: true
 - Add page on `cutadapt`
 - Add page on `trimmomatic`
 - Entry on BED/bigWig
+- Add page on `muscle`
