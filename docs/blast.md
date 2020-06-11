@@ -16,6 +16,7 @@ BLAST is one of the most widely used tools in bioinformatics; it can be applied 
 - [Types of BLAST search](#types-of-blast-search)
 - [E-value and Bit-score](#e-value-and-bit-score)
 - [Creating a BLAST database using `makeblastdb`](#creating-a-blast-database-using-makeblastdb)
+- [Downloading Swiss-Prot FASTA sequences and creating BLAST protein database](#downloading-swiss-prot-fasta-sequences-and-creating-blast-protein-database)
 - [Searching against a BLAST nucleotide database using `blastn`](#searching-against-a-blast-nucleotide-database-using-blastn)
 - [BLAST `-outfmt 6` results](#blast--outfmt-6-results)
 - [Video demonstration](#video-demonstration)
@@ -91,6 +92,23 @@ In this command...
 2. `-in` is used to specify the input file. The database created can be used to search against the sequences in this file.
 3. `-out` is used to name the database that will be created from the input file.
 
+## Downloading Swiss-Prot FASTA sequences and creating BLAST protein database
+
+[![asciicast](https://asciinema.org/a/338534.svg)](https://asciinema.org/a/338534?autoplay=1)
+
+In this video, the FASTA amino acid sequences of Swiss-Prot are downloaded, and a BLAST protein database is created from these sequences using `makeblastdb`.
+[UniProtKB/Swiss-Prot is a manually annotated, non-redundant protein sequence database.](https://en.wikipedia.org/wiki/UniProt#UniProtKB.2FSwiss-Prot)
+As it is well-annotated and curated, the Swiss-Prot database gives informative results when searched locally using `blastp` and `blastx`.
+The link used in the `wget` command is copied and pasted from the [UniProt downloads page](https://www.uniprot.org/downloads).
+This is the full link to the compressed FASTA sequences of the Swiss-Prot database: <ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz>
+
+These FASTA amino acid sequences are compressed into a `.gz` (gzip) file.
+Before using the `makeblastdb` command, this FASTA file is uncompressed using `gunzip`, turning `uniprot_sprot`**`.fasta.gz`** into `uniprot_sprot`**`.fasta`**.
+Once the FASTA file is downloaded and uncompressed, `makeblastdb` is used to create a BLAST protein database of the amino acid sequences in this FASTA file.
+This BLAST protein database is named `swissprot`, and consists of three binary files.
+
+Once the BLAST protein database is created, `blastp` and `blastx` can be used to search sequences against it.
+This database can be selected using the argument `-db swissprot`with `blastp` or `blastx` (the path to the `swissprot` database will need to be given if the command is run from a different directory).
 
 ## Searching against a BLAST nucleotide database using `blastn`
 
