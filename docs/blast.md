@@ -94,8 +94,6 @@ In this command...
 
 ## Downloading Swiss-Prot FASTA sequences and creating BLAST protein database
 
-[![asciicast](https://asciinema.org/a/338534.svg)](https://asciinema.org/a/338534?autoplay=1)
-
 In this video, the FASTA amino acid sequences of Swiss-Prot are downloaded, and a BLAST protein database is created from these sequences using `makeblastdb`.
 [UniProtKB/Swiss-Prot is a manually annotated, non-redundant protein sequence database.](https://en.wikipedia.org/wiki/UniProt#UniProtKB.2FSwiss-Prot)
 As it is well-annotated and curated, the Swiss-Prot database gives informative results when searched locally using `blastp` and `blastx`.
@@ -109,6 +107,8 @@ This BLAST protein database is named `swissprot`, and consists of three binary f
 
 Once the BLAST protein database is created, `blastp` and `blastx` can be used to search sequences against it.
 This database can be selected using the argument `-db swissprot`with `blastp` or `blastx` (the path to the `swissprot` database will need to be given if the command is run from a different directory).
+
+[![asciicast](https://asciinema.org/a/338534.svg)](https://asciinema.org/a/338534?autoplay=1)
 
 ## Searching against a BLAST nucleotide database using `blastn`
 
