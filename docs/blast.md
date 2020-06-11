@@ -16,7 +16,7 @@ BLAST is one of the most widely used tools in bioinformatics; it can be applied 
 - [Types of BLAST search](#types-of-blast-search)
 - [E-value and Bit-score](#e-value-and-bit-score)
 - [Creating a BLAST database using `makeblastdb`](#creating-a-blast-database-using-makeblastdb)
-- [Downloading Swiss-Prot FASTA sequences and creating BLAST protein database](#downloading-swiss-prot-fasta-sequences-and-creating-blast-protein-database)
+- [Downloading Swiss-Prot FASTA sequences and creating a BLAST protein database](#downloading-swiss-prot-fasta-sequences-and-creating-a-blast-protein-database)
 - [Searching against a BLAST nucleotide database using `blastn`](#searching-against-a-blast-nucleotide-database-using-blastn)
 - [BLAST `-outfmt 6` results](#blast--outfmt-6-results)
 - [Video demonstration](#video-demonstration)
@@ -92,7 +92,7 @@ In this command...
 2. `-in` is used to specify the input file. The database created can be used to search against the sequences in this file.
 3. `-out` is used to name the database that will be created from the input file.
 
-## Downloading Swiss-Prot FASTA sequences and creating BLAST protein database
+## Downloading Swiss-Prot FASTA sequences and creating a BLAST protein database
 
 In this video, the FASTA amino acid sequences of Swiss-Prot are downloaded, and a BLAST protein database is created from these sequences using `makeblastdb`.
 [UniProtKB/Swiss-Prot is a manually annotated, non-redundant protein sequence database.](https://en.wikipedia.org/wiki/UniProt#UniProtKB.2FSwiss-Prot)
