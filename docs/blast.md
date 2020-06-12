@@ -98,7 +98,7 @@ In this video, the FASTA amino acid sequences of Swiss-Prot are downloaded, and 
 [UniProtKB/Swiss-Prot](https://en.wikipedia.org/wiki/UniProt#UniProtKB.2FSwiss-Prot) is a manually annotated, non-redundant protein sequence database.
 As it is well-annotated and curated, the Swiss-Prot database gives informative results when searched locally using `blastp` and `blastx`.
 The link used in the `wget` command is copied and pasted from the [UniProt downloads page](https://www.uniprot.org/downloads).
-[This is the FTP link](ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz) to the compressed FASTA sequences of the Swiss-Prot database.
+The compressed FASTA sequences of the Swiss-Prot database on `ftp.uniprot.org`.
 
 These FASTA amino acid sequences are compressed into a `.gz` (gzip) file.
 Before using the `makeblastdb` command, this FASTA file is uncompressed using `gunzip`, turning `uniprot_sprot`**`.fasta.gz`** into `uniprot_sprot`**`.fasta`**.
