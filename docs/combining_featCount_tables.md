@@ -71,5 +71,5 @@ optional arguments:
 ```
 
 ## See also
-
+- [combining_featCount_tables.py on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/scripts/combining_featCount_tables.py)
 - [fastq-dump_to_featureCounts.sh](fastq-dump_to_featureCounts.md)
