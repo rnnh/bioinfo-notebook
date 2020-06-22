@@ -53,6 +53,7 @@ Optional arguments:
 
 ## See also
 
+- [linux_setup.sh on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/scripts/linux_setup.sh)
 - [Conda](conda.md)
 - [Cloning and activating a conda environment](conda.md#cloning-and-activating-a-conda-environment)
 - [Using Ubuntu through a Virtual Machine](ubuntu_virtualbox.md)
