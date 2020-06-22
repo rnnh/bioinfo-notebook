@@ -75,7 +75,7 @@ The more identical residues that two sequences have at the same position in an a
 
 While bit-scores are comparable between searches, as they are normalised, they do not take the size of the database into account.
 E-values, however, do account for the size of the database.
-This means that for a given set of query sequences, the E-values from BLAST results against different databases are comparable.
+The lower the E-value and the higher the bit-score, the better the BLAST result.
 
 ## Creating a BLAST database using `makeblastdb`
 
