@@ -13,12 +13,16 @@ A brief introduction to various file formats used in bioinformatics.
 
 - [Sequence formats](#sequence-formats)
     - [FASTA](#fasta)
+	- [Example FASTA file](#example-fasta-file)
 	- [FASTA filename extensions](#fasta-filename-extensions)
     - [FASTQ](#fastq)
+	- [Example FASTQ file](#example-fastq-file)
 - [Alignment formats](#alignment-formats)
     - [SAM](#sam)
     - [BAM](#bam)
     - [CRAM](#cram)
+    - [Stockholm format](#stockholm-format)
+	- [Example Stockholm file](#example-stockholm-file)
 - [Generic Feature Formats](#generic-feature-formats)
     - [GFF general structure](#gff-general-structure)
     - [GTF](#gtf)
@@ -35,7 +39,11 @@ These are file formats for storing nucleotide sequences and/or amino acid (prote
 
 FASTA is a ubiquitous text-based format for representing nucleotide sequences or amino acid sequences. A FASTA file can contain one sequence or multiple sequences. If a FASTA file contains multiple sequences, it may sometimes be referred to as a "multi-FASTA" file.
 
-Here is an example of a FASTA file:
+Each FASTA entry begins with a `>` (greater-than) symbol, followed by a comment on the same line describing the sequence that will follow. The actual sequence begins on the line after this comment. Another `>` (greater-than) symbol denotes the beginning of another FASTA entry (comment describing the sequence + the sequence itself).
+
+#### Example FASTA file
+
+This example FASTA file contains two linear nucleotide sequences.
 
 ```
 >gi|1817694395|ref|NZ_JAAGMU010000151.1| Streptomyces sp. SID7958 contig-52000002, whole genome shotgun sequence
@@ -48,8 +56,6 @@ GCACAGTGAGATCAGCATTCCGTTGGATCTACTGGTCAATCAAAACCTGACGCTGGGTACTGAATGGAAC
 CAGCAGCGCATGAAGGACATGCTGTCTAACTCGCAGACCTTTATGGGCGGTAATATTCCAGGCTACAGCA
 GCACCGATCGCAGCCCATATTCGAAAGCCGAGATCTTCTCTTTGTTTGCCGAAAACAACATG
 ```
-
-This example FASTA file contains two linear nucleotide sequences. Each FASTA entry begins with a `>` (greater-than) symbol, followed by a comment on the same line describing the sequence that will follow. The actual sequence begins on the line after this comment. Another `>` (greater-than) symbol denotes the beginning of another FASTA entry (comment describing the sequence + the sequence itself).
 
 #### FASTA filename extensions
 
@@ -70,7 +76,7 @@ A FASTQ file normally uses four lines per sequence:
 3. A line beginning with `+`, sometimes followed by the same comment as the first line
 4. A line encoding the quality values for the sequence in line 2, with the same numbers of symbols as letters in the sequence
 
-Here's an example FASTQ file:
+#### Example FASTQ file
 
 ```
 @SRR8933535.1 1 length=75
@@ -132,6 +138,51 @@ CRAM has the following major objectives:
 2. Full compatibility with BAM
 3. Effortless transition to CRAM from using BAM files
 4. Support for controlled loss of BAM data
+
+### Stockholm format
+
+The Stockholm format is a system for marking up features in a multiple alignment, used by [HMMER](http://hmmer.org/), [Pfam](https://pfam.xfam.org/), and [Rfam](https://rfam.xfam.org/).
+The first line of a Stockholm file (`.sto`, or `.stk`) states the format and version identifier, currently `# STOCKHOLM 1.0`.
+The header is followed by mark-up lines beginning with `#`.
+These mark-up lines can annotate features of the alignment file (`#=GF`, generic per-file annotation), or features of the aligned sequences (`#=GS`, generic per-sequence annotation).
+The sequence alignment itself is a series of lines with sequence names (typically in the form `name/start-end`) followed by a space and the aligned sequence.
+A line with two forward slashes (`//`) indicates the end of the alignment.
+
+#### Example Stockholm file
+
+This is a Stockholm format alignment for Alpha-haemoglobin stabilising protein [(AHSP) from Pfam](https://pfam.xfam.org/family/PF09236):
+
+```
+# STOCKHOLM 1.0
+#=GS G1TJ87_RABIT/6-91   AC G1TJ87.1
+#=GS H0XCX0_OTOGA/5-91   AC H0XCX0.1
+#=GS F6RTV5_HORSE/5-91   AC F6RTV5.2
+#=GS AHSP_BOVIN/5-91     AC Q865F8.1
+#=GS AHSP_MOUSE/5-91     AC Q9CY02.1
+#=GS G3IJS0_CRIGR/5-91   AC G3IJS0.1
+#=GS L9KTP8_TUPCH/5-91   AC L9KTP8.1
+#=GS G5BYB6_HETGA/5-104  AC G5BYB6.1
+#=GS G3T391_LOXAF/5-91   AC G3T391.1
+#=GS F7EDV6_ORNAN/6-92   AC F7EDV6.1
+#=GS G3WLQ8_SARHA/5-86   AC G3WLQ8.1
+#=GS F7DP52_MONDO/4-90   AC F7DP52.1
+#=GS H2NS04_PONAB/5-91   AC H2NS04.1
+G1TJ87_RABIT/6-91              .TNKDLISMGLKEF....NVLLNQ.........QVFSDPL.LSQEAMQTVLDDWVNLYVNYYRQQMTGEQQELDKALEELRLELNGLAKPFLNKYSVFLKS
+H0XCX0_OTOGA/5-91              QANEDLISAGVKEF....NILLNQ.........QVFNEPF.VSEEAMETVVNDWVNFYMNYYKKQMTGEQGEQEKALQELKQKLNSLANPFLAKYRAFLKS
+F6RTV5_HORSE/5-91              QANRDLISTAIKEF....NVLLNQ.........QVFSDPP.VSEEAMVTVVNDWVNFYINYYRRQVVGEQQEKDRALQELRQELNILSAPFLAKYRAFLKS
+AHSP_BOVIN/5-91                QTNKDLISKGIKEF....NILLNQ.........QVFSDPA.ISEEAMVTVVNDWVSFYINYYKKQLSGEQDEQDKALQEFRQELNTLSASFLDKYRNFLKS
+AHSP_MOUSE/5-91                QSNKDLISTGIKEF....NVLLDQ.........QVFDDPL.ISEEDMVIVVHDWVNLYTNYYKKLVHGEQEEQDRAMTEFQQELSTLGSQFLAKYRTFLKS
+G3IJS0_CRIGR/5-91              QTNKELISEGIKQF....NVLLGQ.........QVFDDPL.IPEENMVTVVNDWVNLYINYYKPLVFGKQQEQDKALQELQQELNTLGSQFLTKYRTILKS
+L9KTP8_TUPCH/5-91              QVNKDIIATGMKKF....SVLLDQ.........QVFSEPP.ISEEAMVVVVNDWVNFYVNYYGQQVTGEQQEQDRALNELRQELTTMASPFLAKYRAFLKS
+G5BYB6_HETGA/5-104             QANKDLIALGMKEFPADYSDMLESHSLSPASHPQVFNYPL.ITEEDMVVVVDDWVNIYINYYRKRLTGEKQDQDRALQELRQELKTLASPFLAKYRACLES
+G3T391_LOXAF/5-91              QANKDLISTGMKEF....SILLNQ.........QDMRDNP.IPEEAMVIVVNDWMSFYINYYRQKMTGEQQEQDRALQELQQGLNTLANPFLTKYRDFLKT
+F7EDV6_ORNAN/6-92              .SNQDVINSAMAAF....QALLNQ.........QVFSPQIPIPMEAMKIIVRDWIEFYISYFAPKLRGDRQERERAQEDLWETLQAIARPFLDKYRDFLNA
+G3WLQ8_SARHA/5-86              QSNQDVISSAMQEF....SKLLDQ.........QEFTKPA.FSETDMVTIVDDWIKFYLSYYSKKMTGNEQEQERAMQKLQEELRTSASPFLDKSQ.....
+F7DP52_MONDO/4-90              QSNQDVISSAMQEF....NKLLNQ.........QDFTYAV.ISEKDMVTIVDDWMNYYLSFFSQKMSGDQQEQERAMQKLQEELRSSANPFLDKYRAFLKS
+H2NS04_PONAB/5-91              KANKDLISAGLKEF....SVLLNQ.........QVFNDPL.ISEEDMVTVVEDWMNFYINYYRQQVTGEPQERDKALQELRQELNTLANPFLAKYRDFLKS
+#=GC seq_cons                  QuNKDLISsGhKEF....slLLNQ.........QVFs-Ph.ISEEsMVTVVsDWVNFYlNYY+pploGEQQEQDRALQELpQELsTLAsPFLsKYRsFLKS
+//
+```
 
 ## Generic Feature Formats
 
@@ -224,8 +275,10 @@ ctg123 . CDS             1201  1500  .  +  0  ID=cds00001;Parent=mRNA00001;Name=
 ```
 
 ## References
+
 - [SAM format specification](https://samtools.github.io/hts-specs/SAMv1.pdf)
 - [CRAM format specification (version 3.0)](https://github.com/samtools/hts-specs/blob/5a5d05fa157c679f34db8920ce3acab1d9f3dfd1/CRAMv3.pdf)
 - [The Sequence Alignment/Map format and SAMtools](https://doi.org/10.1093/bioinformatics/btp352)
 - [GTF2.2: A Gene Annotation Format (Revised Ensembl GTF)](http://mblab.wustl.edu/GTF22.html)
 - [GFF3 Specification](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md)
+- [Stockholm format](https://sonnhammer.sbc.su.se/Stockholm.html)
