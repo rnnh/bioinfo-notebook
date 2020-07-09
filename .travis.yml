@@ -34,14 +34,14 @@ install:
   - conda activate bioinfo-notebook-yml
   - conda deactivate
   
-  # Creating conda environment using envs/augustus.txt
-  - conda env create --name augustus-txt --file envs/augustus.txt
-  - conda activate augustus-txt
-  - conda deactivate
-  
   # Creating conda environment using envs/augustus.yml
   - conda env create --name augustus-yml --file envs/augustus.yml
   - conda activate augustus-yml
+  - conda deactivate
+  
+  # Creating conda environment using envs/augustus.txt
+  - conda env create --name augustus-txt --file envs/augustus.txt
+  - conda activate augustus-txt
   - conda deactivate
   
 script:
@@ -59,13 +59,13 @@ script:
   - samtools --version
   - fastq-dump --version
   - conda deactivate
-
-  # augustus-txt
-  - conda activate augustus-txt
-  - augustus --help
-  - conda deactivate
   
   # augustus-yml
   - conda activate augustus-yml
+  - augustus --help
+  - conda deactivate
+
+  # augustus-txt
+  - conda activate augustus-txt
   - augustus --help
   - conda deactivate
