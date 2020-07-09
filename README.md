@@ -99,6 +99,7 @@ bioinfo-notebook/
 │   ├── example_genome_annotation.gtf
 │   └── example_nucleotide_sequence.fasta
 ├── docs/
+│   ├── Augustus.md
 │   ├── blast.md
 │   ├── bowtie.md
 │   ├── bowtie2.md
@@ -120,7 +121,9 @@ bioinfo-notebook/
 │   ├── to_do.md
 │   ├── ubuntu_virtualbox.md
 │   └── wsl.md
-├── envs/           # conda environment files
+├── envs/            # conda environment files
+│   ├── augustus.txt # environments for augustus
+│   ├── augustus.yml
 │   ├── bioinfo-notebook.txt
 │   └── bioinfo-notebook.yml
 ├── scripts/
