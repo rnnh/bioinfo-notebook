@@ -39,11 +39,6 @@ install:
   - conda activate augustus-yml
   - conda deactivate
   
-  # Creating conda environment using envs/augustus.txt
-  - conda env create --name augustus-txt --file envs/augustus.txt
-  - conda activate augustus-txt
-  - conda deactivate
-  
 script:
   # Confirming that programs work in conda environments
   # bioinfo-notebook-explicit
@@ -62,10 +57,5 @@ script:
   
   # augustus-yml
   - conda activate augustus-yml
-  - augustus --help
-  - conda deactivate
-
-  # augustus-txt
-  - conda activate augustus-txt
   - augustus --help
   - conda deactivate
