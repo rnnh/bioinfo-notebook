@@ -39,6 +39,7 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 
 ### [2. Program guides](docs/part2.md)
 
+- [Augustus](docs/augustus.md)
 - [BLAST](docs/blast.md)
 - [bowtie](docs/bowtie.md)
 - [bowtie2](docs/bowtie2.md)
