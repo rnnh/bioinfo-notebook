@@ -21,7 +21,7 @@ nav_exclude: true
 - Add page on GWIPS-viz
 - ~~Rewrite README.md, make project/website easier to navigate~~
 - Add page on `OrthoFinder`
-- Add page on `Augustus`
+- ~~Add page on `Augustus`~~
 - Add page on `HMMER`
 - ~~Add page on `BLAST`~~
 - Add page on `edgeR`
