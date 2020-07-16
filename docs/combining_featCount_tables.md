@@ -13,7 +13,7 @@ This combined feature count table can be used for differential expression analys
 
 ## Demonstration
 
-This is a video demonstartion of [combining_featCount_tables.py](scripts/combining_featCount_tables.py).
+This is a video demonstartion of [combining_featCount_tables.py](../scripts/combining_featCount_tables.py).
 
 [![asciicast](https://asciinema.org/a/311771.svg)](https://asciinema.org/a/311771?autoplay=1)
 
