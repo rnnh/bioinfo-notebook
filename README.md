@@ -97,10 +97,12 @@ bioinfo-notebook/
 ├── assets/
 │   └── bioinfo-notebook_logo.svg
 ├── data/
+│   ├── design_table.csv
 │   ├── example_genome_annotation.gtf
-│   └── example_nucleotide_sequence.fasta
+│   ├── example_genome_annotation.gtf
+│   └── featCounts_S_cere_20200331.csv
 ├── docs/
-│   ├── Augustus.md
+│   ├── augustus.md
 │   ├── blast.md
 │   ├── bowtie.md
 │   ├── bowtie2.md
@@ -119,16 +121,15 @@ bioinfo-notebook/
 │   ├── part2.md    # Navigation page for website
 │   ├── part3.md    # Navigation page for website
 │   ├── samtools.md
-│   ├── to_do.md
 │   ├── ubuntu_virtualbox.md
 │   └── wsl.md
 ├── envs/            # conda environment files
-│   ├── augustus.txt # environments for augustus
-│   ├── augustus.yml
+│   ├── augustus.yml # environments for augustus
 │   ├── bioinfo-notebook.txt
 │   └── bioinfo-notebook.yml
 ├── scripts/
 │   ├── combining_featCount_tables.py
+│   ├── DE_analysis_edgeR_script.R
 │   ├── fastq-dump_to_featureCounts.sh
 │   └── linux_setup.sh
 ├── _config.yml     # Configures github.io project website

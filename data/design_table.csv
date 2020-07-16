@@ -1,0 +1,16 @@
+﻿run,name,condition
+SRR8933532,SCEhightemp3,high_temp
+SRR8933534,SCEhightemp1,high_temp
+SRR8933509,SCEkcl3,osmotic_pressure
+SRR8933530,SCElowPH2,low_pH
+SRR8933511,SCEanaer2,anaerobic
+SRR8933533,SCEhightemp2,high_temp
+SRR8933537,SCEstan1,standard
+SRR8933506,SCEanaer3,anaerobic
+SRR8933531,SCElowPH1,low_pH
+SRR8933538,SCEkcl1,osmotic_pressure
+SRR8933512,SCEanaer1,anaerobic
+SRR8933510,SCEkcl2,osmotic_pressure
+SRR8933535,SCEstan3,standard
+SRR8933536,SCEstan2,standard
+SRR8933539,SCElowPH3,low_pH
