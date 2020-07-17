@@ -2,7 +2,6 @@
 layout: default
 title: Linux setup script
 parent: 3. Scripts
-nav_order: 1
 ---
 
 # Linux setup script

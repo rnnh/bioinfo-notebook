@@ -2,7 +2,6 @@
 layout: default
 title: fastq-dump to featureCounts
 parent: 3. Scripts
-nav_order: 2
 ---
 
 # fastq-dump to featureCounts.sh
