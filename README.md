@@ -110,6 +110,7 @@ bioinfo-notebook/
 │   ├── cl_solutions.md
 │   ├── combining_featCount_tables.md
 │   ├── conda.md
+│   ├── DE_analysis_edgeR_script.R
 │   ├── fasterq-dump.md
 │   ├── fastq-dump.md
 │   ├── fastq-dump_to_featureCounts.md
