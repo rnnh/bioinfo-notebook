@@ -124,35 +124,29 @@ counts.DGEList$samples$group <- as.factor(design.df$condition)
 # Printing counts.DGEList
 counts.DGEList
 
-# Getting counts per million (CPM) for each gene
-counts.cpm  <- cpm(counts.DGEList)
-
 # Summary of the counts.DGEList object: number of genes, number of samples
 dim(counts.DGEList)
 
-# Creating an object to filter genes with a low number of reads
-low_read_filter <- rowSums(counts.cpm) >= 2
-summary(low_read_filter)
+# Creating an object to filter genes with low expression
+counts.keep <- filterByExpr(counts.DGEList)
+summary(counts.keep)
 
-# Filtering genes with a low number of reads
-counts.DGEList <- counts.DGEList[rowSums(counts.cpm) >= 2, ]
+# Filtering lowly expressed genes
+counts.DGEList <- counts.DGEList[counts.keep, , keep.lib.sizes = FALSE]
 dim(counts.DGEList)
 
 # Confirming that the number of genes in counts.DGEList is the same as the
-# number of TRUE values in low_read_filter
-length(low_read_filter[low_read_filter == TRUE]) == dim(counts.DGEList)[1]
+# number of TRUE values in counts.keep
+length(counts.keep[counts.keep == TRUE]) == dim(counts.DGEList)[1]
 
-# Removing the low read filter
-rm(low_read_filter)
+# Removing counts.keep
+rm(counts.keep)
 
-# Normalising counts
-# Printing library size per sample
-counts.DGEList$samples$lib.size
 # Printing the normalisation factors for the libraries
 counts.DGEList$samples$norm.factors
 
 # Calculating normalisation factors and applying them to counts.DGEList
-counts.DGEList <- calcNormFactors(counts.DGEList, method = "TMM")
+counts.DGEList <- calcNormFactors(counts.DGEList)
 counts.DGEList$samples$norm.factors
 
 # Estimating common dispersion and tagwise dispersion
