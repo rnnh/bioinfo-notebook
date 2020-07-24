@@ -21,6 +21,8 @@ Note that each DE analysis needs to be tailored to the specific research questio
 - [Estimating dispersion](#estimating-dispersion)
 - [Pairwise testing](#pairwise-testing)
 - [Session information](#session-information)
+- [See also](#see-also)
+- [References](#references)
 
 ## Introduction
 
@@ -975,8 +977,12 @@ sessionInfo()
 ## See also
 
 - [DE_analysis_edgeR_script.R on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/scripts/DE_analysis_edgeR_script.R)
+- [fastq-dump to featureCounts.sh](fastq-dump_to_featureCounts.md)
+- [combining_featCount_tables](combining_featCount_tables.md)
+- [The CHASSY project](http://chassy.eu/)
 
 ## References
 
 - [R operators](https://www.tutorialspoint.com/r/r_operators.htm)
 - [edgeR User's Guide](https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf)
+- [NCBI BioProject PRJNA531619](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA531619)
