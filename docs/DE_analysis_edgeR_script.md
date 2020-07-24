@@ -6,11 +6,21 @@ parent: 3. Scripts
 
 # DE analysis edgeR script.R
 
-In this script, differential expression (DE) analysis is carried out on RNA-seq data, using the `R` programming language with the `edgeR` library.
+In `DE_analysis_edgeR_script.R`, differential expression (DE) analysis is carried out on RNA-seq data, using the `R` programming language with the `{edgeR}` library.
+This page will provide commentary for this `R` script, and will discuss general concepts used in `R`.
+Note that each DE analysis needs to be tailored to the specific research questions that need to be addressed: a one-size-fits-all approach does not apply to DE analysis scripts.
 
 ## Contents
 
 - [Introduction](#introduction)
+- [Loading and formatting data](#loading-and-formatting-data)
+- [Testing relative standard deviation](#testing-relative-standard-deviation)
+- [Creating a DGEList object](#creating-a-dgelist-object)
+- [Filtering lowly expressed genes](#filtering-lowly-expressed-genes)
+- [Normalising samples](#normalising-samples)
+- [Estimating dispersion](#estimating-dispersion)
+- [Pairwise testing](#pairwise-testing)
+- [Session information](#session-information)
 
 ## Introduction
 
@@ -21,7 +31,10 @@ This script is used to analyse data from an RNA-seq experiment, featuring reads 
 These stresses are: high temperature, low pH, anaerobic stress, and osmotic pressure (KCl).
 A standard chemostat was used as a control.
 This experiment was carried out as part of the [CHASSY project](http://chassy.eu/), and the data is available through [NCBI BioProject PRJNA531619](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA531619).
+
 The aim of this script is to determine which genes are most differentially expressed under each stress condition when compared to the control sample.
+Before doing this, we want to create a function that will test the relative standard deviation between replicates in each condition.
+This is done to eliminate genes with large differences between replicates from the analysis.
 
 Gene count tables were generated from these data using the [fastq-dump to featureCounts](fastq-dump_to_featureCounts.md) script.
 These gene count tables were then combined into [featCounts_S_cere_20200331.csv](../data/featCounts_S_cere_20200331.csv) using the [combining_featCount_tables](combining_featCount_tables.md) script.
@@ -32,7 +45,7 @@ The experimental design is summarised in [design_table.csv](../data/design_table
 The `R` packages that are required for this script are loaded at the beginning using the `library()` function.
 An `R` package or library is a collection of functions, complied code and sample data.
 In this case, the packages loaded are [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) and [limma](https://bioconductor.org/packages/release/bioc/html/limma.html).
-Commands from the `limma` package are not used in this script, it is loaded as it is a dependency for `edgeR`.
+Commands from the `{limma}` package are not used in this script, it is loaded as it is a dependency for `{edgeR}`.
 
 ```{R}
 # Loading required libraries
@@ -41,7 +54,7 @@ library(edgeR)
 ```
 
 Once the packages are loaded, an `if (){} else {}` statement is used to set the working directory for the script to its current location.
-This is done so that the data can be loaded using [relative file pathways](cl_intro.html#relative-paths).
+This is done so that the data can be loaded using [relative file pathways](cl_intro.md#relative-paths).
 
 ```{R}
 # Changing working directory
@@ -269,6 +282,8 @@ str(counts_pressure.df)
 ##  $ SRR8933538: int  3 0 0 3 19 0 0 0 49 569 ...
 ```
 
+## Testing relative standard deviation
+
 Next, a new function is defined: `RSD.test()`.
 This function tests whether the relative standard deviation (RSD) is less than or equal to one for each row in a data frame.
 A data frame is a type of object in `R`: in the output from the `str()` commands above, all of the gene count sets and subsets were listed as `'data.frame'` objects.
@@ -402,6 +417,7 @@ length(RSD_failed_genes)
 ```
 
 We can see that 373 of the 6420 genes failed the RSD test.
+
 We can select against these genes using the `which()` command.
 In this command, `!rownames(counts.df) %in% RSD_failed_genes` is given as the selection condition.
 The exclaimation mark (`!`) at the start of the condition is a *NOT* operator.
@@ -465,6 +481,8 @@ It is also good practice for avoiding mistakes: if there are many objects in the
 rm(counts_anaerobic.df, counts_high_temp.df, counts_low_pH.df,
    counts_pressure.df, counts_standard.df, counts.df, RSD_failed_genes)
 ```
+
+## Creating a DGEList object
 
 Now that our gene counts are correctly formatted and filtered, we can begin the DE analysing using `{edgeR}`.
 The first `edgeR` command we need to use is `DGEList()`.
@@ -595,6 +613,8 @@ In this case the dimensions are the number of genes (`x`) and the number of samp
 
 The object `counts.DGEList` contains 6047 genes, across 15 samples.
 
+## Filtering lowly expressed genes
+
 At this point, we want to filter out lowly expressed genes, as they will not be useful for DE analysis.
 We can do this using the `{edgeR}` command `filterByExpr()`.
 This command will create a set of logical (`TRUE`/`FALSE`) values that can be used to filter lowly expressed genes.
@@ -649,6 +669,8 @@ We can now remove `counts.keep`, as it will not be used again.
 rm(counts.keep)
 ```
 
+## Normalising samples
+
 We now need to normalise the library sizes between the samples in `counts.DGEList`.
 This is done to minimise bias towards highly expressed genes.
 The `{edgeR}` function `calcNormFactors()` normalises the library sizes by finding a set of scaling factors for the library sizes that minimizes the log-fold changes between the samples for most genes.
@@ -676,6 +698,8 @@ counts.DGEList$samples$norm.factors
 ##  [8] 0.9657677 1.0155710 0.9607328 1.0797312 0.9803494 0.9144696 0.9374429
 ## [15] 1.0004370
 ```
+
+## Estimating dispersion
 
 Next, we need to apply `estimateDisp()` to `counts.DGEList`.
 This command is used to estimate common dispersion and tagwise dispersion.
@@ -784,6 +808,8 @@ counts.DGEList
 ## $span
 ## [1] 0.3197199
 ```
+
+## Pairwise testing
 
 In this DE analysis, we want to compare samples for each stress condition to the standard condition samples.
 This is essentially a series of pairwise tests: standard verus high temperature, standard versus low pH, etc.
@@ -912,9 +938,12 @@ std_pH.topTags
 ## YGR174W-A YGR174W-A  0.8523619 4.982261 8.223465e-07 3.731196e-04
 ```
 
+## Session information
+
 The final command that this script runs is `sessionInfo()`.
 This command prints version information about `R`, the operating system and attached or loaded packages.
-All of the output on this page was created in one session, and having information about the exact versions of the software used should make it easier to replicate these results.
+All of the output on this page was created in one session.
+Providing information about the exact versions of the software used will make it easier to replicate results.
 
 ```{R}
 sessionInfo()
@@ -949,4 +978,5 @@ sessionInfo()
 
 ## References
 
-https://www.tutorialspoint.com/r/r_operators.htm
+- [R operators](https://www.tutorialspoint.com/r/r_operators.htm)
+- [edgeR User's Guide](https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf)
