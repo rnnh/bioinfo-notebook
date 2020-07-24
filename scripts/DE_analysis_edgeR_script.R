@@ -1,5 +1,4 @@
 # Loading required libraries
-library(tidyverse)
 library(limma)
 library(edgeR)
 
@@ -156,9 +155,9 @@ counts.DGEList <- estimateDisp(counts.DGEList,
 
 counts.DGEList
 
-# Exact tests for differences between experimental conditions
 condition_
 
+# Exact tests for differences between experimental conditions
 std_anaerobic.DGEExact <- exactTest(counts.DGEList, pair = c("standard",
                                                              "anaerobic"))
 std_salt.DGEExact <- exactTest(counts.DGEList, pair = c("standard",
