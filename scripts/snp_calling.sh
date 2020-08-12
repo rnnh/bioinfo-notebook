@@ -4,10 +4,11 @@
 usage="$(basename "$0") [-h|--help] [-l|--log -p|--processors n] \n
 \n
 This script downloads FASTQ sequencing reads, aligns them to a reference genome, \n
-and creates a VCF file based on this alignment. It is written to be run \n
-from the 'bioinfo-notebook/' directory. \n
+and finds genetic variants (SNPs/indels) based on this alignment, which are \n
+written to a variant call format (VCF) file. This script should be called from \n
+the 'bioinfo-notebook/' directory. \n
 \n
-where: \n
+arguments: \n
     -h | --help          show this help text and exit \n
     -l | --log           redirect terminal output to a log file \n
     -p | --processors    optional: set the number (n) of processors to use \n
@@ -66,17 +67,16 @@ done
 
 echo Downloading reference sequence...
 
-curl -s --remote-name --remote-time ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA\
-/003/086/655/GCA_003086655.1_ASM308665v1\
-/GCA_003086655.1_ASM308665v1_genomic.fna.gz
+curl -s --remote-name --remote-time ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF\
+/000/146/045/GCF_000146045.2_R64/GCF_000146045.2_R64_genomic.fna.gz
 
 echo Decompressing reference sequence...
 
-gunzip GCA_003086655.1_ASM308665v1_genomic.fna.gz
+gunzip GCF_000146045.2_R64_genomic.fna.gz
 
 echo Indexing reference sequence for bowtie2...
 
-bowtie2-build GCA_003086655.1_ASM308665v1_genomic.fna S_cere_ref_seq
+bowtie2-build GCF_000146045.2_R64_genomic.fna S_cere_ref_seq
 
 echo Aligning reads to the reference genome...
 
@@ -85,37 +85,46 @@ bowtie2 --no-unal -p $PROCESSORS -x S_cere_ref_seq -1 DRR237290_pass_1.fastq.gz 
 
 echo Converting SAM alignment to sorted BAM alignment...
 
-samtools view -@ $PROCESSORS -Sb -o S_cere_DRR237290_alignment.bam \
+samtools view -@ $PROCESSORS -Sb -o S_cere_DRR237290_alignment_unsorted.bam \
 	S_cere_DRR237290_alignment.sam 
 
-samtools sort -@ $PROCESSORS -O bam -o sorted_S_cere_DRR237290_alignment.bam \
-	S_cere_DRR237290_alignment.bam
+samtools sort -@ $PROCESSORS -O bam -l 9 -o S_cere_DRR237290_alignment.bam \
+	S_cere_DRR237290_alignment_unsorted.bam
+
+echo Removing redundant alignment files...
+
+rm S_cere_DRR237290_alignment.sam S_cere_DRR237290_alignment_unsorted.bam
 
 echo Indexing reference sequence for SAMtools...
 
-samtools faidx GCA_003086655.1_ASM308665v1_genomic.fna
+samtools faidx GCF_000146045.2_R64_genomic.fna
 
-echo Generating genotype variant likelihoods...
+echo Generating genotype variant likelihoods with BCFtools...
 
-samtools mpileup -g -f GCA_003086655.1_ASM308665v1_genomic.fna \
-	-o S_cere_DRR237290_full.bcf sorted_S_cere_DRR237290_alignment.bam
+bcftools mpileup --max-depth 10000 --threads $PROCESSORS \
+	-f GCF_000146045.2_R64_genomic.fna \
+	-o S_cere_DRR237290_full.bcf S_cere_DRR237290_alignment.bam
 
-echo SNP calling with BCFtools...
+echo Variant calling with BCFtools...
 
-bcftools call -O b --threads $PROCESSORS -vc S_cere_DRR237290_full.bcf \
-	> S_cere_DRR237290_var.bcf
+bcftools call -O b --threads $PROCESSORS -vc --ploidy 1 -p 0.05 \
+	-o S_cere_DRR237290_var_unfiltered.bcf S_cere_DRR237290_full.bcf
 
-echo SNP filtering with vcfutils.pl...
+echo Removing redundant BCF file...
 
-bcftools view S_cere_DRR237290_var.bcf | vcfutils.pl varFilter - \
-	> S_cere_DRR237290_SNP.vcf
+rm S_cere_DRR237290_full.bcf
+
+echo Variant filtering with BCFtools filter...
+
+bcftools filter --threads $PROCESSORS -i '%QUAL>=20' -O v \
+	-o S_cere_DRR237290_var.vcf S_cere_DRR237290_var_unfiltered.bcf
 
 echo Head of VCF file...
 
-head S_cere_DRR237290_SNP.vcf
+head S_cere_DRR237290_var.vcf
 
 echo Tail of VCF file...
 
-tail S_cere_DRR237290_SNP.vcf
+tail S_cere_DRR237290_var.vcf
 
 echo "$(date +%Y/%m/%d\ %H:%M) Script finished."
