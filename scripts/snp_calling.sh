@@ -3,16 +3,16 @@
 # Help/usage text
 usage="$(basename "$0") [-h|--help] [-l|--log -p|--processors n] \n
 \n
-This script downloads FASTQ sequencing reads, aligns them to a reference genome, \n
-and finds genetic variants (SNPs/indels) based on this alignment, which are \n
-written to a variant call format (VCF) file. This script should be called from \n
-the 'bioinfo-notebook/' directory. \n
+This script downloads FASTQ sequencing reads, aligns them to a reference \n
+genome, and finds genetic variants (SNPs/indels) based on this alignment, \n
+which are written to a variant call format (VCF) file. This script should \n
+be called from the 'bioinfo-notebook/' directory. \n
 \n
 arguments: \n
-    -h | --help          show this help text and exit \n
-    -l | --log           redirect terminal output to a log file \n
-    -p | --processors    optional: set the number (n) of processors to use \n
-                         (default: 1) \n
+\t  -h | --help\t\t          show this help text and exit \n
+\t  -l | --log\t\t           redirect terminal output to a log file \n
+\t  -p | --processors\t      optional: set the number (n) of processors to \n
+\t\t\t\t                     use (default: 1) \n
 "
 
 MAKELOG=false
