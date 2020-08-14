@@ -13,3 +13,4 @@ data/*.log
 temp/
 results/
 .temp/
+results/*
