@@ -82,66 +82,52 @@ fi
 echo "$(date +%Y/%m/%d\ %H:%M) Beginning genome annotation script."
 
 echo Downloading genome FASTA file...
-
 curl -s -o S_cere.fna.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146\
 /045/GCF_000146045.2_R64/GCF_000146045.2_R64_genomic.fna.gz
 
 echo Decompressing genome FASTA file...
-
 gunzip S_cere.fna.gz
 
 echo Downloading Swiss-Prot sequences...
-
 curl -s -o uniprot_sprot.fasta.gz ftp://ftp.uniprot.org/pub/databases/uniprot\
 /current_release/knowledgebase/complete/uniprot_sprot.fasta.gz | xargs -n 1 \
 -P $PROCESSORS
 
 echo Decompressing Swiss-Prot sequences...
-
 gunzip uniprot_sprot.fasta.gz
 
 echo Creating BLAST database...
-
 makeblastdb -dbtype prot -in uniprot_sprot.fasta -out SwissProt
 
 echo Removing Swiss-Prot sequences...
-
 rm uniprot_sprot.fasta
 
 echo Searching genome FASTA file against Swiss-Prot with BLASTx...
-
 blastx -num_threads $PROCESSORS -evalue 1e-100 -query S_cere.fna -db SwissProt \
 -outfmt 6 -out blastx_SwissProt_S_cere_unfiltered.tsv
 
 echo Removing Swiss-Prot database...
-
 rm SwissProt*
 
 echo Filtering BLASTx results with percentage identity less than 90% with awk...
-
 awk '{ if ($3 >= 90) { print } }' blastx_SwissProt_S_cere_unfiltered.tsv \
 > blastx_SwissProt_S_cere.tsv
 
 echo Removing unfiltered BLASTx results...
-
 rm blastx_SwissProt_S_cere_unfiltered.tsv
 
 echo Creating genome annotation GFF file from BLASTx results...
-
 blast2gff uniprot --fasta-file S_cere.fna blastx_SwissProt_S_cere.tsv \
 S_cere_without_UniProt_info.gff
 
 echo Adding information to genome annotation from UniProt...
-
 add-gff-info uniprot --email $EMAIL --protein-names --enzymes --kegg_orthologs \
 --eggnog --taxon-id S_cere_without_UniProt_info.gff S_cere.gff
 
 echo Removing copy of genome annotation without added UniProt info...
-
 rm S_cere_without_UniProt_info.gff
 
 echo First line of finished genome annotation...
-
 head -n 1 S_cere.gff
 
 echo "$(date +%Y/%m/%d\ %H:%M) Script finished."
