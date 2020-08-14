@@ -48,8 +48,10 @@ done
 cd data
 
 if $MAKELOG ; then
-    # Creating results directory
-    mkdir ../results
+    # Creating results directory, if it does not already exist
+    if [ ! -d ../results ]; then
+        mkdir ../results
+    fi
     # CREATING LOG FILE
     # Terminal output directed to the file 'snp_calling_[date]_[time].log'
     exec 3>&1 4>&2
