@@ -21,6 +21,7 @@ Note that each DE analysis needs to be tailored to the specific research questio
 - [Estimating dispersion](#estimating-dispersion)
 - [Pairwise testing](#pairwise-testing)
 - [Session information](#session-information)
+- [Versions of this document](#versions-of-this-document)
 - [See also](#see-also)
 - [References](#references)
 
@@ -422,7 +423,7 @@ We can see that 373 of the 6420 genes failed the RSD test.
 
 We can select against these genes using the `which()` command.
 In this command, `!rownames(counts.df) %in% RSD_failed_genes` is given as the selection condition.
-The exclaimation mark (`!`) at the start of the condition is a *NOT* operator.
+The exclamation mark (`!`) at the start of the condition is a *NOT* operator.
 In this case, we want to select the gene names that are *not* in the RSD failed genes list.
 This can be written in square brackets before the comma as the condition to select rows in `counts.df`: this will result in selecting the genes which did not fail the RSD test under any of the experimental conditions.
 The arrow operator (`<-`) is used to assign these filtered gene counts to the object `filtered_counts.df`.
@@ -974,12 +975,24 @@ sessionInfo()
 ## [5] splines_4.0.2   grid_4.0.2      locfit_1.5-9.4  lattice_0.20-41
 ```
 
+## Versions of this document
+
+- [PDF version on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/docs/DE_analysis_edgeR_script.pdf)
+- [Online version on GitHub Pages](https://rnnh.github.io/bioinfo-notebook/docs/DE_analysis_edgeR_script.html)
+- [Markdown version on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/docs/DE_analysis_edgeR_script.md)
+
 ## See also
 
 - [DE_analysis_edgeR_script.R on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/scripts/DE_analysis_edgeR_script.R)
-- [fastq-dump to featureCounts.sh](fastq-dump_to_featureCounts.md)
-- [combining_featCount_tables](combining_featCount_tables.md)
+- [featCounts_S_cere_20200331.csv](https://github.com/rnnh/bioinfo-notebook/blob/master/data/featCounts_S_cere_20200331.csv)
+- [design_table.csv](https://github.com/rnnh/bioinfo-notebook/blob/master/data/design_table.csv)
+- [fastq-dump to featureCounts.sh](https://rnnh.github.io/bioinfo-notebook/docs/fastq-dump_to_featureCounts.html)
+- [combining_featCount_tables](https://rnnh.github.io/bioinfo-notebook/docs/combining_featCount_tables.html)
+- [Relative file pathways](https://rnnh.github.io/bioinfo-notebook/docs/cl_intro.html#relative-paths)]
 - [The CHASSY project](http://chassy.eu/)
+- [R project](https://www.r-project.org/)
+- [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)
+- [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)
 
 ## References
 
