@@ -983,12 +983,14 @@ sessionInfo()
 
 ## See also
 
+## See also
+
 - [DE_analysis_edgeR_script.R on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/scripts/DE_analysis_edgeR_script.R)
 - [featCounts_S_cere_20200331.csv](https://github.com/rnnh/bioinfo-notebook/blob/master/data/featCounts_S_cere_20200331.csv)
 - [design_table.csv](https://github.com/rnnh/bioinfo-notebook/blob/master/data/design_table.csv)
-- [fastq-dump to featureCounts.sh](https://rnnh.github.io/bioinfo-notebook/docs/fastq-dump_to_featureCounts.html)
-- [combining_featCount_tables](https://rnnh.github.io/bioinfo-notebook/docs/combining_featCount_tables.html)
-- [Relative file pathways](https://rnnh.github.io/bioinfo-notebook/docs/cl_intro.html#relative-paths)]
+- [fastq-dump_to_featureCounts.sh](https://rnnh.github.io/bioinfo-notebook/docs/fastq-dump_to_featureCounts.html)
+- [combining_featCount_tables.py](https://rnnh.github.io/bioinfo-notebook/docs/combining_featCount_tables.html)
+- [Relative file pathways](https://rnnh.github.io/bioinfo-notebook/docs/cl_intro.html#relative-paths)
 - [The CHASSY project](http://chassy.eu/)
 - [R project](https://www.r-project.org/)
 - [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)
