@@ -121,8 +121,13 @@ blast2gff uniprot --fasta-file S_cere.fna blastx_SwissProt_S_cere.tsv \
 S_cere_without_UniProt_info.gff
 
 echo Adding information to genome annotation from UniProt...
-add-gff-info uniprot --email $EMAIL --protein-names --enzymes --kegg_orthologs \
---eggnog --taxon-id S_cere_without_UniProt_info.gff S_cere.gff
+until add-gff-info uniprot --email $EMAIL --protein-names --enzymes \
+--kegg_orthologs --eggnog --taxon-id S_cere_without_UniProt_info.gff \
+S_cere.gff; do
+    echo add-gff-info failed, retrying in 10 seconds...
+    rm -v S_cere.gff
+    sleep 10s
+done
 
 echo Removing copy of genome annotation without added UniProt info...
 rm S_cere_without_UniProt_info.gff
