@@ -2,7 +2,7 @@
 
 # Help/usage text
 usage="$(basename "$0") [-h|--help] [-1|--one -2|--two -r|--reference] \n
-[-d|--demo] [-l|--log -p|--processors n] \n
+[-d|--demo] [-o|--output -l|--log -p|--processors n] \n
 \n
 This script aligns sequencing reads to a reference genome, and finds genetic \n
 variants (SNPs/indels) based on this alignment, which are written to a variant\n
@@ -26,6 +26,11 @@ arguments: \n
 \t  -r | --reference\t       reference sequence to align reads against \n
 \t\t\t\t                     (FASTA nucleotide file: .fna) \n
 \t  -d | --demo\t\t          run the script with demonstration inputs\n
+\n
+optional arguments: \n
+\t  -o | --output\t\t        optional: name of final output file \n
+\t\t\t\t                     (default: 'reference_seq_vs_reads_var.vcf', or \n
+\t\t\t\t                     'S_cere_DRR237290_var.vcf' if demo is used). \n
 \t  -l | --log\t\t           redirect terminal output to a log file in the \n
 \t\t\t\t                     directory bioinfo-notebook/results/ \n
 \t  -p | --processors\t      optional: set the number (n) of processors to \n
@@ -38,6 +43,7 @@ DEMO=false
 ONE=""
 TWO=""
 REFERENCE=""
+OUTPUT=""
 
 # Iterating through the input arguments with a while loop
 while (( "$#" )); do
@@ -56,6 +62,10 @@ while (( "$#" )); do
             ;;
         -r|--reference)
             REFERENCE=$2
+            shift 2
+            ;;
+        -o|--output)
+            OUTPUT=$2
             shift 2
             ;;
         -d|--demo)
@@ -146,17 +156,30 @@ if $DEMO ; then
     echo Removing redundant BCF file...
     rm -v S_cere_DRR237290_full.bcf
 
-    echo Variant filtering with BCFtools filter...
-    bcftools filter --threads $PROCESSORS -i '%QUAL>=20' -O v \
-    -o S_cere_DRR237290_var.vcf S_cere_DRR237290_var_unfiltered.bcf
+    if [ -z $OUTPUT ]; then
+        echo Variant filtering with BCFtools filter...
+        bcftools filter --threads $PROCESSORS -i '%QUAL>=20' -O v \
+        -o S_cere_DRR237290_var.vcf S_cere_DRR237290_var_unfiltered.bcf
 
-    echo Head of VCF file...
-    head S_cere_DRR237290_var.vcf
+        echo Head of VCF file...
+        head S_cere_DRR237290_var.vcf
 
-    echo Tail of VCF file...
-    tail S_cere_DRR237290_var.vcf
+        echo Tail of VCF file...
+        tail S_cere_DRR237290_var.vcf
 
-    echo "$(date +%Y/%m/%d\ %H:%M) Script finished."
+        echo "$(date +%Y/%m/%d\ %H:%M) Script finished."
+    else
+        echo Variant filtering with BCFtools filter...
+        bcftools filter --threads $PROCESSORS -i '%QUAL>=20' -O v \
+        -o $OUTPUT.vcf S_cere_DRR237290_var_unfiltered.bcf
+
+        echo Head of VCF file...
+        head $OUTPUT.vcf
+
+        echo Tail of VCF file...
+        tail $OUTPUT.vcf
+    fi
+
 fi
 
 echo Indexing reference sequence for bowtie2...
@@ -194,14 +217,26 @@ bcftools call -O b --threads $PROCESSORS -vc --ploidy 1 -p 0.05 \
 echo Removing redundant BCF file...
 rm reference_seq_vs_reads_full.bcf
 
-echo Variant filtering with BCFtools filter...
-bcftools filter --threads $PROCESSORS -i '%QUAL>=20' -O v \
--o reference_seq_vs_reads_var.vcf reference_seq_vs_reads_var_unfiltered.bcf
+if [ -z $OUTPUT ]; then
+    echo Variant filtering with BCFtools filter...
+    bcftools filter --threads $PROCESSORS -i '%QUAL>=20' -O v \
+    -o reference_seq_vs_reads_var.vcf reference_seq_vs_reads_var_unfiltered.bcf
 
-echo Head of VCF file...
-head reference_seq_vs_reads_var.vcf
+    echo Head of VCF file...
+    head reference_seq_vs_reads_var.vcf
 
-echo Tail of VCF file...
-tail reference_seq_vs_reads_var.vcf
+    echo Tail of VCF file...
+    tail reference_seq_vs_reads_var.vcf
+else
+    echo Variant filtering with BCFtools filter...
+    bcftools filter --threads $PROCESSORS -i '%QUAL>=20' -O v \
+    -o $OUTPUT.vcf reference_seq_vs_reads_var_unfiltered.bcf
+
+    echo Head of VCF file...
+    head $OUTPUT.vcf
+
+    echo Tail of VCF file...
+    tail $OUTPUT.vcf
+fi
 
 echo "$(date +%Y/%m/%d\ %H:%M) Script finished."
