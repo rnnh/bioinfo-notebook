@@ -14,7 +14,8 @@
 #     section. For this script to work, these files need to use the same
 #     sequence names: e.g. if the first sequence in the VCF is called "chrI",
 #     there should be a corresponding sequence called "chrI" in the GFF file.
-#   - The VCF and GFF files should be in the directory '/bioinfo-notebook/data/'.
+#   - The VCF and GFF files should be in the directory
+#     '~/bioinfo-notebook/data/'.
 #   - The number of lines in the VCF file header should be specified in the
 #     'VCF_header.int' variable. This is the number of lines that begin with '#'
 #     in the VCF file.
