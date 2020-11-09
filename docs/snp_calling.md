@@ -16,16 +16,19 @@ snp_calling.sh [-h|--help] [-1|--one -2|--two -r|--reference]
  
  This script aligns sequencing reads to a reference genome, and finds genetic 
  variants (SNPs/indels) based on this alignment, which are written to a variant
- call format (VCF) file. This script should be called from the 
- 'bioinfo-notebook/' directory.
+ call format (VCF) file.
  
  Calling this script with the argument '-d' or '--demo' will run this script 
  using Saccharomyces cerevisiae FASTQ sequencing reads and a Saccharomyces 
  cerevisiae reference genome, which will be downloaded from NCBI. 
  
- The programs required for this script are in the 'bioinfo-notebook' conda 
+ This script should be called from the 'bioinfo-notebook/' directory.The 
+ programs required for this script are in the 'bioinfo-notebook' conda 
  environment (bioinfo-notebook/envs/bioinfo-notebook.yml or 
  bioinfo-notebook/envs/bioinfo-notebook.txt). 
+ If the input files are not in the 'bioinfo-notebook/data/' directory, the full 
+ file paths should be given.
+
  
  arguments: 
  	 -h | --help		 show this help text and exit 
@@ -44,7 +47,7 @@ snp_calling.sh [-h|--help] [-1|--one -2|--two -r|--reference]
  	 -l | --log		 redirect terminal output to a log file in the 
  				 directory bioinfo-notebook/results/ 
  	 -p | --processors	 optional: set the number (n) of processors to 
- 				 use (default: 1) 
+ 				 use (default: 1)
 ```
 
 ## See also

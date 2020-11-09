@@ -17,6 +17,8 @@ This script should be called from the 'bioinfo-notebook/' directory.The \n
 programs required for this script are in the 'bioinfo-notebook' conda \n
 environment (bioinfo-notebook/envs/bioinfo-notebook.yml or \n
 bioinfo-notebook/envs/bioinfo-notebook.txt). \n
+If the input files are not in the 'bioinfo-notebook/data/' directory, the full \n
+file paths should be given.\n\n
 \n
 arguments: \n
 \t  -h | --help\t\t          show this help text and exit \n

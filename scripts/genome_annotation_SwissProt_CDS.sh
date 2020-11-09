@@ -27,16 +27,18 @@ in the S. cerevisiae genome that are described in UniProtKB/Swiss-Prot. \n
 This script can also be run with the argument '-i' or '--input', which is used\n
 to specify a FASTA nucleotide file (.fasta or .fna) to annotate, instead of\n
 the demo sequence. The end result is also an annotation of the CDS in the input\n
-sequence based on UniProtKB/Swiss-Prot, called '<input>.gff'.\n
+sequence based on UniProtKB/Swiss-Prot, called '<input>.gff'.
 \n
 This script should be called from the 'bioinfo-notebook/' directory.The \n
 programs required for this script are in the 'bioinfo-notebook' conda \n
 environment (bioinfo-notebook/envs/bioinfo-notebook.yml or \n
 bioinfo-notebook/envs/bioinfo-notebook.txt). \n
+If the input file is not in the 'bioinfo-notebook/data/' directory, the full \n
+file path should be given.\n
 \n
 arguments: \n
 \t  -h | --help\t\t          show this help text and exit \n
-\t  -i | --input\t\t         input FASTA nucleotide file to annotate\n
+\t  -i | --input\t\t         name of input FASTA nucleotide file to annotate \n
 \t  -d | --demo\t\t          run the script with demonstration inputs\n
 \n
 optional arguments:\n
