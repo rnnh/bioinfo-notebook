@@ -2,10 +2,13 @@
 # https://github.com/rnnh/bioinfo-notebook.git
 
 # Help/usage text
-usage="$(basename "$0") [-h|--help] [-l|--log -p|--processors n \n
--e|--email] \n
+usage="$(basename "$0") [-h|--help] [-d|--demo] [-i|--input] \n
+[-l|--log -p|--processors n -e|--email] \n
 \n
-This script...\n
+A script to annotate proteins in a genome assembly, using BLASTx with\n
+UniProtKB/Swiss-Prot.\n
+\n
+When run with the arugment '-d' or '--demo' this script...\n
 \n
 \t 1. Downloads a Saccharomyces cerevisiae S288C genome assembly, and \n
 \t the UniProtKB/Swiss-Prot amino acid sequences. \n
@@ -21,19 +24,33 @@ This script...\n
 The end result ('S_cere.gff') is an annotation of the coding sequences (CDS) \n
 in the S. cerevisiae genome that are described in UniProtKB/Swiss-Prot. \n
 \n
-This script should be called from the 'bioinfo-notebook/' directory. \n
+This script can also be run with the argument '-i' or '--input', which is used\n
+to specify a FASTA nucleotide file (.fasta or .fna) to annotate, instead of\n
+the demo sequence. The end result is also an annotation of the CDS in the input\n
+sequence based on UniProtKB/Swiss-Prot, called '<input>.gff'.\n
+\n
+This script should be called from the 'bioinfo-notebook/' directory.The \n
+programs required for this script are in the 'bioinfo-notebook' conda \n
+environment (bioinfo-notebook/envs/bioinfo-notebook.yml or \n
+bioinfo-notebook/envs/bioinfo-notebook.txt). \n
 \n
 arguments: \n
 \t  -h | --help\t\t          show this help text and exit \n
+\t  -i | --input\t\t         input FASTA nucleotide file to annotate\n
+\t  -d | --demo\t\t          run the script with demonstration inputs\n
+\n
+optional arguments:\n
 \t  -l | --log\t\t           redirect terminal output to a log file \n
-\t  -p | --processors\t      optional: set the number (n) of processors to \n
-\t\t\t\t                     use (default: 1) \n
-\t  -e | --email\t\t         optional: contact email for UniProt queries
+\t  -p | --processors\t      set the number (n) of processors to use\n
+\t\t\t\t                     (default: 1) \n
+\t  -e | --email\t\t         contact email for UniProt queries
 "
 
 MAKELOG=false
 PROCESSORS=1
-EMAIL='none'
+EMAIL="none"
+DEMO=false
+INPUT=""
 
 # Iterating through the input arguments with a while loop
 while (( "$#" )); do
@@ -41,6 +58,14 @@ while (( "$#" )); do
         -h|--help)
             echo -e $usage
             exit
+            ;;
+        -i|--input)
+            INPUT=$2
+            shift 2
+            ;;
+        -d|--demo)
+            DEMO=true
+            shift 1
             ;;
         -l|--log)
             MAKELOG=true
@@ -82,16 +107,19 @@ fi
 
 echo "$(date +%Y/%m/%d\ %H:%M) Beginning genome annotation script."
 
-echo Downloading genome FASTA file...
-curl -s -o S_cere.fna.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146\
+if $DEMO ; then
+    echo Downloading genome FASTA file...
+    curl -s -o S_cere.fna.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146\
 /045/GCF_000146045.2_R64/GCF_000146045.2_R64_genomic.fna.gz
 
-echo Decompressing genome FASTA file...
-gunzip S_cere.fna.gz
+    echo Decompressing genome FASTA file...
+    gunzip S_cere.fna.gz
+
+fi
 
 echo Downloading Swiss-Prot sequences...
-curl -s -o uniprot_sprot.fasta.gz ftp://ftp.uniprot.org/pub/databases/uniprot\
-/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz | xargs -n 1 \
+curl -s -o uniprot_sprot.fasta.gz ftp://ftp.uniprot.org/pub/databases/uniprot/\
+current_release/knowledgebase/complete/uniprot_sprot.fasta.gz | xargs -n 1 \
 -P $PROCESSORS
 
 echo Decompressing Swiss-Prot sequences...
@@ -101,39 +129,76 @@ echo Creating BLAST database...
 makeblastdb -dbtype prot -in uniprot_sprot.fasta -out SwissProt
 
 echo Removing Swiss-Prot sequences...
-rm uniprot_sprot.fasta
+rm -v uniprot_sprot.fasta
 
-echo Searching genome FASTA file against Swiss-Prot with BLASTx...
-blastx -num_threads $PROCESSORS -evalue 1e-100 -query S_cere.fna -db SwissProt \
--outfmt 6 -out blastx_SwissProt_S_cere_unfiltered.tsv
+if $DEMO ; then
+    echo Searching genome FASTA file against Swiss-Prot with BLASTx...
+    blastx -num_threads $PROCESSORS -evalue 1e-100 -query S_cere.fna \
+    -db SwissProt -outfmt 6 -out blastx_SwissProt_S_cere_unfiltered.tsv
 
-echo Removing Swiss-Prot database...
-rm SwissProt*
+    echo Removing Swiss-Prot database...
+    rm -v SwissProt*
 
 echo Filtering BLASTx results with percentage identity less than 90% with awk...
-awk '{ if ($3 >= 90) { print } }' blastx_SwissProt_S_cere_unfiltered.tsv \
-> blastx_SwissProt_S_cere.tsv
+    awk '{ if ($3 >= 90) { print } }' blastx_SwissProt_S_cere_unfiltered.tsv \
+    > blastx_SwissProt_S_cere.tsv
 
-echo Removing unfiltered BLASTx results...
-rm blastx_SwissProt_S_cere_unfiltered.tsv
+    echo Removing unfiltered BLASTx results...
+    rm -v blastx_SwissProt_S_cere_unfiltered.tsv
 
-echo Creating genome annotation GFF file from BLASTx results...
-blast2gff uniprot --fasta-file S_cere.fna blastx_SwissProt_S_cere.tsv \
-S_cere_without_UniProt_info.gff
+    echo Creating genome annotation GFF file from BLASTx results...
+    blast2gff uniprot --fasta-file S_cere.fna blastx_SwissProt_S_cere.tsv \
+    S_cere_without_UniProt_info.gff
 
-echo Adding information to genome annotation from UniProt...
-until add-gff-info uniprot --email $EMAIL --protein-names --enzymes \
---kegg_orthologs --eggnog --taxon-id S_cere_without_UniProt_info.gff \
-S_cere.gff; do
-    echo add-gff-info failed, retrying in 10 seconds...
-    rm -v S_cere.gff
-    sleep 10s
-done
+    echo Adding information to genome annotation from UniProt...
+    until add-gff-info uniprot --email $EMAIL --protein-names --enzymes \
+    --kegg_orthologs --eggnog --taxon-id S_cere_without_UniProt_info.gff \
+    S_cere.gff; do
+        echo add-gff-info failed, retrying in 10 seconds...
+        rm -v S_cere.gff
+        sleep 10s
+    done
 
-echo Removing copy of genome annotation without added UniProt info...
-rm S_cere_without_UniProt_info.gff
+    echo Removing copy of genome annotation without added UniProt info...
+    rm -v S_cere_without_UniProt_info.gff
 
-echo First line of finished genome annotation...
-head -n 1 S_cere.gff
+    echo First line of finished genome annotation...
+    head -n 1 S_cere.gff
+fi
+
+if [ ! -z $INPUT ]; then
+    echo Searching genome FASTA file against Swiss-Prot with BLASTx...
+    blastx -num_threads $PROCESSORS -evalue 1e-100 -query $INPUT \
+    -db SwissProt -outfmt 6 -out blastx_SwissProt_$INPUT\_unfiltered.tsv
+
+    echo Removing Swiss-Prot database...
+    rm -v SwissProt*
+
+echo Filtering BLASTx results with percentage identity less than 90% with awk...
+    awk '{ if ($3 >= 90) { print } }' blastx_SwissProt_$INPUT\_unfiltered.tsv \
+    > blastx_SwissProt_$INPUT\.tsv
+
+    echo Removing unfiltered BLASTx results...
+    rm -v blastx_SwissProt_$INPUT\_unfiltered.tsv
+
+    echo Creating genome annotation GFF file from BLASTx results...
+    blast2gff uniprot --fasta-file $INPUT blastx_SwissProt_$INPUT\.tsv \
+    $INPUT\_without_UniProt_info.gff
+
+    echo Adding information to genome annotation from UniProt...
+    until add-gff-info uniprot --email $EMAIL --protein-names --enzymes \
+    --kegg_orthologs --eggnog --taxon-id $INPUT\_without_UniProt_info.gff \
+    $INPUT.gff; do
+        echo add-gff-info failed, retrying in 10 seconds...
+        rm -v $INPUT.gff
+        sleep 10s
+    done
+
+    echo Removing copy of genome annotation without added UniProt info...
+    rm -v $INPUT\_without_UniProt_info.gff
+
+    echo First line of finished genome annotation...
+    head -n 1 $INPUT.gff
+fi
 
 echo "$(date +%Y/%m/%d\ %H:%M) Script finished."

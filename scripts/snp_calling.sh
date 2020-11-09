@@ -7,14 +7,14 @@ usage="$(basename "$0") [-h|--help] [-1|--one -2|--two -r|--reference] \n
 \n
 This script aligns sequencing reads to a reference genome, and finds genetic \n
 variants (SNPs/indels) based on this alignment, which are written to a variant\n
-call format (VCF) file. This script should be called from the \n
-'bioinfo-notebook/' directory.\n
+call format (VCF) file.\n
 \n
 Calling this script with the argument '-d' or '--demo' will run this script \n
 using Saccharomyces cerevisiae FASTQ sequencing reads and a Saccharomyces \n
 cerevisiae reference genome, which will be downloaded from NCBI. \n
 \n
-The programs required for this script are in the 'bioinfo-notebook' conda \n
+This script should be called from the 'bioinfo-notebook/' directory.The \n
+programs required for this script are in the 'bioinfo-notebook' conda \n
 environment (bioinfo-notebook/envs/bioinfo-notebook.yml or \n
 bioinfo-notebook/envs/bioinfo-notebook.txt). \n
 \n
@@ -180,7 +180,6 @@ GCF/000/146/045/GCF_000146045.2_R64/GCF_000146045.2_R64_genomic.fna.gz
         echo Tail of VCF file...
         tail $OUTPUT.vcf
     fi
-
 fi
 
 echo Indexing reference sequence for bowtie2...
