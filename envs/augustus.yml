@@ -2,6 +2,7 @@ name: augustus
 channels:
   - bioconda
   - conda-forge
+  - cf-staging
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
