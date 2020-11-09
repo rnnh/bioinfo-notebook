@@ -1,11 +1,11 @@
 ---
 layout: default
-title: htseq-count
+title: Htseq-count
 parent: 2. Program guides
 ---
 
 
-# htseq-count
+# Htseq-count
 
 Given a file with aligned sequencing reads and a list of genomic features, `htseq-count` can be used to count how many reads map to each feature.
 

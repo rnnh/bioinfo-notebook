@@ -1,10 +1,10 @@
 ---
 layout: default
-title: fastq-dump
+title: Fastq-dump
 parent: 2. Program guides
 ---
 
-# fastq-dump
+# Fastq-dump
 
 `fastq-dump` is a tool for downloading sequencing reads from [NCBI's Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra).
 These sequence reads will be downloaded as FASTQ files.

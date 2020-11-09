@@ -1,11 +1,11 @@
 ---
 layout: default
-title: combining featCount tables.py
+title: Combining featCount tables.py
 parent: 3. Scripts
 ---
 
 
-# combining featCount tables.py
+# Combining featCount tables.py
 
 This is a Python script that creates a single CSV feature count table from the featureCounts output tables in the target directory.
 This combined feature count table can be used for differential expression analysis (e.g. using DESeq2 or edgeR in R).

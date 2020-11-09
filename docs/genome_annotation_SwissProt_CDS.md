@@ -4,7 +4,7 @@ title: Genome annotation script
 parent: 3. Scripts
 ---
 
-# Genome annotation SwissProt CDS
+# Genome annotation SwissProt CDS.sh
 
 [genome annotation SwissProt CDS.sh](../scripts/genome_annotation_SwissProt_CDS.sh) is a bash script that annotates the coding sequences (CDS) in a given genome assembly.
 It uses [BLAST](blast.md) and [MGKit](https://github.com/frubino/mgkit), which are included in the `bioinfo-notebook` [conda environment](conda.md).

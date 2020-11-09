@@ -1,10 +1,10 @@
 ---
 layout: default
-title: conda
+title: Conda
 parent: 2. Program guides
 ---
 
-# conda
+# Conda
 
 From the website, `conda` provides ["Package, dependency and environment management for any language"](https://docs.conda.io/en/latest/).
 

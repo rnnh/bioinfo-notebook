@@ -1,10 +1,10 @@
 ---
 layout: default
-title: fastq-dump to featureCounts
+title: Fastq-dump to featureCounts
 parent: 3. Scripts
 ---
 
-# fastq-dump to featureCounts.sh
+# Fastq-dump to featureCounts.sh
 
 [fastq-dump_to_featureCounts.sh](../scripts/fastq-dump_to_featureCounts.sh) is a `bash` script that...
 

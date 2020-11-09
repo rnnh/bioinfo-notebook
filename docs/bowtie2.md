@@ -1,10 +1,10 @@
 ---
 layout: default
-title: bowtie2
+title: Bowtie2
 parent: 2. Program guides
 ---
 
-# bowtie2
+# Bowtie2
 
 From the manual: [*"Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences"*](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml).
 

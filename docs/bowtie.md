@@ -1,10 +1,10 @@
 ---
 layout: default
-title: bowtie
+title: Bowtie
 parent: 2. Program guides
 ---
 
-# bowtie
+# Bowtie
 
 `bowtie` can be used to:
  - index reference FASTA nucleotide genomes/sequences
