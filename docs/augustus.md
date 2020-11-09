@@ -49,6 +49,18 @@ The extension of this file can be changed from ".aa" to ".faa" with the followin
 $ mv output_file.aa output_file.faa
 ```
 
+## Removing comments from Augustus annotations
+
+Genome annotations produced by Augustus follow the [Generic Feature Format](file_formats.md#generic-feature-formats), with the addition of comment lines for amino acid sequences.
+These are the same FASTA amino acid sequences that are extracted using `getAnnoFasta.pl`.
+These lines begin with the character `#`, and removing them results a standard GFF file.
+
+Here is one method for removing these amino acid lines, using `grep -v` to select lines which do not contain the `#` character:
+
+```bash
+$ grep -v "#" augustus_annotation.gff > clean_augustus_annotation.gff
+```
+
 ## Demonstration
 
 In this video, `augustus` is used to predict genes in `example_nucleotide_sequence.fasta`.
@@ -67,3 +79,4 @@ The `mv` command is used to change the extension of this file from ".aa" to ".fa
 ## References
 
 - [The Augustus website](http://bioinf.uni-greifswald.de/augustus/)
+- [GNU grep](https://www.gnu.org/software/grep/manual/grep.html)
