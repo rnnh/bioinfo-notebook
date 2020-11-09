@@ -24,7 +24,7 @@ If you are not familiar with using programs from the command line, begin with th
 
 If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
 
-- [Contents](#Contents)
+- [Contents](#contents)
 - [Installation instructions](#installation-instructions)
 	- [Video demonstration of installation](#Video-demonstration-of-installation)
 - [Repository structure](#repository-structure)
