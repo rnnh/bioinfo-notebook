@@ -31,7 +31,6 @@ In the output directory, the assembled genome will be available as contigs (**`c
 
 - [conda](conda.md): The `bioinfo-notebook` conda environment includes SPAdes
 - [File formats used in bioinformatics](file_formats.md)
-- [snp_calling.sh](snp_calling.md): This script uses SPAdes
 
 ## Further reading
 
