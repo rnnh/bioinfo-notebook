@@ -189,9 +189,9 @@ H2NS04_PONAB/5-91              KANKDLISAGLKEF....SVLLNQ.........QVFNDPL.ISEEDMVT
 
 Variant Call Format (VCF) is a format for storing variations between a reference genome and sequences aligned to it, based on SAM/BAM alignments.
 VCF files begin with a header section: lines in the header section begin with `##`.
-The last line in the header section begins with `#`: this line gives the headers of the columns used in the VCF file:
+The last line in the header section begins with `#`; this line gives the headers of the columns used in the VCF file:
 
-1. `CHROM The name of the sequence (typically a chromosome) on which the variation is being called. This sequence is usually known as 'the reference sequence', i.e. the sequence against which the given sample varies.
+1. `CHROM` The name of the sequence (typically a chromosome) on which the variation is being called. This sequence is usually known as 'the reference sequence', i.e. the sequence against which the given sample varies.
 2. `POS` The 1-based position of the variation on the given sequence.
 3. `ID` The identifier of the variation, e.g. a dbSNP rs identifier, or if unknown a ".". Multiple identifiers should be separated by semi-colons without white-space.
 4. `REF` The reference base (or bases in the case of an indel) at the given position on the given reference sequence.
