@@ -38,6 +38,7 @@ genome_annotation_SwissProt_CDS.sh [-h|--help] [-d|--demo] [-i|--input]
  to specify a FASTA nucleotide file (.fasta or .fna) to annotate, instead of
  the demo sequence. The end result is also an annotation of the CDS in the input
  sequence based on UniProtKB/Swiss-Prot, called '<input>.gff'. 
+ 
  This script should be called from the 'bioinfo-notebook/' directory.The 
  programs required for this script are in the 'bioinfo-notebook' conda 
  environment (bioinfo-notebook/envs/bioinfo-notebook.yml or 
