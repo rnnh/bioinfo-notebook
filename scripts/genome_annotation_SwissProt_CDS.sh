@@ -1,4 +1,5 @@
 #! /bin/bash
+# https://github.com/rnnh/bioinfo-notebook.git
 
 # Help/usage text
 usage="$(basename "$0") [-h|--help] [-l|--log -p|--processors n \n

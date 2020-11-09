@@ -29,5 +29,6 @@ snp_calling.sh [-h|--help] [-l|--log -p|--processors n]
 
 - [snp_calling.sh on GitHub](https://github.com/rnnh/bioinfo-notebook/blob/master/scripts/snp_calling.sh)
 - [File formats used in bioinformatics](file_formats.md)
+- [samtools](samtools.md)
 - [fastq-dump](fastq-dump.md)
 - [bowtie2](bowtie2.md)
