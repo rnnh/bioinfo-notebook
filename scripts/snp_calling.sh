@@ -119,7 +119,7 @@ if $DEMO ; then
 
     echo Downloading reference sequence...
     curl -s --remote-name --remote-time ftp://ftp.ncbi.nlm.nih.gov/genomes/all/\
-    GCF/000/146/045/GCF_000146045.2_R64/GCF_000146045.2_R64_genomic.fna.gz
+GCF/000/146/045/GCF_000146045.2_R64/GCF_000146045.2_R64_genomic.fna.gz
 
     echo Decompressing reference sequence...
     gunzip GCF_000146045.2_R64_genomic.fna.gz
