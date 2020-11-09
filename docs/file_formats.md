@@ -23,6 +23,7 @@ A brief introduction to various file formats used in bioinformatics.
     - [CRAM](#cram)
     - [Stockholm format](#stockholm-format)
 	- [Example Stockholm file](#example-stockholm-file)
+	- [VCF](#vcf)
 - [Generic Feature Formats](#generic-feature-formats)
     - [GFF general structure](#gff-general-structure)
     - [GTF](#gtf)
@@ -184,6 +185,24 @@ H2NS04_PONAB/5-91              KANKDLISAGLKEF....SVLLNQ.........QVFNDPL.ISEEDMVT
 //
 ```
 
+### VCF
+
+Variant Call Format (VCF) is a format for storing variations between a reference genome and sequences aligned to it, based on SAM/BAM alignments.
+VCF files begin with a header section: lines in the header section begin with `##`.
+The last line in the header section begins with `#`: this line gives the headers of the columns used in the VCF file:
+
+1. `CHROM The name of the sequence (typically a chromosome) on which the variation is being called. This sequence is usually known as 'the reference sequence', i.e. the sequence against which the given sample varies.
+2. `POS` The 1-based position of the variation on the given sequence.
+3. `ID` The identifier of the variation, e.g. a dbSNP rs identifier, or if unknown a ".". Multiple identifiers should be separated by semi-colons without white-space.
+4. `REF` The reference base (or bases in the case of an indel) at the given position on the given reference sequence.
+5. `ALT` The list of alternative alleles at this position.
+6. `QUAL` A quality score associated with the inference of the given alleles.
+7. `FILTER` A flag indicating which of a given set of filters the variation has passed.
+8. `INFO` An extensible list of key-value pairs (fields) describing the variation. Multiple fields are separated by semicolons with optional values in the format: <key>=<data>[,data].
+9. `FORMAT` An (optional) extensible list of fields for describing the samples.
+10. `SAMPLEs` For each (optional) sample described in the file, values are given for the fields listed in FORMAT. If multiple samples have been aligned to the reference sequence, each sample will have its own column.
+
+
 ## Generic Feature Formats
 
 The Generic Feature Formats (`.gff`) are tab-delimited text file formats used for describing genes and other features of DNA, RNA and protein sequences.
@@ -282,3 +301,5 @@ ctg123 . CDS             1201  1500  .  +  0  ID=cds00001;Parent=mRNA00001;Name=
 - [GTF2.2: A Gene Annotation Format (Revised Ensembl GTF)](http://mblab.wustl.edu/GTF22.html)
 - [GFF3 Specification](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md)
 - [Stockholm format](https://sonnhammer.sbc.su.se/Stockholm.html)
+- [Specifications of SAM/BAM and related high-throughput sequencing file formats](https://github.com/samtools/hts-specs)
+- [VCF poster](http://vcftools.sourceforge.net/VCF-poster.pdf)
