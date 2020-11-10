@@ -100,7 +100,7 @@ $ sudo apt-get update # Updates lists of software that can be installed
 $ git clone https://github.com/rnnh/bioinfo-notebook.git
 ```
 
-**3.** After downloading this project, run the [Linux setup script](docs/linux_setup.md) with this command:
+**3.** If you are using Linux, run the [Linux setup script](docs/linux_setup.md) with this command after downloading the project:
 
 ```bash
 $ bash ~/bioinfo-notebook/scripts/linux_setup.sh
