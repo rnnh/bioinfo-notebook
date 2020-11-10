@@ -44,6 +44,11 @@ install:
   - conda activate orthofinder-yml
   - conda deactivate
   
+  # Creating conda environment using envs/sgRNAcas9.yml
+  - conda env create --name sgRNAcas9-yml --file envs/sgRNAcas9.yml
+  - conda activate sgRNAcas9-yml
+  - conda deactivate
+  
 script:
   # Confirming that programs work in conda environments
   # bioinfo-notebook-explicit
@@ -68,4 +73,9 @@ script:
   # orthofinder-yml
   - conda activate orthofinder-yml
   - orthofinder --help
+  - conda deactivate
+  
+  # orthofinder-yml
+  - conda activate sgRNAcas9-yml
+  - java --version
   - conda deactivate
