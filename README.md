@@ -29,13 +29,24 @@ If you have any suggestions, or questions, or spot any mistakes, [please let me 
 
 ## Pipeline examples
 
-These bioinformatics pipelines can be carried out using scripts included in this project.
+These bioinformatics pipelines can be carried out using scripts and tools described in this project.
+Input files for some of these scripts can be specified in the command line; other scripts will need to be altered to fit the given input data.
 
 ### RNA-seq analysis
 
 - [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) can be used to download RNA-seq reads from NCBI's Sequence Read Archive (SRA) and align them to a reference genome. This script uses [fastq-dump](docs/fastq-dump.md) or [fasterq-dump](docs/fasterq-dump.md) to download the sequencing reads as [FASTQ](docs/file_formats.md#fastq), and [featureCounts](docs/featureCounts.md) to align them to a reference [FASTA nucleotide file.](docs/file_formats.md#fasta)
 - Running [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) will produce feature count tables. These feature count tables can be combined using [combining_featCount_tables.sh](docs/combining_featCount_tables.md).
 - These combined feature count tables can be used for differential expression (DE) analysis. An example DE analysis script is included in this project: [DE_analysis_edgeR_script.R](docs/DE_analysis_edgeR_script.md). This script uses the [R programming language](https://cran.r-project.org/) with the [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) library.
+
+### SNP analysis
+
+- [FASTQ](docs/file_formats.md#fastq) reads from whole genome sequencing (WGS) can be assembled using [SPAdes](docs/SPAdes.md).
+- Sequencing reads can be aligned to this assembled genome using [bowtie2](docs/bowtie2.md).
+- The script [snp_calling.sh](docs/snp_calling.md) aligns sequencing reads to an assembled genome and detects single nucleotide polymorphisms (SNPs). This will produce a [Variant Call Format (VCF) file](docs/file_formats.md#vcf).
+- The proteins in the assembled reference genome- the genome to which the reads are aligned- can be annotated using [genome_annotation_SwissProt_CDS.sh](docs/genome_annotation_SwissProt_CDS.doc).
+- The genome annotation [GFF](docs/file_formats.md#gff) file can be cross-referenced with the VCF file using [annotating_snps.R](docs/annotating_snps.md). This will produce an [annotated SNP format](docs/annotating_snps.md#annotated_snp_format) file.
+- Annotated SNP format files can be cross-referenced using [annotated_snps_filter.R](docs/annotated_snps_filter.md). For two annotated SNP files, this script will produce a file with annotated SNPs unique to the first file, and a file with annotated SNPs unique to the second file.
+
 
 ## Contents
 

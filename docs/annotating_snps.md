@@ -22,7 +22,7 @@ To use this script, variables need to be defined on lines 28 to 32 of the script
 - The variable `upstream.int` is used to determine how far upstream from an annotated feature a SNP can be. This can be set to 0 if you do not want upstream SNPs to be considered. Setting it to 1000 will mean that SNPs up to 1,000 bases/1kb upstream from a feature will be annotated.
 - The variable 'output_name' is used to specify the name of the output file, which should end in '.tsv' as it will be a tab-separated values text file.
 
-## Output format
+## Annotated SNP format
 
 The `.tsv` files created by this script have a combination of columns from the [GFF and VCF formats](file_formats.md) as follows...
 
