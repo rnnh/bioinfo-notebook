@@ -20,7 +20,7 @@ by [Ronan Harrington](https://github.com/rnnh)
 This project provides introductions to various bioinformatics tools with short guides, video demonstrations, and scripts that tie these tools together.
 The documents in this project can be read locally in a plain-text editor, or viewed online at <https://rnnh.github.io/bioinfo-notebook/>.
 If you are not familiar with using programs from the command line, begin with the page "[Introduction to the command line](docs/cl_intro.md)".
-If you have any suggestions, or questions, or spot any mistakes, [please submit an issue on GitHub](https://github.com/rnnh/bioinfo-notebook/issues).
+If you have any questions, or spot any mistakes, [please submit an issue on GitHub](https://github.com/rnnh/bioinfo-notebook/issues).
 
 - [Pipeline examples](#pipeline-examples)
 - [Contents](#contents)
