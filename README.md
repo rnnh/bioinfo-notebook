@@ -129,45 +129,64 @@ bioinfo-notebook/
 ├── assets/
 │   └── bioinfo-notebook_logo.svg
 ├── data/
+│   ├── blastx_SwissProt_example_nucleotide_sequence.fasta.tsv
+│   ├── blastx_SwissProt_S_cere.tsv
 │   ├── design_table.csv
 │   ├── example_genome_annotation.gtf
-│   ├── example_genome_annotation.gtf
+│   ├── example_nucleotide_sequence.fasta
 │   └── featCounts_S_cere_20200331.csv
 ├── docs/
+│   ├── annotated_snps_filter.md
+│   ├── annotating_snps.md
 │   ├── augustus.md
 │   ├── blast.md
-│   ├── bowtie.md
 │   ├── bowtie2.md
+│   ├── bowtie.md
 │   ├── cl_intro.md
 │   ├── cl_solutions.md
 │   ├── combining_featCount_tables.md
 │   ├── conda.md
-│   ├── DE_analysis_edgeR_script.R
+│   ├── DE_analysis_edgeR_script.md
+│   ├── DE_analysis_edgeR_script.pdf
 │   ├── fasterq-dump.md
 │   ├── fastq-dump.md
 │   ├── fastq-dump_to_featureCounts.md
 │   ├── featureCounts.md
 │   ├── file_formats.md
+│   ├── genome_annotation_SwissProt_CDS.md
 │   ├── htseq-count.md
 │   ├── linux_setup.md
+│   ├── orthofinder.md
 │   ├── part1.md    # Navigation page for website
 │   ├── part2.md    # Navigation page for website
 │   ├── part3.md    # Navigation page for website
+│   ├── report_an_issue.md
 │   ├── samtools.md
+│   ├── sgRNAcas9.md
+│   ├── snp_calling.md
+│   ├── SPAdes.md
 │   ├── ubuntu_virtualbox.md
+│   ├── UniProt_downloader.md
 │   └── wsl.md
 ├── envs/            # conda environment files
-│   ├── augustus.yml # environments for augustus
+│   ├── augustus.yml            # environment for Augustus
 │   ├── bioinfo-notebook.txt
-│   └── bioinfo-notebook.yml
+│   ├── bioinfo-notebook.yml
+│   ├── orthofinder.yml         # environment for OrthoFinder
+│   └── sgRNAcas9.yml           # environment for sgRNAcas9
 ├── scripts/
+│   ├── annotated_snps_filter.R
+│   ├── annotating_snps.R
 │   ├── combining_featCount_tables.py
 │   ├── DE_analysis_edgeR_script.R
 │   ├── fastq-dump_to_featureCounts.sh
-│   └── linux_setup.sh
+│   ├── genome_annotation_SwissProt_CDS.sh
+│   ├── linux_setup.sh
+│   ├── snp_calling.sh
+│   └── UniProt_downloader.sh
 ├── _config.yml     # Configures github.io project website
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-└── .travis.yml     # Configures Travis CI testing
+└── .travis.yml     # Configures Travis CI testing for GitHub repo
 ```
