@@ -43,8 +43,8 @@ Input files for some of these scripts can be specified in the command line; othe
 - [FASTQ](docs/file_formats.md#fastq) reads from whole genome sequencing (WGS) can be assembled using [SPAdes](docs/SPAdes.md).
 - Sequencing reads can be aligned to this assembled genome using [bowtie2](docs/bowtie2.md).
 - The script [snp_calling.sh](docs/snp_calling.md) aligns sequencing reads to an assembled genome and detects single nucleotide polymorphisms (SNPs). This will produce a [Variant Call Format (VCF) file](docs/file_formats.md#vcf).
-- The proteins in the assembled reference genome- the genome to which the reads are aligned- can be annotated using [genome_annotation_SwissProt_CDS.sh](docs/genome_annotation_SwissProt_CDS.doc).
-- The genome annotation [GFF](docs/file_formats.md#gff) file can be cross-referenced with the VCF file using [annotating_snps.R](docs/annotating_snps.md). This will produce an [annotated SNP format](docs/annotating_snps.md#annotated_snp_format) file.
+- The proteins in the assembled reference genome- the genome to which the reads are aligned- can be annotated using [genome_annotation_SwissProt_CDS.sh](docs/genome_annotation_SwissProt_CDS.md).
+- The genome annotation [GFF](docs/file_formats.md#gff) file can be cross-referenced with the VCF file using [annotating_snps.R](docs/annotating_snps.md). This will produce an [annotated SNP format](docs/annotating_snps.md#annotated-snp-format) file.
 - Annotated SNP format files can be cross-referenced using [annotated_snps_filter.R](docs/annotated_snps_filter.md). For two annotated SNP files, this script will produce a file with annotated SNPs unique to the first file, and a file with annotated SNPs unique to the second file.
 
 
