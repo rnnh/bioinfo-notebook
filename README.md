@@ -16,6 +16,7 @@ by [Ronan Harrington](https://github.com/rnnh)
 ![GitHub issues](https://img.shields.io/github/issues/rnnh/bioinfo-notebook)
 ![GitHub repo size](https://img.shields.io/github/repo-size/rnnh/bioinfo-notebook)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Frnnh.github.io%2Fbioinfo-notebook)
+[![DOI](https://zenodo.org/badge/243280413.svg)](https://zenodo.org/badge/latestdoi/243280413)
 
 This project provides introductions to various bioinformatics tools with short guides, video demonstrations, and scripts that tie these tools together.
 The documents in this project can be read locally in a plain-text editor, or viewed online at <https://rnnh.github.io/bioinfo-notebook/>.
