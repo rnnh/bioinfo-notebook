@@ -35,7 +35,7 @@ Input files for some of these scripts can be specified in the command line; othe
 ### RNA-seq analysis
 
 - [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) can be used to download RNA-seq reads from NCBI's Sequence Read Archive (SRA) and align them to a reference genome. This script uses [fastq-dump](docs/fastq-dump.md) or [fasterq-dump](docs/fasterq-dump.md) to download the sequencing reads as [FASTQ](docs/file_formats.md#fastq), and [featureCounts](docs/featureCounts.md) to align them to a reference [FASTA nucleotide file.](docs/file_formats.md#fasta)
-- Running [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) will produce feature count tables. These feature count tables can be combined using [combining_featCount_tables.sh](docs/combining_featCount_tables.md).
+- Running [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) will produce feature count tables. These feature count tables can be combined using [combining_featCount_tables.py](docs/combining_featCount_tables.md).
 - These combined feature count tables can be used for differential expression (DE) analysis. An example DE analysis script is included in this project: [DE_analysis_edgeR_script.R](docs/DE_analysis_edgeR_script.md). This script uses the [R programming language](https://cran.r-project.org/) with the [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) library.
 
 ### SNP analysis

@@ -8,6 +8,7 @@ parent: 3. Scripts
 
 [UniProt_downloader.sh](../scripts/UniProt_downloader.sh) is a `bash` shell script for downloading [UniProt](https://www.uniprot.org/) protein sequences to a FASTA amino acid ([.faa](file_formats.md)) file.
 It takes a list of UniProt accession numbers as input, and then pipes each one into a `curl` command to download the corresponding protein.
+This is essentially a [one-line program](https://en.wikipedia.org/wiki/One-liner_program) wrapped in a shell script to make downloading UniProt sequences easier.
 
 ## Usage
 
