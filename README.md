@@ -66,20 +66,27 @@ Input files for some of these scripts can be specified in the command line; othe
 
 - [Augustus](docs/augustus.md)
 - [BLAST](docs/blast.md)
-- [bowtie](docs/bowtie.md)
-- [bowtie2](docs/bowtie2.md)
-- [conda](docs/conda.md)
-- [fasterq-dump](docs/fasterq-dump.md)
-- [fastq-dump](docs/fastq-dump.md)
-- [featureCounts](docs/featureCounts.md)
-- [htseq-count](docs/htseq-count.md)
-- [samtools](docs/samtools.md)
+- [Bowtie](docs/bowtie.md)
+- [Bowtie2](docs/bowtie2.md)
+- [Conda](docs/conda.md)
+- [Fasterq-dump](docs/fasterq-dump.md)
+- [Fastq-dump](docs/fastq-dump.md)
+- [FeatureCounts](docs/featureCounts.md)
+- [Htseq-count](docs/htseq-count.md)
+- [SAMtools](docs/samtools.md)
+- [SPAdes](docs/SPAdes.md)
 
 ### [3. Scripts](docs/part3.md)
 
-- [linux_setup.sh](docs/linux_setup.md)
-- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md)
-- [combining_featCount_tables.py](docs/combining_featCount_tables.md)
+- [Annotated SNPs filter](docs/annotated_snps_filter.md)
+- [Annotating SNPs](docs/annotating_snps.md)
+- [Combining featCount tables.py](docs/combining_featCount_tables.md)
+- [DE_analysis_edgeR_script.R](docs/DE_analysis_edgeR_script.md)
+- [Fastq-dump to featureCounts](docs/fastq-dump_to_featureCounts.md)
+- [Genome annotation script](docs/genome_annotation_SwissProt_CDS.md)
+- [Linux setup script](docs/linux_setup.md)
+- [SNP calling script](docs/snp_calling.md)
+- [UniProt downloader](docs/UniProt_downloader.md)
 
 ## Installation instructions
 
