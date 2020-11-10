@@ -38,6 +38,11 @@ install:
   - conda env create --name augustus-yml --file envs/augustus.yml
   - conda activate augustus-yml
   - conda deactivate
+
+  # Creating conda environment using envs/orthofinder.yml
+  - conda env create --name orthofinder-yml --file envs/orthofinder.yml
+  - conda activate orthofinder-yml
+  - conda deactivate
   
 script:
   # Confirming that programs work in conda environments
@@ -58,4 +63,9 @@ script:
   # augustus-yml
   - conda activate augustus-yml
   - augustus --help
+  - conda deactivate
+  
+  # orthofinder-yml
+  - conda activate orthofinder-yml
+  - orthofinder --help
   - conda deactivate
