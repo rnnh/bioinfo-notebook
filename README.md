@@ -17,17 +17,25 @@ by [Ronan Harrington](https://github.com/rnnh)
 ![GitHub repo size](https://img.shields.io/github/repo-size/rnnh/bioinfo-notebook)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Frnnh.github.io%2Fbioinfo-notebook)
 
-This project provides introductions to various bioinformatics tools with short guides, video demonstrations, and scripts that tie these tools together.
-The documents in this project can be read locally in a plain-text editor, or viewed online at <https://rnnh.github.io/bioinfo-notebook/>.
+- This project provides introductions to various bioinformatics tools with short guides, video demonstrations, and scripts that tie these tools together.
+- The documents in this project can be read locally in a plain-text editor, or viewed online at <https://rnnh.github.io/bioinfo-notebook/>.
+- If you are not familiar with using programs from the command line, begin with the page "[Introduction to the command line](docs/cl_intro.md)".
+- If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
 
-If you are not familiar with using programs from the command line, begin with the page "[Introduction to the command line](docs/cl_intro.md)".
-
-If you have any suggestions, or questions, or spot any mistakes, [please let me know](https://github.com/rnnh/bioinfo-notebook/issues).
-
+- [Pipeline examples](#pipeline-examples)
 - [Contents](#contents)
 - [Installation instructions](#installation-instructions)
-	- [Video demonstration of installation](#Video-demonstration-of-installation)
 - [Repository structure](#repository-structure)
+
+## Pipeline examples
+
+These bioinformatics pipelines can be carried out using scripts included in this project.
+
+### RNA-seq analysis
+
+- [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) can be used to download RNA-seq reads from NCBI's Sequence Read Archive (SRA) and align them to a reference genome. This script uses [fastq-dump](docs/fastq-dump.md) or [fasterq-dump](docs/fasterq-dump.md) to download the sequencing reads as [FASTQ](docs/file_formats.md#fastq), and [featureCounts](docs/featureCounts.md) to align them to a reference [FASTA nucleotide file.](docs/file_formats.md#fasta)
+- Running [fastq-dump_to_featureCounts.sh](docs/fastq-dump_to_featureCounts.md) will produce feature count tables. These feature count tables can be combined using [combining_featCount_tables.sh](docs/combining_featCount_tables.md).
+- These combined feature count tables can be used for differential expression (DE) analysis. An example DE analysis script is included in this project: [DE_analysis_edgeR_script.R](docs/DE_analysis_edgeR_script.md). This script uses the [R programming language](https://cran.r-project.org/) with the [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) library.
 
 ## Contents
 
