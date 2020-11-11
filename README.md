@@ -75,9 +75,10 @@ Input files for some of these scripts can be specified in the command line; othe
 - [Fastq-dump](docs/fastq-dump.md)
 - [FeatureCounts](docs/featureCounts.md)
 - [Htseq-count](docs/htseq-count.md)
+- [OrthoFinder](docs/orthofinder.md)
 - [SAMtools](docs/samtools.md)
-- [SPAdes](docs/SPAdes.md)
 - [sgRNAcas9](docs/sgRNAcas9.md)
+- [SPAdes](docs/SPAdes.md)
 
 ### [3. Scripts](docs/part3.md)
 
