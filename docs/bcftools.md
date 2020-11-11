@@ -20,7 +20,7 @@ In this command...
 
 1. **`--max-depth`** or **`-d`** sets the reads per input file for each position in the alignment. In this case, it is set to 10000
 2. **`--threads`** sets the number (*n*) of processors/threads to use.
-3. **`--fasta-ref`** or **`-f`** is used to select the faidx-indexed FASTA nucleotide reference file (*reference.fasta*) used for the alignment.
+3. **`--fasta-ref`** or **`-f`** is used to select the [faidx-indexed FASTA](samtools.md#indexing-a-fasta-file-using-samtools-faidx) nucleotide reference file (*reference.fasta*) used for the alignment.
 4. **`--output `** or **`-o`** is used to name the ouput file (*genotype_likelihoods.bcf*).
 5. The final argument given is the input BAM alignment file (*reference_sequence_alignment.bam*). Multiple input files can be given here.
 
