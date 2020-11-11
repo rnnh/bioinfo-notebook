@@ -66,6 +66,7 @@ Input files for some of these scripts can be specified in the command line; othe
 ### [2. Program guides](docs/part2.md)
 
 - [Augustus](docs/augustus.md)
+- [Bcftools](docs/bcftools.md)
 - [BLAST](docs/blast.md)
 - [Bowtie](docs/bowtie.md)
 - [Bowtie2](docs/bowtie2.md)
@@ -76,6 +77,7 @@ Input files for some of these scripts can be specified in the command line; othe
 - [Htseq-count](docs/htseq-count.md)
 - [SAMtools](docs/samtools.md)
 - [SPAdes](docs/SPAdes.md)
+- [sgRNAcas9](docs/sgRNAcas9.md)
 
 ### [3. Scripts](docs/part3.md)
 
