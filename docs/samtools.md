@@ -51,7 +51,7 @@ In this command...
 
 1. **`sorted_example_alignment.bam`** is the name of the input file.
 
-### Demonstration
+### Demonstration 1
 
 In this video, `samtools` is used to convert `example_alignment.sam` into a BAM file, sort that BAM file, and index it.
 
@@ -71,11 +71,21 @@ In this command...
 1. **`example_nucleotide_sequence.fasta`** is the reference genome input.
 2. **`example_reads_1.fastq`** and **`example_reads_2.fastq`** are the names of the simulated read output files.
 
-### Demonstration
+### Demonstration 2
 
 In this video, `wgsim` is used to simulate reads from `example_nucleotide_sequence.fasta`.
 
 [![asciicast](https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH.svg)](https://asciinema.org/a/m89gXtx4cKRnKpI6amWj3BEAH?autoplay=1)
+
+## Indexing a FASTA file using `samtools faidx`
+
+SAMtools can be used to index a FASTA file as follows...
+
+```bash
+$ samtools faidx file.fasta
+```
+
+After running this command, `file.fasta` can now be used by [bcftools](bcftools.md).
 
 ## See also
 
