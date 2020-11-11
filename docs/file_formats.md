@@ -23,7 +23,8 @@ A brief introduction to various file formats used in bioinformatics.
     - [CRAM](#cram)
     - [Stockholm format](#stockholm-format)
 	- [Example Stockholm file](#example-stockholm-file)
-	- [VCF](#vcf)
+    - [VCF](#vcf)
+    - [BCF](#bcf)
 - [Generic Feature Formats](#generic-feature-formats)
     - [GFF general structure](#gff-general-structure)
     - [GTF](#gtf)
@@ -202,6 +203,9 @@ The last line in the header section begins with `#`; this line gives the headers
 9. `FORMAT` An (optional) extensible list of fields for describing the samples.
 10. `SAMPLEs` For each (optional) sample described in the file, values are given for the fields listed in FORMAT. If multiple samples have been aligned to the reference sequence, each sample will have its own column.
 
+### BCF
+
+Binary Call Format (BCF) is a binary representation of [VCF](#vcf), containing the same information in binary format for improved performance.
 
 ## Generic Feature Formats
 
