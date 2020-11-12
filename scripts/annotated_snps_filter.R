@@ -23,6 +23,9 @@ annotated_SNP_file_2 <- "<.tsv File name here>"
 
 # Setup ========================================================================
 
+# Setting the working directory
+setwd("~/bioinfo-notebook/data")
+  
 annotated_SNP_file_1 <- read.table(
   annotated_SNP_file_1,
   stringsAsFactors = FALSE, header = TRUE)
@@ -31,9 +34,6 @@ annotated_SNP_file_2 <- read.table(
   annotated_SNP_file_2,
   stringsAsFactors = FALSE, header = TRUE)
 
-# Setting the working directory
-setwd("~/bioinfo-notebook/data")
-  
 # Finding rows in common between annotated SNP data frames =====================
 
 # This needs to be carried out multiple times because the number of rows in
