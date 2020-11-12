@@ -91,7 +91,7 @@ detach(SNPs_with_annotations.df)
 
 # Exporting SNPs with annotations to tab-separated value (.tsv) file ===========
 write.table(SNPs_with_annotations.df,
-            file = "DMKU3_annotation_with_ATCC_SNPs.tsv",
+            file = output_name,
             fileEncoding = "UTF-8",
             sep = "\t",
             row.names = FALSE)

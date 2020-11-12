@@ -95,7 +95,7 @@ while (( "$#" )); do
     esac
 done
 
-cd data
+cd ~/bioinfo-notebook/data/
 
 if $MAKELOG ; then
     # Creating results directory, if it does not already exist

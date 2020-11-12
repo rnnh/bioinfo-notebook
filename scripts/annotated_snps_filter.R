@@ -32,7 +32,7 @@ annotated_SNP_file_2 <- read.table(
   stringsAsFactors = FALSE, header = TRUE)
 
 # Setting the working directory
-setwd("/data/users/ronan/temp/scripts/")
+setwd("~/bioinfo-notebook/data")
   
 # Finding rows in common between annotated SNP data frames =====================
 
